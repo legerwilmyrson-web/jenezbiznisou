@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO ═══ -->
+  <title>Générateur de Nom d'Entreprise Gratuit Haïti | JenezBiznissou</title>
+  <meta name="description" content="Trouvez un nom créatif et professionnel pour votre entreprise en Haïti. Générateur de noms gratuit basé sur votre secteur et votre style. NexFlow, Lakou Digital, etc.">
+  <meta name="keywords" content="générateur nom entreprise haïti, trouver nom business créatif, nom boutique haïti, jenezbiznissou, idée nom entreprise">
+  <link rel="canonical" href="https://jenezbiznissou.xyz/tools/startup/generateur-nom-business.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Générateur de Nom d'Entreprise Gratuit — JenezBiznissou">
+  <meta property="og:description" content="Jwenn yon bèl non pou bizniss ou an Ayiti byen rapid epi gratis.">
+  <meta property="og:url" content="https://jenezbiznissou.xyz/tools/startup/generateur-nom-business.html">
+  <meta property="og:site_name" content="JenezBiznissou">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/global.css">
+
+  <style>
+    /* ── NAME GENERATOR SPECIFIC STYLES ── */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .results-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .name-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .name-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .name-text {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: var(--accent);
+      color: var(--bg-main);
+      border-color: var(--accent);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <a href="/" class="navbar-logo">
+          Jenez<span>Biznissou</span>
+        </a>
+
+        <ul class="navbar-links" role="list">
+          <li><a href="/#finance">Finans</a></li>
+          <li><a href="/#documents">Dokiman</a></li>
+          <li><a href="/#startup">Startup</a></li>
+          <li><a href="/#digital">Digital</a></li>
+        </ul>
+
+        <button class="navbar-toggle" aria-label="Ouvri meni" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" role="menu">
+      <a href="/#finance" role="menuitem">Finans</a>
+      <a href="/#documents" role="menuitem">Dokiman</a>
+      <a href="/#startup" role="menuitem">Startup</a>
+      <a href="/#digital" role="menuitem">Digital</a>
+      <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Akèy</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#startup">Startup</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Générateur de Nom</span>
+      </nav>
+
+      <div class="ad-space" aria-hidden="true">Ad Space</div>
+
+      <section class="tool-hero">
+        <h1>Jwenn yon Non pou Bizniss ou</h1>
+        <p>
+          Mete mo kle ou yo epi chwazi style ou vle a pou nou ka sijere 10 bèl non pwofesyonèl pou bizniss ou an Ayiti.
+        </p>
+      </section>
+
+      <div class="tool-card reveal" style="max-width: 600px; margin: 0 auto;">
+        <div class="form-group">
+          <label class="form-label">Sektè Aktivite</label>
+          <select class="form-input" id="sector">
+            <option value="Commerce">Commerce</option>
+            <option value="Services">Services</option>
+            <option value="Tech">Tech / Digital</option>
+            <option value="Beauté">Beauté / Mode</option>
+            <option value="Food">Food / Gastronomie</option>
+            <option value="Construction">Construction</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Mo kle (2-3 mo)</label>
+          <input class="form-input" type="text" id="keywords" placeholder="Ex: rapid livraison" onkeydown="if(event.key==='Enter') generateNames()">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Style Non an</label>
+          <select class="form-input" id="style">
+            <option value="Moderne">Moderne (Short & Sleek)</option>
+            <option value="Classique">Classique (Pro & Trust)</option>
+            <option value="Créatif">Créatif (Unique)</option>
+            <option value="Kreyòl">Local Kreyòl (Ayiti Style)</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary btn-full" onclick="generateNames()">
+          ✨ Jenere 10 Non
+        </button>
+      </div>
+
+      <div id="results-area" class="hidden">
+        <div class="results-grid" id="names-container">
+          <!-- Names will appear here -->
+        </div>
+        <div style="text-align: center; margin-top: 24px;">
+          <button class="btn btn-secondary" onclick="generateNames()">
+            🔄 Jenere lòt non ankò
+          </button>
+        </div>
+      </div>
+
+      <div class="cta-kolonih reveal" style="margin-top: 60px;">
+        <div class="cta-kolonih-text">
+          <p>Ou prèt pou vann pwodui dijital ou?</p>
+          <strong>Lanse boutik ou sou Kolonih.com — Platfòm #1 Ayiti</strong>
+        </div>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Kòmanse Gratis →</a>
+      </div>
+
+      <!-- ── CTA WHATSAPP ── -->
+      <div class="cta-whatsapp reveal">
+        <span style="font-size: 1.25rem;">📱</span>
+        <p style="margin:0; color: var(--text-secondary); font-size: var(--text-sm);">
+          Resevwa <strong style="color: var(--text-primary);">1 tip business gratis chak semèn</strong> sou WhatsApp →
+        </p>
+        <a
+          href="https://wa.me/50932049515?text=Mwen+vle+tips+business+gratis"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-sm"
+          style="background: #25D366; color: #fff; min-width: auto;"
+          onclick="trackEvent('whatsapp_click', {page: location.pathname})"
+        >
+          Rejwenn →
+        </a>
+      </div>
+
+      <section class="seo-content">
+        <h2>Poukisa non bizniss ou enpòtan konsa?</h2>
+        <p> Non bizniss ou se premye bagay yon kliyan ap tande oswa wè. Li dwe fasil pou sonje, fasil pou pwononse, epi li dwe bay yon lide sou sa w ap vann. Yon move non ka fè kliyan yo konfonn ou ak yon lòt moun oswa li ka fè bizniss ou pa parèt pwofesyonèl. </p>
+        <p> Notre générateur de nom d'entreprise en Haïti vous aide à sortir du blocage créatif. Que vous cherchiez un nom moderne comme "NexFlow" ou un nom bien créole comme "Lakou Digital", notre outil analyse vos mots-clés pour créer des combinaisons uniques qui résonnent avec le public haïtien et international. </p>
+
+        <h2>Kijan pou w chwazi pi bon non an nan lis la?</h2>
+        <p> Yon fwa ou fin jenere 10 non yo, pa sèlman chwazi sa ki pi bèl la nan zòrèy ou. Tcheke si domain nan (sit web) disponib, tcheke si non an deja pran sou Facebook oswa Instagram, epi mande 2-3 zanmi sa yo panse de li. Yon bon non dwe "sonnen" byen men li dwe pratik tou pou maketing ou. </p>
+        <p> Si w ap vize yon mache lokal sèlman, yon non an Kreyòl ka kreye yon pi gwo koneksyon ak kliyan yo. Men si w panse vann pwodui ou aletranje via Kolonih, yon non ki pi "moderne" oswa "tech" ka pi apwopriye pou yon odyans entènasyonal. </p>
+
+        <h2>3 Erè pou w evite lè w ap chwazi non bizniss ou</h2>
+        <p>
+          - <strong>Non ki twò long:</strong> Si kliyan an oblije fè efò pou l sonje non an, se yon move siy.<br>
+          - <strong>Kopi konkiran:</strong> Pa chwazi yon non ki sanble twòp ak yon gwo bizniss ki deja egziste.<br>
+          - <strong>Twò limite:</strong> Si w rele bizniss la "Soulye Sen-Mak", sa ka anpeche w vann rad oswa deplase nan lòt vil pita.
+        </p>
+      </section>
+
+      <section class="related-tools reveal">
+        <h3>Tools ou ka itilize tou:</h3>
+        <div class="related-tools-grid">
+          <a href="generateur-slogan.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Jenere Slogan</span>
+            <span class="tool-card-desc">Jwenn yon fraz maketing ki makònen ak non w.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+          <a href="generateur-bio-instagram.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Bio Instagram</span>
+            <span class="tool-card-desc">Kreye yon bio ki atire kliyan sou rezo yo.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+          <a href="generateur-idee-business.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Ide Bizniss</span>
+            <span class="tool-card-desc">Jwenn ide pwojè ki ka mache an Ayiti.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>JenezBiznissou</strong> — Tools gratis pou entrepreneurs<br>
+          <span>© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Ayiti</span>
+        </div>
+        <nav class="footer-links" aria-label="Liens footer">
+          <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
+          <a href="/">Tout Tools</a>
+          <a href="/#finance">Finans</a>
+          <a href="/politique-confidentialite.html">Konfidansyalite</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/global.js" defer></script>
+  <script>
+    const DATA = {
+      prefixes: {
+        Tech: ['Nex', 'Cyber', 'Digi', 'Bit', 'Logi', 'Smart', 'Core', 'Tech', 'Cloud', 'Data'],
+        Commerce: ['Maison', 'Boutique', 'Grand', 'Elite', 'Global', 'Prime', 'Select', 'Omni', 'Market'],
+        Services: ['Expert', 'Pro', 'Swift', 'Direct', 'Nova', 'Flex', 'Zenith', 'Reliant', 'Prime'],
+        Food: ['Delice', 'Gou', 'Chef', 'Tasty', 'Green', 'Fresh', 'Urban', 'Soleil', 'Kitchen'],
+        Beauté: ['Belle', 'Eclat', 'Pure', 'Glam', 'Luxe', 'Style', 'Vogue', 'Aura', 'Grace'],
+        Construction: ['Build', 'Solid', 'Apex', 'Terra', 'Struc', 'Titan', 'Safe', 'Haut', 'Fond'],
+        Autre: ['General', 'Hub', 'Plus', 'Multi', 'Group', 'Union', 'Way', 'Star', 'Flow']
+      },
+      suffixes: {
+        Moderne: ['Flow', 'Pulse', 'Node', 'Grid', 'Link', 'Up', 'Next', 'Sphere', 'Way', 'Vibe'],
+        Classique: ['& Co', 'Group', 'Associes', 'International', 'Solutions', 'Frères', 'Héritage', 'Compagnie'],
+        Créatif: ['Lab', 'Mind', 'Forge', 'Spark', 'Studio', 'Loop', 'Wave', 'Verse', 'Junction'],
+        Kreyòl: ['Lakay', 'Ayiti', 'Lakou', 'Solèy', 'Pwòp', 'Gou', 'Bèl', 'Kreyòl', 'Gran', 'Konekte']
+      }
+    };
+
+    function generateNames() {
+      const sector = document.getElementById('sector').value;
+      const style = document.getElementById('style').value;
+      const keywordsRaw = document.getElementById('keywords').value.trim();
+      const keywords = keywordsRaw ? keywordsRaw.split(/\s+/) : ['Bizniss'];
+      
+      const container = document.getElementById('names-container');
+      container.innerHTML = '';
+      
+      let generated = new Set();
+      const sectorPrefixes = DATA.prefixes[sector] || DATA.prefixes.Autre;
+      const styleSuffixes = DATA.suffixes[style] || DATA.suffixes.Moderne;
+
+      while(generated.size < 10) {
+        let name = '';
+        const randType = Math.floor(Math.random() * 5);
+        const kw = keywords[Math.floor(Math.random() * keywords.length)];
+        const pref = sectorPrefixes[Math.floor(Math.random() * sectorPrefixes.length)];
+        const suff = styleSuffixes[Math.floor(Math.random() * styleSuffixes.length)];
+
+        switch(randType) {
+          case 0: // Prefix + KW
+            name = pref + kw.charAt(0).toUpperCase() + kw.slice(1).toLowerCase();
+            break;
+          case 1: // KW + Suffix
+            name = kw.charAt(0).toUpperCase() + kw.slice(1).toLowerCase() + ' ' + suff;
+            break;
+          case 2: // Portmanteau
+            name = pref + suff.toLowerCase();
+            break;
+          case 3: // Kreyòl Style or Modern Short
+            if (style === 'Kreyòl') {
+              name = kw.charAt(0).toUpperCase() + kw.slice(1).toLowerCase() + ' ' + pref;
+            } else {
+              name = kw.charAt(0).toUpperCase() + kw.slice(1).toLowerCase() + suff.toLowerCase();
+            }
+            break;
+          case 4: // Triple Combo
+            name = pref + ' ' + kw.charAt(0).toUpperCase() + kw.slice(1).toLowerCase();
+            break;
+        }
+
+        // Clean name
+        name = name.replace(/[^a-zA-Z0-9\s&]/g, '').trim();
+        if (name.length > 3) generated.add(name);
+      }
+
+      Array.from(generated).forEach(name => {
+        const card = document.createElement('div');
+        card.className = 'name-card';
+        card.innerHTML = `
+          <span class="name-text">${name}</span>
+          <button class="btn-copy" onclick="copyName('${name}', this)">Kopye</button>
+        `;
+        container.appendChild(card);
+      });
+
+      document.getElementById('results-area').classList.remove('hidden');
+      document.getElementById('results-area').scrollIntoView({ behavior: 'smooth' });
+      
+      trackEvent('generate_names', { sector, style });
+    }
+
+    function copyName(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const oldText = btn.textContent;
+        btn.textContent = 'Kopye!';
+        btn.style.background = '#25D366';
+        btn.style.color = '#fff';
+        setTimeout(() => {
+          btn.textContent = oldText;
+          btn.style.background = '';
+          btn.style.color = '';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
