@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ═══ SEO ═══ -->
-  <title>Calculateur de Bénéfice Gratuit en Ligne | JenezBiznissou</title>
-  <meta name="description" content="Calculateur bénéfice gratuit en ligne. Faites le calcul profit et connaissez votre marge nette facilement. Outil gratuit et essentiel pour business en Haïti.">
-  <meta name="keywords" content="calculateur bénéfice gratuit, calcul profit, marge, haïti, business, jenezbiznissou">
-  <link rel="canonical" href="https://jenezbiznissou.xyz/tools/finance/calculateur-benefice.html">
+  <title>Calculateur de Seuil de Rentabilité Gratuit | JenezBiznissou</title>
+  <meta name="description" content="Calculez votre seuil de rentabilité gratuitement. Découvrez combien de produits vous devez vendre pour couvrir vos frais en Haïti. Outil business indispensable.">
+  <meta name="keywords" content="seuil de rentabilité, break even point, point mort business, jenezbiznissou, haïti business">
+  <link rel="canonical" href="https://jenezbiznissou.xyz/tools/finance/calculateur-seuil-rentabilite.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Calculateur de Bénéfice Gratuit — JenezBiznissou">
-  <meta property="og:description" content="Kalkile benefis nèt ou apre tout depans ak taks an 1 minit.">
-  <meta property="og:url" content="https://jenezbiznissou.xyz/tools/finance/calculateur-benefice.html">
+  <meta property="og:title" content="Calculateur de Seuil de Rentabilité Gratuit — JenezBiznissou">
+  <meta property="og:description" content="Konnen konbe lavant ou dwe fè pou w pa fè pèt epi kòmanse fè pwofi.">
+  <meta property="og:url" content="https://jenezbiznissou.xyz/tools/finance/calculateur-seuil-rentabilite.html">
   <meta property="og:site_name" content="JenezBiznissou">
 
   <!-- Fonts -->
@@ -75,55 +75,54 @@
         <span aria-hidden="true">›</span>
         <a href="/#finance">Finans</a>
         <span aria-hidden="true">›</span>
-        <span aria-current="page">Kalkilatè Benefis</span>
+        <span aria-current="page">Seuil de Rentabilité</span>
       </nav>
 
       <div class="ad-space" aria-hidden="true">Ad Space</div>
 
       <section class="tool-hero">
-        <h1>Kalkilatè Benefis Nèt — Gratis</h1>
+        <h1>Kalkilatè Seuil de Rentabilité — Pa janm fè pèt</h1>
         <p>
-          Konnen egzakteman konbe kòb ki rete nan pòch ou apre ou fin retire tout depans ak taks sou lavant ou fè.
+          Konnen egzakteman konbe pwodui oswa sèvis ou dwe vann pou w ka kouvri tout depans ou anvan ou kòmanse fè pwofi nèt.
         </p>
       </section>
 
       <section class="tool-container" aria-label="Interface tool">
         <div class="form-group">
-          <label class="form-label" for="chiffre-affaire">
-            Chif d'Afè (Lavant total) <span style="color: var(--error)">*</span>
+          <label class="form-label" for="couts-fixes">
+            Depans Fiks Total (Mwa) <span style="color: var(--error)">*</span>
           </label>
-          <input class="form-input" type="number" id="chiffre-affaire" placeholder="Ex: 50000" min="0" inputmode="decimal">
-          <span class="form-hint">Lajan total ou resevwa nan men kliyan yo.</span>
+          <input class="form-input" type="number" id="couts-fixes" placeholder="Ex: 25000" min="0" inputmode="decimal">
+          <span class="form-hint">Lwaye, Entènèt, Salè fiks, elatriye.</span>
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="cout-produit">
-            Kou Pwodui (Acha) <span style="color: var(--error)">*</span>
+          <label class="form-label" for="prix-vente-unitaire">
+            Pri Lavant pa inite <span style="color: var(--error)">*</span>
           </label>
-          <input class="form-input" type="number" id="cout-produit" placeholder="Ex: 30000" min="0" inputmode="decimal">
-          <span class="form-hint">Konbe ou te peye pou achte oswa fabrike pwodui a.</span>
+          <input class="form-input" type="number" id="prix-vente-unitaire" placeholder="Ex: 1500" min="0" inputmode="decimal">
         </div>
 
         <div class="form-group">
-          <label class="form-label" for="depans-operasyon">
-            Lòt depans (Livrezon, Pub, etc.)
+          <label class="form-label" for="cout-variable-unitaire">
+            Kou Varya pa inite (Acha + Livrezon) <span style="color: var(--error)">*</span>
           </label>
-          <input class="form-input" type="number" id="depans-operasyon" placeholder="Ex: 5000" min="0" inputmode="decimal">
+          <input class="form-input" type="number" id="cout-variable-unitaire" placeholder="Ex: 800" min="0" inputmode="decimal">
         </div>
 
         <button class="btn btn-primary btn-full" onclick="calculate()" id="btn-calculate" style="margin-top: 8px;">
-          Kalkile Benefis →
+          Kalkile Point Mort →
         </button>
 
         <div class="result-box hidden" id="result" role="region" aria-live="polite" aria-label="Rezilta">
           <div class="result-grid">
             <div class="result-item">
-              <span class="result-value" id="result-benefice">—</span>
-              <span class="result-label">Benefis Nèt</span>
+              <span class="result-value" id="result-quantite">—</span>
+              <span class="result-label">Inite pou w vann</span>
             </div>
             <div class="result-item">
-              <span class="result-value" id="result-marge">—</span>
-              <span class="result-label">Marge Benefisyè</span>
+              <span class="result-value" id="result-ca">—</span>
+              <span class="result-label">Chif d'Afè sib</span>
             </div>
           </div>
 
@@ -155,7 +154,7 @@
           Resevwa <strong style="color: var(--text-primary);">1 tip business gratis chak semèn</strong> sou WhatsApp →
         </p>
         <a
-          href="https://wa.me/50900000000?text=Mwen+vle+tips+business+gratis"
+          href="https://wa.me/50932049515?text=Mwen+vle+tips+business+gratis"
           target="_blank"
           rel="noopener"
           class="btn btn-sm"
@@ -167,13 +166,23 @@
       </div>
 
       <section class="seo-content">
-        <h2>Poukisa li enpòtan pou kalkile benefis ou?</h2>
+        <h2>Ki sa Seuil de Rentabilité a ye pou yon bizniss?</h2>
+        <p> Seuil de rentabilité a, ke yo rele tou "Point Mort", se moman egzak kote bizniss ou an pa fè ni pèt ni pwofi. Sa vle di tout kòb ou antre nan lavant egal ak tout depans ou fè pou w ka fonksyone. Konnen chif sa a se pi bon fason pou w fikse objektif lavant ki reyalis pou chak mwa. </p>
+        <p> Le seuil de rentabilité est un indicateur de survie. En Haïti, où les coûts opérationnels peuvent être imprévisibles (énergie, transport), calculer ce point critique vous permet de savoir à partir de quel moment chaque vente supplémentaire devient du bénéfice réel pour vous. C'est la base de toute planification financière sérieuse. </p>
+
+        <h2>Kijan pou w kalkile konbe lavant ou dwe fè?</h2>
+        <p> Pou w jwenn seuil de rentabilité w la, ou dwe separe depans ou yo an de kategori : </p>
         <p>
-          Anpil entrepreneurs an Ayiti fè lavant men yo pa konnen si y ap fè pwofi reyèl. Kalkile benefis nèt pèmèt ou wè kote kòb ou ap pase epi si pri w ap vann yo kòrèk. Zouti sa a ede w separe lajan bizniss la ak lajan pèsonèl ou.
+          1. <strong>Depans Fiks:</strong> Sa yo se depans ou genyen menm si ou pa vann anyen (lwaye, abònman Entènèt, frè bankè).<br>
+          2. <strong>Depans Varya:</strong> Sa yo se depans ki depann de kantite ou vann (pri acha machandiz la, frais de livraison, emballage).
         </p>
-        <h2>Kijan pou itilize kalkilatè benefis sa a?</h2>
+        <p> Fòmil la senp : ou pran tout depans fiks yo, epi ou divize yo pa "marge sur coût variable" ou fè sou chak pwodui. Kalkilatè nou an fè travay sa a pou ou an de segonn pou w ka konsantre w sou vann plis. </p>
+
+        <h2>3 Avantaj pou w konnen "Point Mort" bizniss ou</h2>
         <p>
-          Antre lavant total ou (Chiffre d'affaires), pri ou te achte machandiz la (Coût des marchandises), epi tout lòt ti depans ou fè pou w ka fè lavant lan (livrezon, piblisite, anbalaj). Kalkilatè a ap ba ou benefis nèt la ak pousantaj marge ou otomatikman.
+          - <strong>Fikse pri kòrèk:</strong> Si ou wè ou dwe vann 1000 inite pou w rantre nan kòb ou men mache a sèlman ka achte 200, sa vle di pri ou dwe monte oswa ou dwe bese depans ou.<br>
+          - <strong>Jere risk:</strong> Ou konnen egzakteman ki kantite efò marketing ou dwe fè chak mwa.<br>
+          - <strong>Pran desizyon:</strong> Èske li vo lapenn pou w pran yon lòt anplwaye? Kalkile kijan sa ap deplase seuil de rentabilité w la anvan ou di wi.
         </p>
       </section>
 
@@ -189,13 +198,13 @@
           <a href="calculateur-marge.html" class="tool-card">
             <div class="tool-card-icon"></div>
             <span class="tool-card-title">Kalkilatè Marge</span>
-            <span class="tool-card-desc">Konnen pousantaj marge ou.</span>
+            <span class="tool-card-desc">Konnen pousantaj maj ou sou chak lavant.</span>
             <span class="tool-card-arrow">Itilize →</span>
           </a>
-          <a href="../documents/generateur-facture.html" class="tool-card">
+          <a href="calculateur-benefice.html" class="tool-card">
             <div class="tool-card-icon"></div>
-            <span class="tool-card-title">Jenere Faktir</span>
-            <span class="tool-card-desc">Kreye faktir PDF rapid.</span>
+            <span class="tool-card-title">Kalkilatè Benefis</span>
+            <span class="tool-card-desc">Kalkile benefis nèt ou apre tout depans.</span>
             <span class="tool-card-arrow">Itilize →</span>
           </a>
         </div>
@@ -211,7 +220,7 @@
           <span>© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Ayiti</span>
         </div>
         <nav class="footer-links" aria-label="Liens footer">
-          <a href="https://kolonih.com" target="_blank" rel="noopener">🛒 Kolonih.com</a>
+          <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
           <a href="/">Tout Tools</a>
           <a href="/#finance">Finans</a>
           <a href="/politique-confidentialite.html">Konfidansyalite</a>
@@ -222,53 +231,65 @@
 
   <script src="../../assets/js/global.js" defer></script>
   <script>
+    /**
+     * Kalkil Seuil de Rentabilité
+     */
     function calculate() {
-      const caInput = document.getElementById('chiffre-affaire');
-      const coutInput = document.getElementById('cout-produit');
-      const depansInput = document.getElementById('depans-operasyon');
+      const fixesInput = document.getElementById('couts-fixes');
+      const prixInput = document.getElementById('prix-vente-unitaire');
+      const variableInput = document.getElementById('cout-variable-unitaire');
 
-      const ca = parseInput(caInput.value);
-      const cout = parseInput(coutInput.value);
-      const depans = parseInput(depansInput.value);
+      const fixes = parseInput(fixesInput.value);
+      const prix = parseInput(prixInput.value);
+      const variable = parseInput(variableInput.value);
 
-      if (!validateInput(caInput, 'Antre lavant total ou')) return;
-      if (!validateInput(coutInput, 'Antre kou pwodui a')) return;
+      if (!validateInput(fixesInput, 'Antre depans fiks ou yo')) return;
+      if (!validateInput(prixInput, 'Antre pri lavant lan')) return;
+      if (!validateInput(variableInput, 'Antre kou varya a')) return;
 
-      const benefice = ca - (cout + depans);
-      const marge = ca > 0 ? (benefice / ca) * 100 : 0;
+      const margeUnitaire = prix - variable;
 
-      setResult('result-benefice', formatHTG(benefice));
-      setResult('result-marge', formatPercent(marge));
+      if (margeUnitaire <= 0) {
+        validateInput(prixInput, 'Pri lavant dwe pi wo pase kou varya a pou w ka rentab');
+        return;
+      }
+
+      const quantite = Math.ceil(fixes / margeUnitaire);
+      const ca = quantite * prix;
+
+      setResult('result-quantite', formatNumber(quantite) + ' inite');
+      setResult('result-ca', formatHTG(ca));
 
       showResult('result');
 
       trackEvent(EVENTS.TOOL_USED, {
-        tool_name: 'calculateur_benefice',
-        result: benefice
+        tool_name: 'calculateur_seuil_rentabilite',
+        result: quantite
       });
     }
 
     function copyResultToClipboard() {
-      const benefice = document.getElementById('result-benefice').textContent;
-      const marge = document.getElementById('result-marge').textContent;
+      const quantite = document.getElementById('result-quantite').textContent;
+      const ca = document.getElementById('result-ca').textContent;
       const btn = document.getElementById('btn-copy');
 
-      const text = `Kalkilatè Benefis — JenezBiznissou\n`
-                 + `Benefis Nèt: ${benefice}\n`
-                 + `Marge: ${marge}\n`
+      const text = `Seuil de Rentabilité — JenezBiznissou\n`
+                 + `Objektif lavant: ${quantite}\n`
+                 + `Chif d'Afè Point Mort: ${ca}\n`
                  + `jenezbiznissou.xyz`;
 
       copyToClipboard(text, btn);
     }
 
     function resetForm() {
-      document.getElementById('chiffre-affaire').value = '';
-      document.getElementById('cout-produit').value = '';
-      document.getElementById('depans-operasyon').value = '';
+      document.getElementById('couts-fixes').value = '';
+      document.getElementById('prix-vente-unitaire').value = '';
+      document.getElementById('cout-variable-unitaire').value = '';
       hideResult('result');
-      document.getElementById('chiffre-affaire').focus();
+      document.getElementById('couts-fixes').focus();
     }
 
+    // Enter key support
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         const active = document.activeElement;

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO ═══ -->
+  <title>Calculateur de Salaire Net Haïti | ONA & OFATMA | JenezBiznissou</title>
+  <meta name="description" content="Calculez votre salaire net en Haïti après déductions ONA et OFATMA. Outil gratuit pour employés et employeurs. Maîtrisez vos fiches de paie avec JenezBiznissou.">
+  <meta name="keywords" content="salaire net haïti, calcul ona ofatma, fiche de paie haïti, salaire brut, jenezbiznissou">
+  <link rel="canonical" href="https://jenezbiznissou.xyz/tools/finance/calculateur-salaire-net.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculateur de Salaire Net Haïti — JenezBiznissou">
+  <meta property="og:description" content="Kalkile konbe kòb ou dwe resevwa apre dediksyon ONA ak OFATMA.">
+  <meta property="og:url" content="https://jenezbiznissou.xyz/tools/finance/calculateur-salaire-net.html">
+  <meta property="og:site_name" content="JenezBiznissou">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/global.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <a href="/" class="navbar-logo">
+          Jenez<span>Biznissou</span>
+        </a>
+
+        <ul class="navbar-links" role="list">
+          <li><a href="/#finance">Finans</a></li>
+          <li><a href="/#documents">Dokiman</a></li>
+          <li><a href="/#startup">Startup</a></li>
+          <li><a href="/#digital">Digital</a></li>
+        </ul>
+
+        <button class="navbar-toggle" aria-label="Ouvri meni" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" role="menu">
+      <a href="/#finance" role="menuitem">Finans</a>
+      <a href="/#documents" role="menuitem">Dokiman</a>
+      <a href="/#startup" role="menuitem">Startup</a>
+      <a href="/#digital" role="menuitem">Digital</a>
+      <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Akèy</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#finance">Finans</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Salè Nèt</span>
+      </nav>
+
+      <div class="ad-space" aria-hidden="true">Ad Space</div>
+
+      <section class="tool-hero">
+        <h1>Kalkilatè Salè Nèt — ONA & OFATMA</h1>
+        <p>
+          Konnen konbyen kòb w ap resevwa tout bon vre chak mwa apre tout dediksyon legal yo fin fèt nan salè bri ou.
+        </p>
+      </section>
+
+      <section class="tool-container" aria-label="Interface tool">
+        <div class="form-group">
+          <label class="form-label" for="salaire-brut">
+            Salè Bri (HTG) <span style="color: var(--error)">*</span>
+          </label>
+          <input class="form-input" type="number" id="salaire-brut" placeholder="Ex: 45000" min="0" inputmode="decimal">
+          <span class="form-hint">Lajan yo te ba ou anvan dediksyon yo fèt.</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="taux-ona">
+              ONA (%)
+            </label>
+            <input class="form-input" type="number" id="taux-ona" value="6" min="0" max="100" step="0.1">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="taux-ofatma">
+              OFATMA (%)
+            </label>
+            <input class="form-input" type="number" id="taux-ofatma" value="2" min="0" max="100" step="0.1">
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-full" onclick="calculate()" id="btn-calculate" style="margin-top: 8px;">
+          Kalkile Salè Nèt →
+        </button>
+
+        <div class="result-box hidden" id="result" role="region" aria-live="polite" aria-label="Rezilta">
+          <div class="result-grid">
+            <div class="result-item" style="grid-column: span 2;">
+              <span class="result-value" id="result-net" style="font-size: 2rem;">—</span>
+              <span class="result-label">Salè Nèt pou w resevwa</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value" id="result-ona">—</span>
+              <span class="result-label">Dediksyon ONA</span>
+            </div>
+            <div class="result-item">
+              <span class="result-value" id="result-ofatma">—</span>
+              <span class="result-label">Dediksyon OFATMA</span>
+            </div>
+            <div class="result-item" style="grid-column: span 2;">
+              <span class="result-value" id="result-total-deductions">—</span>
+              <span class="result-label">Total Dediksyon</span>
+            </div>
+          </div>
+
+          <div class="result-divider"></div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn btn-secondary btn-sm" id="btn-copy" onclick="copyResultToClipboard()">
+              📋 Kopye rezilta
+            </button>
+            <button class="btn btn-ghost btn-sm" onclick="resetForm()">
+              ↺ Rekòmanse
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="cta-kolonih reveal">
+        <div class="cta-kolonih-text">
+          <p>Ou prèt pou vann pwodui dijital ou?</p>
+          <strong>Lanse boutik ou sou Kolonih.com — Platfòm #1 Ayiti</strong>
+        </div>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Kòmanse Gratis →</a>
+      </div>
+
+      <!-- ── CTA WHATSAPP ── -->
+      <div class="cta-whatsapp reveal">
+        <span style="font-size: 1.25rem;">📱</span>
+        <p style="margin:0; color: var(--text-secondary); font-size: var(--text-sm);">
+          Resevwa <strong style="color: var(--text-primary);">1 tip business gratis chak semèn</strong> sou WhatsApp →
+        </p>
+        <a
+          href="https://wa.me/50932049515?text=Mwen+vle+tips+business+gratis"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-sm"
+          style="background: #25D366; color: #fff; min-width: auto;"
+          onclick="trackEvent('whatsapp_click', {page: location.pathname})"
+        >
+          Rejwenn →
+        </a>
+      </div>
+
+      <section class="seo-content">
+        <h2>Konprann dediksyon salè yo an Ayiti</h2>
+        <p> Lè w ap travay kòm anplwaye an Ayiti, gen de gwo enstitisyon leta kote yon pati nan salè w ale pou pwoteje avni w ak sante w. Li enpòtan pou tout travayè ak patwon konnen kijan chif sa yo kalkile pou evite konfizyon nan fen mwa a. </p>
+        <p> 1. <strong>ONA (Office National d'Assurance-Vieillesse) :</strong> Sa a se yon asirans pansyon. Pousantaj nòmal la se 6% nan salè bri anplwaye a (patwon an peye 6% tou pou kont pa l). Lajan sa a sèvi pou lè w pran retrèt oswa si w ta vin pa ka travay ankò.<br>
+            2. <strong>OFATMA (Office d'Assurance Accident du Travail, Maladie et Maternité) :</strong> Sa a se yon asirans ki kouvri aksidan travay, maladi, ak matènite. Pousantaj dediksyon nan salè anplwaye a se nòmalman 2%. </p>
+
+        <h2>Poukisa ou dwe kalkile salè nèt ou?</h2>
+        <p> Le salaire net est ce qui vous reste réellement en poche pour vos dépenses personnelles (loyer, nourriture, éducation). En utilisant notre calculateur, vous pouvez vérifier si votre employeur applique les bons taux et mieux planifier votre budget mensuel. Pour un entrepreneur, cet outil aide à simuler le coût réel d'un employé et à préparer les fiches de paie sans erreur. </p>
+        <p> Notez que ce calculateur se base sur les déductions sociales standards. Selon le montant de votre salaire, vous pourriez également être assujetti à l'IRI (Impôt sur le Revenu Individuel), qui est une taxe progressive prélevée par la DGI. </p>
+
+        <h2>Kèk konsèy pou jere salè w pi byen</h2>
+        <p>
+          - <strong>Verifye fwa pa mwa:</strong> Toujou gade si montan ki nan kont bankè w la koresponn ak kalkil sa a.<br>
+          - <strong>Konnen dwa w:</strong> Chak anplwaye dwe resevwa yon fich de paie ki detaye tout dediksyon sa yo.<br>
+          - <strong>Planifye pou demen:</strong> Menm si ONA la, li toujou bon pou w gen yon ti kòb sou kote (épargne) pou ka ijan.
+        </p>
+      </section>
+
+      <section class="related-tools reveal">
+        <h3>Tools ou ka itilize tou:</h3>
+        <div class="related-tools-grid">
+          <a href="calculateur-benefice.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Kalkilatè Benefis</span>
+            <span class="tool-card-desc">Kalkile benefis nèt ou apre tout depans.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+          <a href="calculateur-marge.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Kalkilatè Marge</span>
+            <span class="tool-card-desc">Konnen pousantaj maj ou sou chak lavant.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+          <a href="calculateur-tva.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Kalkilatè TCA</span>
+            <span class="tool-card-desc">Kalkile taks sou chif d'afè (10%) rapid.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>JenezBiznissou</strong> — Tools gratis pou entrepreneurs<br>
+          <span>© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Ayiti</span>
+        </div>
+        <nav class="footer-links" aria-label="Liens footer">
+          <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
+          <a href="/">Tout Tools</a>
+          <a href="/#finance">Finans</a>
+          <a href="/politique-confidentialite.html">Konfidansyalite</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/global.js" defer></script>
+  <script>
+    /**
+     * Kalkil Salè Nèt
+     */
+    function calculate() {
+      const brutInput = document.getElementById('salaire-brut');
+      const onaRateInput = document.getElementById('taux-ona');
+      const ofatmaRateInput = document.getElementById('taux-ofatma');
+
+      const brut = parseInput(brutInput.value);
+      const onaRate = parseInput(onaRateInput.value);
+      const ofatmaRate = parseInput(ofatmaRateInput.value);
+
+      if (!validateInput(brutInput, 'Antre salè bri ou')) return;
+
+      const onaAmount = brut * (onaRate / 100);
+      const ofatmaAmount = brut * (ofatmaRate / 100);
+      const totalDeductions = onaAmount + ofatmaAmount;
+      const netSalary = brut - totalDeductions;
+      const totalPercent = onaRate + ofatmaRate;
+
+      setResult('result-net', formatHTG(netSalary));
+      setResult('result-ona', formatHTG(onaAmount));
+      setResult('result-ofatma', formatHTG(ofatmaAmount));
+      setResult('result-total-deductions', `${formatHTG(totalDeductions)} (${totalPercent.toFixed(1)}%)`);
+
+      showResult('result');
+
+      trackEvent(EVENTS.TOOL_USED, {
+        tool_name: 'calculateur_salaire_net',
+        result: netSalary
+      });
+    }
+
+    function copyResultToClipboard() {
+      const net = document.getElementById('result-net').textContent;
+      const total = document.getElementById('result-total-deductions').textContent;
+      const btn = document.getElementById('btn-copy');
+
+      const text = `Kalkilatè Salè Nèt — JenezBiznissou\n`
+                 + `Salè Nèt: ${net}\n`
+                 + `Total Dediksyon: ${total}\n`
+                 + `jenezbiznissou.xyz`;
+
+      copyToClipboard(text, btn);
+    }
+
+    function resetForm() {
+      document.getElementById('salaire-brut').value = '';
+      document.getElementById('taux-ona').value = '6';
+      document.getElementById('taux-ofatma').value = '2';
+      hideResult('result');
+      document.getElementById('salaire-brut').focus();
+    }
+
+    // Enter key support
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const active = document.activeElement;
+        if (active && active.classList.contains('form-input')) {
+          calculate();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
