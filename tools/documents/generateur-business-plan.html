@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO ═══ -->
+  <title>Générateur de Business Plan Gratuit Haïti | Simple & Rapide | JenezBiznissou</title>
+  <meta name="description" content="Créez votre plan d'affaires en quelques minutes. Modèle de business plan simplifié pour entrepreneurs haïtiens. Structurez votre projet et trouvez du financement.">
+  <meta name="keywords" content="business plan simple haïti, créer business plan gratuit, modèle business plan haïti, jenezbiznissou, plan d'affaires entrepreneur">
+  <link rel="canonical" href="https://jenezbiznissou.xyz/tools/documents/generateur-business-plan.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Générateur de Business Plan Gratuit — JenezBiznissou">
+  <meta property="og:description" content="Kreye yon plan d'afè pwofesyonèl pou pwojè ou an Ayiti byen rapid epi gratis.">
+  <meta property="og:url" content="https://jenezbiznissou.xyz/tools/documents/generateur-business-plan.html">
+  <meta property="og:site_name" content="JenezBiznissou">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/global.css">
+
+  <style>
+    /* ── BUSINESS PLAN SPECIFIC STYLES ── */
+    .bp-form {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 30px;
+    }
+
+    .form-section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .form-section-title span {
+      background: var(--accent);
+      color: var(--bg-main);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ── OUTPUT ── */
+    .bp-output {
+      background: #fff;
+      color: #1a1a1a;
+      padding: 60px;
+      border-radius: 8px;
+      margin-top: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.8;
+      display: none;
+    }
+
+    .bp-output h2 {
+      color: #000;
+      font-size: 1.75rem;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    .bp-output h3 {
+      color: #333;
+      font-size: 1.125rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-left: 4px solid var(--accent);
+      padding-left: 15px;
+    }
+
+    .bp-output p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .bp-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 30px;
+      justify-content: center;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      .bp-output, .bp-output * {
+        visibility: visible;
+      }
+      .bp-output {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 0;
+        box-shadow: none;
+        display: block !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+  <header class="no-print">
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <a href="/" class="navbar-logo">
+          Jenez<span>Biznissou</span>
+        </a>
+
+        <ul class="navbar-links" role="list">
+          <li><a href="/#finance">Finans</a></li>
+          <li><a href="/#documents">Dokiman</a></li>
+          <li><a href="/#startup">Startup</a></li>
+          <li><a href="/#digital">Digital</a></li>
+        </ul>
+
+        <button class="navbar-toggle" aria-label="Ouvri meni" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" role="menu">
+      <a href="/#finance" role="menuitem">Finans</a>
+      <a href="/#documents" role="menuitem">Dokiman</a>
+      <a href="/#startup" role="menuitem">Startup</a>
+      <a href="/#digital" role="menuitem">Digital</a>
+      <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <nav class="breadcrumb no-print" aria-label="Fil d'Ariane">
+        <a href="/">Akèy</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#documents">Dokiman</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Business Plan</span>
+      </nav>
+
+      <div class="ad-space no-print" aria-hidden="true">Ad Space</div>
+
+      <section class="tool-hero no-print">
+        <h1>Jenere Business Plan — Estrikti Pwojè ou</h1>
+        <p>
+          Mete ide ou yo sou papye byen rapid. Ranpli fòm sa a epi nou pral jenere yon plan d'afè pwofesyonèl pou ou.
+        </p>
+      </section>
+
+      <div class="bp-form no-print">
+        
+        <!-- SECTION 1 -->
+        <div class="form-section reveal">
+          <div class="form-section-title"><span>1</span> Bizniss ou</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Non Bizniss la</label>
+              <input class="form-input" type="text" id="biz-name" placeholder="Ex: Boutique Fleur de Sel">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Sektè Aktivite</label>
+              <select class="form-input" id="biz-sector">
+                <option value="Commerce">Commerce</option>
+                <option value="Services">Services</option>
+                <option value="Tech">Tech / Digital</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Artisanat">Artisanat</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group" style="margin-top: 20px;">
+            <label class="form-label">Deskripsyon Pwodui / Sèvis</label>
+            <textarea class="form-input" id="biz-desc" rows="4" placeholder="Kisa w ap vann egzakteman? Ki pwoblèm w ap rezoud?"></textarea>
+          </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="form-section reveal">
+          <div class="form-section-title"><span>2</span> Mache & Konkiran</div>
+          <div class="form-group">
+            <label class="form-label">Ki moun ki mache sib ou? (Kliyan ideyal)</label>
+            <input class="form-input" type="text" id="mkt-target" placeholder="Ex: Jèn ant 18-35 an ki abite Petyonvil">
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Konkiran prensipal (2-3 non)</label>
+              <input class="form-input" type="text" id="mkt-comp" placeholder="Ex: Magasin X, Boutique Y">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Ki avantaj ou genyen sou yo?</label>
+              <input class="form-input" type="text" id="mkt-advantage" placeholder="Ex: Pi bon pri, livrezon rapid">
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="form-section reveal">
+          <div class="form-section-title"><span>3</span> Finansyè (Previzyon)</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Envestisman Inisyal (HTG)</label>
+              <input class="form-input" type="number" id="fin-invest" placeholder="Ex: 250000">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Depans Fiks / mwa (HTG)</label>
+              <input class="form-input" type="number" id="fin-costs" placeholder="Ex: 30000">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Revni mwa 1 (HTG)</label>
+              <input class="form-input" type="number" id="fin-rev1" placeholder="Ex: 50000">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Revni mwa 3 (HTG)</label>
+              <input class="form-input" type="number" id="fin-rev3" placeholder="Ex: 120000">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Revni mwa 6 (HTG)</label>
+              <input class="form-input" type="number" id="fin-rev6" placeholder="Ex: 250000">
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="form-section reveal">
+          <div class="form-section-title"><span>4</span> Estrateji Vant</div>
+          <div class="form-group">
+            <label class="form-label">Kijan w ap fè piblisite?</label>
+            <textarea class="form-input" id="strat-ads" rows="3" placeholder="Ex: Facebook Ads, influencers, flyers nan lari..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Ki kanal vant ou pral itilize?</label>
+            <select class="form-input" id="strat-channels">
+              <option value="WhatsApp / Facebook">WhatsApp / Facebook</option>
+              <option value="Boutik fizik">Boutik fizik</option>
+              <option value="Livrezon sèlman">Livrezon sèlman</option>
+              <option value="Tout kanal (Omnicanal)">Tout kanal (Omnicanal)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-full" onclick="generateBP()">
+          🚀 Jenere Business Plan
+        </button>
+
+      </div>
+
+      <!-- OUTPUT AREA -->
+      <div id="bp-result" class="bp-output">
+        <h2 id="out-title">BUSINESS PLAN</h2>
+        
+        <h3>1. RÉSUMÉ EXÉCUTIF</h3>
+        <p id="out-summary"></p>
+
+        <h3>2. ANALYSE DU MARCHÉ</h3>
+        <p id="out-market"></p>
+
+        <h3>3. STRATÉGIE COMMERCIALE</h3>
+        <p id="out-strategy"></p>
+
+        <h3>4. PRÉVISIONS FINANCIÈRES</h3>
+        <p id="out-finance"></p>
+
+        <div class="bp-actions no-print">
+          <button class="btn btn-secondary" onclick="copyBP()">📋 Kopye Tout</button>
+          <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer / PDF</button>
+        </div>
+      </div>
+
+      <div class="cta-kolonih reveal no-print" style="margin-top: 60px;">
+        <div class="cta-kolonih-text">
+          <p>Ou prèt pou vann pwodui dijital ou?</p>
+          <strong>Lanse boutik ou sou Kolonih.com — Platfòm #1 Ayiti</strong>
+        </div>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Kòmanse Gratis →</a>
+      </div>
+
+      <!-- ── CTA WHATSAPP ── -->
+      <div class="cta-whatsapp reveal no-print">
+        <span style="font-size: 1.25rem;">📱</span>
+        <p style="margin:0; color: var(--text-secondary); font-size: var(--text-sm);">
+          Resevwa <strong style="color: var(--text-primary);">1 tip business gratis chak semèn</strong> sou WhatsApp →
+        </p>
+        <a
+          href="https://wa.me/50932049515?text=Mwen+vle+tips+business+gratis"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-sm"
+          style="background: #25D366; color: #fff; min-width: auto;"
+          onclick="trackEvent('whatsapp_click', {page: location.pathname})"
+        >
+          Rejwenn →
+        </a>
+      </div>
+
+      <section class="seo-content no-print">
+        <h2>Poukisa ou bezwen yon Business Plan an Ayiti?</h2>
+        <p> Gen yon ide se yon bon bagay, men gen yon plan se sa ki fè w reyisi. Yon business plan pèmèt ou wè klè kote w prale epi li ede w evite gaspiye kòb ou nan move desizyon. Si w ap chèche finansman bò kot bank oswa envestisè an Ayiti, se premye dokiman y ap mande w. </p>
+        <p> En utilisant notre générateur de business plan gratuit, vous structurez votre pensée de manière professionnelle. L'outil vous guide à travers les sections essentielles : l'analyse du marché, la stratégie marketing et les prévisions financières. C'est un gain de temps énorme qui vous permet de passer de l'idée à l'action en quelques minutes. </p>
+
+        <h2>Kijan pou w sèvi ak plan d'afè sa a?</h2>
+        <p> Le document généré est une base solide que vous pouvez imprimer ou copier pour l'intégrer dans un document plus complet. Il vous donne une structure cohérente avec des phrases professionnelles en français, ce qui est souvent exigé dans les milieux d'affaires haïtiens. </p>
+        <p> Asire w ke chif ou yo (revni ak depans) pi pre reyalite a posib. Pa bliye ke yon plan d'afè se yon dokiman ki vivan ; ou ka toujou tounen sou tool la pou w ajiste l jan bizniss ou ap grandi a. </p>
+
+        <h2>Konsèy pou yon pwojè siksè</h2>
+        <p>
+          - <strong>Konnen kliyan ou:</strong> Plis ou konnen kiyès k ap achte nan men w, plis piblisite w ap pi efikas.<br>
+          - <strong>Siveye konkiran yo:</strong> Pa kopye yo, men gade sa yo fè byen ak sa yo fè mal pou w ka pi bon.<br>
+          - <strong>Jere kòb ou:</strong> Toujou gen yon ti rezèv (depans fiks) pou lè mache a yon ti jan dousman.
+        </p>
+      </section>
+
+      <section class="related-tools reveal no-print">
+        <h3>Tools ou ka itilize tou:</h3>
+        <div class="related-tools-grid">
+          <a href="generateur-facture.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Jenere Faktir</span>
+            <span class="tool-card-desc">Kreye bèl faktir PDF pou kliyan ou yo.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+          <a href="generateur-devis.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Jenere Devis</span>
+            <span class="tool-card-desc">Voye bèl sitasyon bay kliyan ou rapidman.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+          <a href="../finance/calculateur-seuil-rentabilite.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Seuil de Rentabilité</span>
+            <span class="tool-card-desc">Konnen konbe lavant ou dwe fè pou w pa fè pèt.</span>
+            <span class="tool-card-arrow">Itilize →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer no-print">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>JenezBiznissou</strong> — Tools gratis pou entrepreneurs<br>
+          <span>© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Ayiti</span>
+        </div>
+        <nav class="footer-links" aria-label="Liens footer">
+          <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
+          <a href="/">Tout Tools</a>
+          <a href="/#finance">Finans</a>
+          <a href="/politique-confidentialite.html">Konfidansyalite</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/global.js" defer></script>
+  <script>
+    function generateBP() {
+      const name = document.getElementById('biz-name').value || 'Votre Entreprise';
+      const sector = document.getElementById('biz-sector').value;
+      const desc = document.getElementById('biz-desc').value || '[Description des produits/services]';
+      const target = document.getElementById('mkt-target').value || '[Cible de clientèle]';
+      const comp = document.getElementById('mkt-comp').value || '[Concurrents principaux]';
+      const advantage = document.getElementById('mkt-advantage').value || '[Avantage concurrentiel]';
+      const invest = document.getElementById('fin-invest').value || '0';
+      const costs = document.getElementById('fin-costs').value || '0';
+      const rev1 = document.getElementById('fin-rev1').value || '0';
+      const rev3 = document.getElementById('fin-rev3').value || '0';
+      const rev6 = document.getElementById('fin-rev6').value || '0';
+      const ads = document.getElementById('strat-ads').value || '[Canaux publicitaires]';
+      const channels = document.getElementById('strat-channels').value;
+
+      // Update Output
+      document.getElementById('out-title').textContent = `BUSINESS PLAN : ${name.toUpperCase()}`;
+
+      document.getElementById('out-summary').innerHTML = `
+        <strong>${name}</strong> est une entreprise évoluant dans le secteur <strong>${sector.toLowerCase()}</strong>. 
+        Notre mission principale est de fournir des solutions de qualité à travers nos services de : ${desc}. 
+        Nous nous positionnons comme un acteur dynamique prêt à répondre aux besoins du marché haïtien.
+      `;
+
+      document.getElementById('out-market').innerHTML = `
+        Nous ciblons principalement <strong>${target}</strong>. Malgré la présence de concurrents tels que <strong>${comp}</strong>, 
+        notre entreprise se distingue par <strong>${advantage}</strong>. Cette proposition de valeur nous permet de capter une part de marché significative dès le lancement.
+      `;
+
+      document.getElementById('out-strategy').innerHTML = `
+        Pour attirer nos clients, nous utiliserons une stratégie basée sur ${ads}. 
+        Nos ventes s'effectueront via <strong>${channels}</strong>, ce qui garantit une proximité maximale avec nos utilisateurs et une efficacité logistique optimale.
+      `;
+
+      document.getElementById('out-finance').innerHTML = `
+        Le projet nécessite un investissement initial de <strong>${parseFloat(invest).toLocaleString()} HTG</strong> pour couvrir les équipements et le fonds de roulement. 
+        Avec des charges fixes mensuelles estimées à <strong>${parseFloat(costs).toLocaleString()} HTG</strong>, nos prévisions de revenus sont progressives : 
+        ${parseFloat(rev1).toLocaleString()} HTG le premier mois, ${parseFloat(rev3).toLocaleString()} HTG au troisième mois, et une croissance atteignant 
+        <strong>${parseFloat(rev6).toLocaleString()} HTG</strong> d'ici le sixième mois.
+      `;
+
+      document.getElementById('bp-result').style.display = 'block';
+      document.getElementById('bp-result').scrollIntoView({ behavior: 'smooth' });
+
+      trackEvent(EVENTS.TOOL_USED, { tool_name: 'generateur_business_plan' });
+    }
+
+    function copyBP() {
+      const text = document.getElementById('bp-result').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Business Plan kopye nan presse-papier!');
+      });
+    }
+  </script>
+</body>
+</html>
