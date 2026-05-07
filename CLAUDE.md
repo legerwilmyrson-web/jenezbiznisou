@@ -6,7 +6,7 @@
 ## 🎯 KONTÈKS PWOJÈ
 
 **Non:** JENEZBIZNISSOU  
-**Domèn:** jenezbiznissou.xyz  
+**Domèn:** jenezbiznisou.online  
 **Kreye pa:** REDPRINT SOLUTION (Wilmyr Leger, Ayiti)  
 **Objektif:** Platfòm tools gratis pou entrepreneurs — trafik SEO → monetizasyon AdSense + funnel pou Kolonih.com
 
@@ -28,7 +28,7 @@ Frontend:  HTML5 + CSS3 + JavaScript vanilla (PAS React, PAS Next.js, PAS framew
 Hosting:   Cloudflare Pages (gratis, bandwidth ilimite)
 Repo:      GitHub
 Deploy:    Push GitHub → Cloudflare Pages deploy otomatik
-Domèn:     jenezbiznissou.xyz (Cloudflare DNS)
+Domèn:     jenezbiznisou.online (Cloudflare DNS)
 Analytics: Google Analytics 4 (gratis)
 AdSense:   Google AdSense (apre lancement)
 ```
@@ -139,12 +139,12 @@ Chak tool HTML dwe genyen **egzakteman** striktire sa:
   <title>[Non Tool] Gratuit | JenezBiznissou</title>
   <meta name="description" content="[Description 150-160 karaktè, rich keyword]">
   <meta name="keywords" content="[keywords relevan]">
-  <link rel="canonical" href="https://jenezbiznissou.xyz/tools/[kategori]/[non-tool].html">
+  <link rel="canonical" href="https://jenezbiznisou.online/tools/[kategori]/[non-tool].html">
   
   <!-- Open Graph -->
   <meta property="og:title" content="[Non Tool] — JenezBiznissou">
   <meta property="og:description" content="[Menm deskripsyon]">
-  <meta property="og:url" content="https://jenezbiznissou.xyz/tools/[kategori]/[non-tool].html">
+  <meta property="og:url" content="https://jenezbiznisou.online/tools/[kategori]/[non-tool].html">
   
   <link rel="stylesheet" href="../../assets/css/global.css">
   <link rel="stylesheet" href="../../assets/css/components.css">
