@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO ═══ -->
+  <title>Générateur de Mot de Passe Sécurisé | JenezBiznissou</title>
+  <meta name="description" content="Créez des mots de passe ultra-sécurisés avec notre générateur gratuit. Utilise window.crypto pour une sécurité maximale. Idéal pour protéger vos comptes business.">
+  <meta name="keywords" content="générateur mot de passe, password generator, sécurité informatique, mot de passe fort, crypto, haïti, business">
+  <link rel="canonical" href="https://jenezbiznissou.xyz/tools/digital/generateur-mot-de-passe.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Générateur de Mot de Passe Sécurisé — JenezBiznissou">
+  <meta property="og:description" content="Générez des mots de passe robustes et incassables pour vos comptes en ligne. Sécurité garantie avec l'API Web Crypto.">
+  <meta property="og:url"         content="https://jenezbiznissou.xyz/tools/digital/generateur-mot-de-passe.html">
+  <meta property="og:site_name"   content="JenezBiznissou">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/global.css">
+
+  <style>
+    .pwd-display-container {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+    }
+
+    .pwd-text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      word-break: break-all;
+      text-align: center;
+      min-height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .strength-meter {
+      width: 100%;
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .strength-bar {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease, background-color 0.3s ease;
+    }
+
+    .strength-text {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .strength-weak { background-color: #ef4444; width: 25%; }
+    .strength-medium { background-color: #f59e0b; width: 50%; }
+    .strength-strong { background-color: #10b981; width: 75%; }
+    .strength-very-strong { background-color: #facc15; width: 100%; box-shadow: 0 0 10px rgba(250, 204, 21, 0.4); }
+
+    .text-weak { color: #ef4444; }
+    .text-medium { color: #f59e0b; }
+    .text-strong { color: #10b981; }
+    .text-very-strong { color: #facc15; }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .checkbox-group input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+    }
+
+    .slider-group {
+      margin-bottom: 24px;
+    }
+
+    .slider-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .slider-value {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <a href="/" class="navbar-logo">Jenez<span>Biznissou</span></a>
+        <ul class="navbar-links" role="list">
+          <li><a href="/#finance">💰 Finans</a></li>
+          <li><a href="/#documents">📄 Dokiman</a></li>
+          <li><a href="/#startup">🚀 Startup</a></li>
+          <li><a href="/#digital">⚙️ Digital</a></li>
+        </ul>
+        <button class="navbar-toggle" aria-label="Ouvri meni" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" role="menu">
+      <a href="/#finance" role="menuitem">💰 Finans</a>
+      <a href="/#documents" role="menuitem">📄 Dokiman</a>
+      <a href="/#startup" role="menuitem">🚀 Startup</a>
+      <a href="/#digital" role="menuitem">⚙️ Digital</a>
+      <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">🛒 Kolonih.com</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Akèy</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#digital">Digital</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Mot de Passe</span>
+      </nav>
+
+      <section class="tool-hero">
+        <h1>Jenere Mot de Passe Solid</h1>
+        <p>Pwoteje kont ou yo ak mot de passe ki sekirize. Nou itilize teknoloji <strong>Web Crypto API</strong> pou garanti sekirite maksimòm.</p>
+      </section>
+
+      <section class="tool-container">
+        
+        <!-- Display Area -->
+        <div class="pwd-display-container">
+          <div class="pwd-text" id="password-output">••••••••••••••••</div>
+          <div style="width: 100%;">
+            <div class="strength-meter">
+              <div id="strength-bar" class="strength-bar"></div>
+            </div>
+            <div id="strength-text" class="strength-text">Score sekirite: —</div>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="slider-group">
+          <div class="slider-header">
+            <label class="form-label" for="length-slider">Longè mot de passe</label>
+            <span class="slider-value" id="length-val">16</span>
+          </div>
+          <input type="range" id="length-slider" min="8" max="32" value="16">
+        </div>
+
+        <div class="options-grid">
+          <label class="checkbox-group">
+            <input type="checkbox" id="opt-upper" checked>
+            <span>Majiskil (A-Z)</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" id="opt-numbers" checked>
+            <span>Chif (0-9)</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" id="opt-symbols" checked>
+            <span>Senbòl (!@#$%^&*)</span>
+          </label>
+          <label class="checkbox-group">
+            <input type="checkbox" id="opt-lower-only">
+            <span>Miniskil sèlman</span>
+          </label>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn btn-primary" style="flex: 1; min-width: 200px;" onclick="generatePassword()">
+            Jenere Nouvo →
+          </button>
+          <button class="btn btn-secondary" id="btn-copy" onclick="copyPassword()">
+            📋 Kopye
+          </button>
+        </div>
+
+      </section>
+
+      <!-- CTA KOLONIH -->
+      <div class="cta-kolonih reveal">
+        <div class="cta-kolonih-text">
+          <p>🛒 Ou prèt pou vann pwodui dijital ou?</p>
+          <strong>Lanse boutik ou sou Kolonih.com — Platfòm #1 Ayiti</strong>
+        </div>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">
+          Kòmanse Gratis →
+        </a>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content">
+        <h2>Poukisa sekirite mot de passe enpòtan?</h2>
+        <p>Nan epòk digital sa a, vòl idantite ak pirataj kont se gwo pwoblèm pou entrepreneurs. Yon mot de passe fèb tankou "123456" oswa "bonjou123" ka jwenn pa robo nan kèk segond sèlman. Pou pwoteje bizniss ou, ou bezwen mot de passe ki gen melanj lèt, chif, ak senbòl.</p>
+
+        <h2>Teknoloji Crypto vs Math.random</h2>
+        <p>Pifò senp generatè sou entènèt itilize fonksyon <code>Math.random()</code> nan Javascript. Men, gen yon gwo pwoblèm: fonksyon sa a pa "vrèman" o aza (pseudo-random). Li baze sou yon algoritm ki ka prevwa si yon moun gen ase kapasite teknik.</p>
+        <p>Tool sa a itilize <strong>window.crypto.getRandomValues()</strong>. Sa a se yon teknoloji ki baze sou "entropy" sistèm operasyon w lan (Windows, Mac, oswa Android), sa ki fè rezilta a enposib pou yo prevwa oswa devine. Se nivo sekirite bankè nou mete nan men entrepreneurs ayisyen yo.</p>
+
+        <h2>Kijan pou w kenbe mot de passe ou an sekirite?</h2>
+        <ul>
+          <li>Pa janm itilize menm mot de passe pou 2 kont diferan.</li>
+          <li>Itilize yon "Password Manager" (tankou Bitwarden oswa Google Password Manager) pou w pa bliye yo.</li>
+          <li>Chanje mot de passe ou yo omwen yon fwa chak ane.</li>
+          <li>Pa janm voye mot de passe ou pa SMS oswa nan WhatsApp an klè.</li>
+        </ul>
+      </section>
+
+      <section class="related-tools reveal">
+        <h3>Zouti Digital ki ka itil ou:</h3>
+        <div class="related-tools-grid">
+          <a href="generateur-qr-code.html" class="tool-card">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Digital</p>
+              <h3 class="tool-title">QR Code Gratis</h3>
+              <p class="tool-desc">Kreye QR code pou WhatsApp ou oswa sit web ou.</p>
+              <span class="tool-arrow">Itilize →</span>
+            </div>
+          </a>
+          <a href="generateur-email-alias.html" class="tool-card">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Digital</p>
+              <h3 class="tool-title">Email Alias</h3>
+              <p class="tool-desc">Pwoteje email prensipal ou kont spam.</p>
+              <span class="tool-arrow">Itilize →</span>
+            </div>
+          </a>
+          <a href="../startup/generateur-nom-business.html" class="tool-card">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Startup</p>
+              <h3 class="tool-title">Non Bizniss</h3>
+              <p class="tool-desc">Jwenn bèl lide non pou pwojè ou.</p>
+              <span class="tool-arrow">Itilize →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>JenezBiznissou</strong> — Tools gratis pou entrepreneurs<br>
+          <span>© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Ayiti</span>
+        </div>
+        <nav class="footer-links">
+          <a href="/">Tout Tools</a>
+          <a href="/#finance">Finans</a>
+          <a href="/#digital">Digital</a>
+          <a href="/politique-confidentialite.html">Konfidansyalite</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/global.js" defer></script>
+  <script>
+    const lengthSlider = document.getElementById('length-slider');
+    const lengthVal = document.getElementById('length-val');
+    const passwordOutput = document.getElementById('password-output');
+    const strengthBar = document.getElementById('strength-bar');
+    const strengthText = document.getElementById('strength-text');
+    const optLowerOnly = document.getElementById('opt-lower-only');
+    const otherOpts = [
+      document.getElementById('opt-upper'),
+      document.getElementById('opt-numbers'),
+      document.getElementById('opt-symbols')
+    ];
+
+    // Update length display
+    lengthSlider.addEventListener('input', () => {
+      lengthVal.textContent = lengthSlider.value;
+      generatePassword();
+    });
+
+    // Handle "Lowercase only" logic
+    optLowerOnly.addEventListener('change', () => {
+      if (optLowerOnly.checked) {
+        otherOpts.forEach(opt => {
+          opt.checked = false;
+          opt.disabled = true;
+        });
+      } else {
+        otherOpts.forEach(opt => {
+          opt.disabled = false;
+        });
+      }
+      generatePassword();
+    });
+
+    // Handle other options
+    otherOpts.forEach(opt => {
+      opt.addEventListener('change', generatePassword);
+    });
+
+    /**
+     * Generate secure password using crypto.getRandomValues()
+     */
+    function generatePassword() {
+      const length = parseInt(lengthSlider.value);
+      const useUpper = document.getElementById('opt-upper').checked;
+      const useNumbers = document.getElementById('opt-numbers').checked;
+      const useSymbols = document.getElementById('opt-symbols').checked;
+      
+      const lowerChars = "abcdefghijklmnopqrstuvwxyz";
+      const upperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const numChars = "0123456789";
+      const symbolChars = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+      
+      let charSet = lowerChars;
+      if (useUpper) charSet += upperChars;
+      if (useNumbers) charSet += numChars;
+      if (useSymbols) charSet += symbolChars;
+      
+      let password = "";
+      const array = new Uint32Array(length);
+      window.crypto.getRandomValues(array);
+      
+      for (let i = 0; i < length; i++) {
+        password += charSet.charAt(array[i] % charSet.length);
+      }
+      
+      passwordOutput.textContent = password;
+      updateStrength(password, useSymbols, useUpper, useNumbers);
+    }
+
+    /**
+     * Calculate and display strength
+     */
+    function updateStrength(pwd, hasSymbols, hasUpper, hasNumbers) {
+      const len = pwd.length;
+      let score = ""; // weak, medium, strong, very-strong
+      let label = "";
+      
+      // LOGIC:
+      // - < 10: Fèb
+      // - 10-13 san senbòl: Mwayen
+      // - 14+ ak senbòl: Fò
+      // - 20+ ak tout opsyon: Trè Fò
+      
+      if (len < 10) {
+        score = "weak";
+        label = "Fèb (Wouj)";
+      } else if (len >= 20 && hasSymbols && hasUpper && hasNumbers) {
+        score = "very-strong";
+        label = "Trè Fò (Gold)";
+      } else if (len >= 14 && hasSymbols) {
+        score = "strong";
+        label = "Fò (Vèt)";
+      } else {
+        score = "medium";
+        label = "Mwayen (Jòn)";
+      }
+      
+      // Reset classes
+      strengthBar.className = "strength-bar";
+      strengthText.className = "strength-text";
+      
+      strengthBar.classList.add(`strength-${score}`);
+      strengthText.classList.add(`text-${score}`);
+      strengthText.textContent = `Score sekirite: ${label}`;
+    }
+
+    /**
+     * Copy to clipboard
+     */
+    function copyPassword() {
+      const pwd = passwordOutput.textContent;
+      const btn = document.getElementById('btn-copy');
+      
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(pwd).then(() => {
+          const originalText = btn.innerHTML;
+          btn.innerHTML = "✅ Kopye!";
+          setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+        });
+      }
+    }
+
+    // Initialize on load
+    window.onload = generatePassword;
+  </script>
+</body>
+</html>
