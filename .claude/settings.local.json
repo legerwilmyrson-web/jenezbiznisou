@@ -3,7 +3,10 @@
     "allow": [
       "Bash(sed 's/.*content=\"//')",
       "Bash(sed 's/\".*//')",
-      "Bash(sed 's/[?].*//')"
+      "Bash(sed 's/[?].*//')",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\leger\\\\OneDrive\\\\Documents\\\\jenezbiznissou\" -Filter \"*.html\" -Recurse)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Sort-Object)"
     ]
   }
 }
