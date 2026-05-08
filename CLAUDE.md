@@ -431,12 +431,12 @@ Chak tool HTML dwe genyen **egzakteman** striktire sa:
 Ajoute nan `<head>` chak paj:
 ```html
 <!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZE70LH5G8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-8ZE70LH5G8');
 </script>
 ```
 
