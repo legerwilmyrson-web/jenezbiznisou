@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ═══ SEO ═══ -->
-  <title>Calculateur de TCA Haïti (10%)</title>
+  <title>Calculateur de TCA Haïti (10%) | jenezbiznisou.online</title>
   <meta name="description"
     content="Calculez facilement la TCA (Taxe sur le Chiffre d'Affaires) à 10% en Haïti. Obtenez les montants HT et TTC instantanément avec cet outil financier gratuit.">
   <meta name="keywords" content="TCA Haïti, taxe sur chiffre d'affaires, calcul TCA 10%, prix TTC HT haïti, jenezbiznisou.online">
@@ -14,7 +14,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Calculateur de TCA Haïti — jenezbiznisou.online">
-  <meta property="og:description" content="Kalkile taks 10% (TCA) sou pri ou yo rapidman.">
+  <meta property="og:description" content="Calculez rapidement la taxe de 10 % (TCA) sur vos prix.">
   <meta property="og:url" content="https://jenezbiznisou.online/tools/finance/calculateur-tva.html">
   <meta property="og:site_name" content="jenezbiznisou.online">
 
@@ -47,13 +47,13 @@
         </a>
 
         <ul class="navbar-links" role="list">
-          <li><a href="/#finance">Finans</a></li>
-          <li><a href="/#documents">Dokiman</a></li>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#documents">Documents</a></li>
           <li><a href="/#startup">Startup</a></li>
           <li><a href="/#digital">Digital</a></li>
         </ul>
 
-        <button class="navbar-toggle" aria-label="Ouvri meni" aria-expanded="false">
+        <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
@@ -62,8 +62,8 @@
     </nav>
 
     <div class="mobile-menu" role="menu">
-      <a href="/#finance" role="menuitem">Finans</a>
-      <a href="/#documents" role="menuitem">Dokiman</a>
+      <a href="/#finance" role="menuitem">Finance</a>
+      <a href="/#documents" role="menuitem">Documents</a>
       <a href="/#startup" role="menuitem">Startup</a>
       <a href="/#digital" role="menuitem">Digital</a>
       <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
@@ -74,29 +74,29 @@
     <div class="container">
 
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="/">Akèy</a>
+        <a href="/">Accueil</a>
         <span aria-hidden="true">›</span>
-        <a href="/#finance">Finans</a>
+        <a href="/#finance">Finance</a>
         <span aria-hidden="true">›</span>
-        <span aria-current="page">Kalkilatè TCA</span>
+        <span aria-current="page">Calculateur de TCA</span>
       </nav>
 
       <div class="ad-space" aria-hidden="true">Ad Space</div>
 
       <section class="tool-hero">
-        <h1>Kalkilatè TCA — Taxe sur le Chiffre d'Affaires</h1>
+        <h1>Calculateur de TCA — Taxe sur le Chiffre d'Affaires</h1>
         <p>
-          Kalkile byen rapid montan TCA (10%) sou pwodui ak sèvis ou yo, oswa jwenn pri san taks la apati pri total la.
+          Calculez rapidement le montant de la TCA (10 %) sur vos produits et services, ou trouvez le prix hors taxe à partir du prix total.
         </p>
       </section>
 
-      <section class="tool-container" aria-label="Interface tool">
+      <section class="tool-container" aria-label="Interface outil">
         <div class="form-group">
           <label class="form-label" for="amount-input" id="label-amount">
-            Montan HT (san taks) <span style="color: var(--error)">*</span>
+            Montant HT (hors taxe) <span style="color: var(--error)">*</span>
           </label>
           <input class="form-input" type="number" id="amount-input" placeholder="Ex: 1000" min="0" inputmode="decimal">
-          <span class="form-hint" id="hint-amount">Mete montan anvan taks la pou w jwenn pri total la.</span>
+          <span class="form-hint" id="hint-amount">Entrez le montant avant taxe pour obtenir le prix total.</span>
         </div>
 
         <div class="form-group">
@@ -108,26 +108,26 @@
 
         <div style="display: flex; gap: 12px; margin-top: 8px;">
           <button class="btn btn-primary" style="flex: 2;" onclick="calculate()" id="btn-calculate">
-            Kalkile TCA →
+            Calculer la TCA →
           </button>
-          <button class="btn btn-secondary" style="flex: 1;" onclick="toggleInverse()" id="btn-inverse" title="Kalkile HT apati TTC">
+          <button class="btn btn-secondary" style="flex: 1;" onclick="toggleInverse()" id="btn-inverse" title="Calculer HT à partir de TTC">
             Inverser ⇄
           </button>
         </div>
 
-        <div class="result-box hidden" id="result" role="region" aria-live="polite" aria-label="Rezilta">
+        <div class="result-box hidden" id="result" role="region" aria-live="polite" aria-label="Résultats">
           <div class="result-grid">
             <div class="result-item" style="grid-column: span 2;">
               <span class="result-value" id="result-total" style="font-size: 2rem;">—</span>
-              <span class="result-label" id="label-result-total">Montan TTC (ak taks)</span>
+              <span class="result-label" id="label-result-total">Montant TTC (toutes taxes comprises)</span>
             </div>
             <div class="result-item">
               <span class="result-value" id="result-taxe">—</span>
-              <span class="result-label">Montan TCA</span>
+              <span class="result-label">Montant TCA</span>
             </div>
             <div class="result-item">
               <span class="result-value" id="result-base">—</span>
-              <span class="result-label" id="label-result-base">Montan HT</span>
+              <span class="result-label" id="label-result-base">Montant HT</span>
             </div>
           </div>
 
@@ -135,10 +135,10 @@
 
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <button class="btn btn-secondary btn-sm" id="btn-copy" onclick="copyResultToClipboard()">
-              Kopye rezilta
+              Copier le résultat
             </button>
             <button class="btn btn-ghost btn-sm" onclick="resetForm()">
-              ↺ Rekòmanse
+              ↺ Recommencer
             </button>
           </div>
         </div>
@@ -146,10 +146,10 @@
 
       <div class="cta-kolonih reveal">
         <div class="cta-kolonih-text">
-          <p>Ou prèt pou vann pwodui dijital ou?</p>
-          <strong>Lanse boutik ou sou Kolonih.com — Platfòm #1 Ayiti</strong>
+          <p>Prêt à vendre vos produits numériques ?</p>
+          <strong>Lancez votre boutique sur Kolonih.com — Plateforme #1 en Haïti</strong>
         </div>
-        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Kòmanse Gratis →</a>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Commencer Gratuitement →</a>
       </div>
 
       <!-- ── CTA WHATSAPP ── -->
@@ -171,43 +171,43 @@
       </div>
 
       <section class="seo-content">
-        <h2>Ki sa TCA a ye an Ayiti?</h2>
-        <p> La TCA (Taxe sur le Chiffre d'Affaires) est une taxe indirecte prélevée sur la consommation de biens et de services en Haïti. Le taux standard actuel est de <strong>10%</strong>. C'est une taxe que les entreprises collectent pour le compte de l'État (DGI) lors de chaque vente. </p>
-        <p> Si ou se yon entrepreneur, ou dwe konnen kijan pou w ajoute TCA sou pri w yo pou w pa peye l nan pòch ou nan fen mwa a. Menm jan an tou, si w ap achte pou bizniss ou, ou dwe konnen ki montan taks ou te peye pou w ka fè "déduction" si lalwa pèmèt sa. Zouti nou an ede w fè kalkil sa yo byen rapid san w pa fè erè nan virgule. </p>
+        <h2>Qu'est-ce que la TCA en Haïti ?</h2>
+        <p> La TCA (Taxe sur le Chiffre d'Affaires) est une taxe indirecte prélevée sur la consommation de biens et de services en Haïti. Le taux standard actuel est de <strong>10 %</strong>. C'est une taxe que les entreprises collectent pour le compte de l'État (DGI) lors de chaque vente. </p>
+        <p> Si vous êtes un entrepreneur, vous devez savoir comment ajouter la TCA à vos prix pour ne pas la payer de votre poche à la fin du mois. De même, si vous achetez pour votre entreprise, vous devez connaître le montant de la taxe que vous avez payée pour pouvoir effectuer une déduction si la loi le permet. Notre outil vous aide à effectuer ces calculs rapidement sans faire d'erreur de virgule. </p>
 
-        <h2>Kijan pou w kalkile pri HT ak TTC?</h2>
-        <p> Gen de fason pou w itilize kalkilatè sa a selon bezwen ou : </p>
+        <h2>Comment calculer les prix HT et TTC ?</h2>
+        <p> Il y a deux façons d'utiliser ce calculateur selon vos besoins : </p>
         <p>
-          - <strong>Kalkil HT vè TTC :</strong> Ou gen pri san taks la, epi ou vle konnen konbe pou w chaje kliyan an total. Ou sèlman miltipliye pri HT a pa 1.10 (pou yon TCA 10%).<br>
-          - <strong>Kalkil TTC vè HT (Inversé) :</strong> Ou gen pri total la deja (taks la ladan l deja) epi ou vle konnen ki valè taks la sèlman. Nan ka sa a, ou divize pri TTC a pa 1.10 pou w jwenn pri HT la.
+          - <strong>Calcul de HT vers TTC :</strong> Vous avez le prix hors taxe et vous voulez savoir combien facturer au client au total. Il vous suffit de multiplier le prix HT par 1,10 (pour une TCA de 10 %).<br>
+          - <strong>Calcul de TTC vers HT (Inversé) :</strong> Vous avez déjà le prix total (la taxe y est déjà incluse) et vous voulez connaître uniquement la valeur de la taxe. Dans ce cas, vous divisez le prix TTC par 1,10 pour obtenir le prix HT.
         </p>
         <p> Notre outil permet d'effectuer ces deux opérations instantanément grâce au bouton <strong>Inverser</strong>. C'est idéal pour préparer vos factures professionnelles ou pour vérifier les reçus de vos fournisseurs. </p>
 
-        <h2>Ki lè ou dwe chaje TCA?</h2>
-        <p> Tout bizniss ki anrejistre legalman an Ayiti epi ki depase yon sèten nivo chif d'afè obligatwa pou yo kolekte TCA. Menm si ou se yon ti bizniss, li bon pou w konprann sistèm nan depi kounye a pou w ka pwofesyonèl nan jesyon finansyè w. </p>
-        <p> Toujou asire w ke taks la parèt aklè sou faktir ou yo jan lalwa mande l la. Sa bay bizniss ou plis kredibilite devan kliyan yo ak devan administrasyon fiskal la. Itilize kalkilatè nou an pou asire w ke chif ou yo toujou egzak. </p>
+        <h2>Quand devez-vous facturer la TCA ?</h2>
+        <p> Toutes les entreprises enregistrées légalement en Haïti et qui dépassent un certain niveau de chiffre d'affaires sont tenues de collecter la TCA. Même si vous êtes une petite entreprise, il est bon de comprendre le système dès maintenant pour être professionnel dans votre gestion financière. </p>
+        <p> Assurez-vous toujours que la taxe apparaît clairement sur vos factures comme la loi le demande. Cela donne plus de crédibilité à votre entreprise auprès de vos clients et de l'administration fiscale. Utilisez notre calculateur pour vous assurer que vos chiffres sont toujours exacts. </p>
       </section>
 
       <section class="related-tools reveal">
-        <h3>Tools ou ka itilize tou:</h3>
+        <h3>Outils suggérés :</h3>
         <div class="related-tools-grid">
           <a href="calculateur-salaire-net.html" class="tool-card">
             <div class="tool-card-icon"></div>
-            <span class="tool-card-title">Salè Nèt</span>
-            <span class="tool-card-desc">Kalkile konbe kòb ou dwe resevwa apre dediksyon.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-title">Salaire Net</span>
+            <span class="tool-card-desc">Calculez le montant que vous devez recevoir après les déductions.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
           <a href="calculateur-prix-vente.html" class="tool-card">
             <div class="tool-card-icon"></div>
             <span class="tool-card-title">Prix de Vente</span>
-            <span class="tool-card-desc">Fixe bon pri pou pwodui ou yo.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-desc">Fixez le bon prix pour vos produits.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
           <a href="calculateur-seuil-rentabilite.html" class="tool-card">
             <div class="tool-card-icon"></div>
             <span class="tool-card-title">Seuil de Rentabilité</span>
-            <span class="tool-card-desc">Konnen konbe lavant ou dwe fè pou w pa fè pèt.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-desc">Sachez combien de ventes vous devez faire pour ne pas être à perte.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
         </div>
       </section>
@@ -218,14 +218,14 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <strong>jenezbiznisou.online</strong> — Tools gratis pou entrepreneurs<br>
-          <span>© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Ayiti</span>
+          <strong>jenezbiznisou.online</strong> — Outils gratuits pour entrepreneurs<br>
+          <span>© 2025 Créé par <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Haïti</span>
         </div>
         <nav class="footer-links" aria-label="Liens footer">
           <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
-          <a href="/">Tout Tools</a>
-          <a href="/#finance">Finans</a>
-          <a href="/politique-confidentialite.html">Konfidansyalite</a>
+          <a href="/">Tous les outils</a>
+          <a href="/#finance">Finance</a>
+          <a href="/politique-confidentialite.html">Confidentialité</a>
         </nav>
       </div>
     </div>
@@ -244,17 +244,17 @@
       const resultLabelBase = document.getElementById('label-result-base');
 
       if (isInverse) {
-        label.innerHTML = 'Montan TTC (ak taks) <span style="color: var(--error)">*</span>';
-        hint.textContent = 'Mete pri total la pou w jwenn pri san taks la (HT).';
-        btn.textContent = 'Mode: HT → TTC';
-        resultLabelTotal.textContent = 'Montan HT (san taks)';
-        resultLabelBase.textContent = 'Montan TTC';
+        label.innerHTML = 'Montant TTC (avec taxe) <span style="color: var(--error)">*</span>';
+        hint.textContent = 'Entrez le prix total pour obtenir le prix hors taxe (HT).';
+        btn.textContent = 'Mode : HT → TTC';
+        resultLabelTotal.textContent = 'Montant HT (hors taxe)';
+        resultLabelBase.textContent = 'Montant TTC';
       } else {
-        label.innerHTML = 'Montan HT (san taks) <span style="color: var(--error)">*</span>';
-        hint.textContent = 'Mete montan anvan taks la pou w jwenn pri total la.';
+        label.innerHTML = 'Montant HT (hors taxe) <span style="color: var(--error)">*</span>';
+        hint.textContent = 'Entrez le montant avant taxe pour obtenir le prix total.';
         btn.textContent = 'Inverser ⇄';
-        resultLabelTotal.textContent = 'Montan TTC (ak taks)';
-        resultLabelBase.textContent = 'Montan HT';
+        resultLabelTotal.textContent = 'Montant TTC (toutes taxes comprises)';
+        resultLabelBase.textContent = 'Montant HT';
       }
       if (document.getElementById('amount-input').value) calculate();
     }
@@ -269,7 +269,7 @@
       const amount = parseInput(amountInput.value);
       const rate = parseInput(rateInput.value);
 
-      if (!validateInput(amountInput, 'Antre yon montan')) return;
+      if (!validateInput(amountInput, 'Entrez un montant')) return;
 
       let ht, tca, ttc;
 
@@ -295,7 +295,7 @@
 
       showResult('result');
 
-      trackEvent(EVENTS.TOOL_USED, {
+      trackEvent('tool_used', {
         tool_name: 'calculateur_tva',
         inverse: isInverse,
         result: ttc
@@ -307,9 +307,9 @@
       const taxe = document.getElementById('result-taxe').textContent;
       const btn = document.getElementById('btn-copy');
 
-      const text = `Kalkilatè TCA — jenezbiznisou.online\n`
-                 + `${isInverse ? 'Montan HT' : 'Montan TTC'}: ${total}\n`
-                 + `Taks: ${taxe}\n`
+      const text = `Calculateur de TCA — jenezbiznisou.online\n`
+                 + `${isInverse ? 'Montant HT' : 'Montant TTC'} : ${total}\n`
+                 + `Taxe : ${taxe}\n`
                  + `jenezbiznisou.online`;
 
       copyToClipboard(text, btn);

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ═══ SEO ═══ -->
-  <title>Calculateur de Prix de Vente Gratuit</title>
+  <title>Calculateur de Prix de Vente Gratuit | jenezbiznisou.online</title>
   <meta name="description"
     content="Fixez vos prix selon votre coût de revient et la marge souhaitée en Haïti avec notre calculateur de prix de vente gratuit. Outil essentiel pour entrepreneurs.">
   <meta name="keywords" content="calcul prix de vente, fixer prix haïti, marge bénéficiaire, jenezbiznisou.online, business haïti">
@@ -47,13 +47,13 @@
         </a>
 
         <ul class="navbar-links" role="list">
-          <li><a href="/#finance">Finans</a></li>
-          <li><a href="/#documents">Dokiman</a></li>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#documents">Documents</a></li>
           <li><a href="/#startup">Startup</a></li>
           <li><a href="/#digital">Digital</a></li>
         </ul>
 
-        <button class="navbar-toggle" aria-label="Ouvri meni" aria-expanded="false">
+        <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
@@ -62,8 +62,8 @@
     </nav>
 
     <div class="mobile-menu" role="menu">
-      <a href="/#finance" role="menuitem">Finans</a>
-      <a href="/#documents" role="menuitem">Dokiman</a>
+      <a href="/#finance" role="menuitem">Finance</a>
+      <a href="/#documents" role="menuitem">Documents</a>
       <a href="/#startup" role="menuitem">Startup</a>
       <a href="/#digital" role="menuitem">Digital</a>
       <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
@@ -74,9 +74,9 @@
     <div class="container">
 
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="/">Akèy</a>
+        <a href="/">Accueil</a>
         <span aria-hidden="true">›</span>
-        <a href="/#finance">Finans</a>
+        <a href="/#finance">Finance</a>
         <span aria-hidden="true">›</span>
         <span aria-current="page">Prix de Vente</span>
       </nav>
@@ -84,49 +84,49 @@
       <div class="ad-space" aria-hidden="true">Ad Space</div>
 
       <section class="tool-hero">
-        <h1>Kalkilatè Prix de Vente — Fixe bon pri a</h1>
+        <h1>Calculateur de Prix de Vente — Fixez le bon prix</h1>
         <p>
-          Konnen ki pri ou dwe vann pwodui ou a pou w ka kouvri tout depans ou epi fè maj benefis ou vle a san pèdi kòb.
+          Déterminez à quel prix vous devez vendre votre produit pour couvrir toutes vos dépenses et réaliser la marge bénéficiaire souhaitée sans perdre d'argent.
         </p>
       </section>
 
-      <section class="tool-container" aria-label="Interface tool">
+      <section class="tool-container" aria-label="Interface outil">
         <div class="form-group">
           <label class="form-label" for="cout-achat">
-            Kou d'Acha (HTG) <span style="color: var(--error)">*</span>
+            Coût d'Achat (HTG) <span style="color: var(--error)">*</span>
           </label>
           <input class="form-input" type="number" id="cout-achat" placeholder="Ex: 2500" min="0" inputmode="decimal">
-          <span class="form-hint">Konbe ou te peye pou achte yon sèl inite pwodui a.</span>
+          <span class="form-hint">Combien vous avez payé pour acheter une seule unité du produit.</span>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="marge-souhaitee">
-            Maj ou vle fè a (%) <span style="color: var(--error)">*</span>
+            Marge souhaitée (%) <span style="color: var(--error)">*</span>
           </label>
           <input class="form-input" type="number" id="marge-souhaitee" placeholder="Ex: 30" min="0" max="99" inputmode="decimal">
-          <span class="form-hint">Pousantaj pwofi ou vle fè sou pri lavant lan.</span>
+          <span class="form-hint">Pourcentage de profit que vous souhaitez réaliser sur le prix de vente.</span>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="depans-fixes">
-            Lòt depans pa inite (Anbalaj, livrezon...)
+            Autres dépenses par unité (Emballage, livraison...)
           </label>
           <input class="form-input" type="number" id="depans-fixes" placeholder="Ex: 200" min="0" inputmode="decimal">
         </div>
 
         <button class="btn btn-primary btn-full" onclick="calculate()" id="btn-calculate" style="margin-top: 8px;">
-          Kalkile Pri Lavant →
+          Calculer le Prix de Vente →
         </button>
 
-        <div class="result-box hidden" id="result" role="region" aria-live="polite" aria-label="Rezilta">
+        <div class="result-box hidden" id="result" role="region" aria-live="polite" aria-label="Résultats">
           <div class="result-grid">
             <div class="result-item">
               <span class="result-value" id="result-prix">—</span>
-              <span class="result-label">Pri pou w vann li</span>
+              <span class="result-label">Prix de vente conseillé</span>
             </div>
             <div class="result-item">
               <span class="result-value" id="result-profit">—</span>
-              <span class="result-label">Pwofi nèt pa inite</span>
+              <span class="result-label">Profit net par unité</span>
             </div>
           </div>
 
@@ -134,10 +134,10 @@
 
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <button class="btn btn-secondary btn-sm" id="btn-copy" onclick="copyResultToClipboard()">
-              Kopye rezilta
+              Copier le résultat
             </button>
             <button class="btn btn-ghost btn-sm" onclick="resetForm()">
-              ↺ Rekòmanse
+              ↺ Recommencer
             </button>
           </div>
         </div>
@@ -145,10 +145,10 @@
 
       <div class="cta-kolonih reveal">
         <div class="cta-kolonih-text">
-          <p>Ou prèt pou vann pwodui dijital ou?</p>
-          <strong>Lanse boutik ou sou Kolonih.com — Platfòm #1 Ayiti</strong>
+          <p>Prêt à vendre vos produits numériques ?</p>
+          <strong>Lancez votre boutique sur Kolonih.com — Plateforme #1 en Haïti</strong>
         </div>
-        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Kòmanse Gratis →</a>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Commencer Gratuitement →</a>
       </div>
 
       <!-- ── CTA WHATSAPP ── -->
@@ -170,50 +170,50 @@
       </div>
 
       <section class="seo-content">
-        <h2>Poukisa ou dwe byen kalkile pri lavant ou?</h2>
+        <h2>Pourquoi devez-vous bien calculer votre prix de vente ?</h2>
         <p>
-          Anpil moun ki kòmanse yon bizniss an Ayiti gen tandans fikse pri yo selon sa yo wè nan mache a oswa selon yon senp miltiplikasyon. Men, metòd sa yo souvan mennen nan pèt paske yo pa pran an kont tout "coût de revient" la. Byen kalkile pri lavant ou pèmèt ou asire dirabilite bizniss ou ak pèmèt ou grandi pi vit.
+          Beaucoup de gens qui lancent une entreprise en Haïti ont tendance à fixer leurs prix selon le marché ou par une simple multiplication. Cependant, ces méthodes mènent souvent à des pertes car elles ne prennent pas en compte tout le "coût de revient". Bien calculer votre prix de vente vous permet d'assurer la durabilité de votre entreprise et vous permet de grandir plus vite.
         </p>
         <p>
           Fixer le bon prix est un équilibre entre être compétitif sur le marché et générer assez de profit pour couvrir vos charges d'exploitation. En utilisant notre calculateur, vous évitez de vendre à perte et vous pouvez justifier vos prix auprès de vos clients ou partenaires financiers.
         </p>
 
-        <h2>Kijan pou itilize kalkilatè sa a pou bizniss ou?</h2>
+        <h2>Comment utiliser ce calculateur pour votre entreprise ?</h2>
         <p>
-          Pou w ka jwenn pri ideyal la, antre pri ou te achte machandiz la (Coût d'achat). Apre sa, mete pousantaj benefis ou vle fè a. Atansyon: maj la kalkile sou pri lavant lan, se pa sou pri acha a sèlman. Pa bliye mete lòt ti depans ki mache ak pwodui a tankou frais de transport, emballage, oswa piblisite sou rezo sosyal yo.
+          Pour trouver le prix idéal, entrez le coût d'achat du produit. Ensuite, indiquez le pourcentage de profit souhaité. Attention : la marge est calculée sur le prix de vente, pas uniquement sur le coût d'achat. N'oubliez pas d'inclure les autres petites dépenses liées au produit comme les frais de transport, l'emballage ou la publicité sur les réseaux sociaux.
         </p>
         <p>
           Une fois les données saisies, le calculateur vous donnera le prix de vente final conseillé et le montant exact du profit que vous ferez sur chaque vente. C'est un outil indispensable pour tout entrepreneur sérieux qui veut maîtriser ses chiffres dès le premier jour.
         </p>
 
-        <h2>3 Konsèy pou w ka fikse yon bon pri an Ayiti</h2>
+        <h2>3 conseils pour fixer un bon prix en Haïti</h2>
         <p>
-          1. <strong>Analize mache a:</strong> Gade konbe lòt moun ap vann men pa bliye ke chak bizniss gen pwòp depans pa l. Si pwodui ou a gen plis valè (pi bon kalite, livrezon pi vit), ou ka vann li pi chè.<br>
-          2. <strong>Pa bliye taks:</strong> Si ou anrejistre legalman, ou dwe pran an kont taks tankou TCA oswa lòt frè legal yo nan kalkil ou.<br>
-          3. <strong>Revize pri yo souvan:</strong> Ak chanjman to dola a an Ayiti, pri acha ou yo ka chanje rapidman. Toujou itilize zouti sa a pou w wè si maj ou an toujou bon.
+          1. <strong>Analysez le marché :</strong> Regardez à quel prix les autres vendent mais n'oubliez pas que chaque entreprise a ses propres dépenses. Si votre produit a plus de valeur (meilleure qualité, livraison plus rapide), vous pouvez le vendre plus cher.<br>
+          2. <strong>N'oubliez pas les taxes :</strong> Si vous êtes enregistré légalement, vous devez prendre en compte les taxes comme la TCA ou d'autres frais légaux dans votre calcul.<br>
+          3. <strong>Révisez les prix souvent :</strong> Avec les fluctuations du taux de change en Haïti, vos prix d'achat peuvent changer rapidement. Utilisez toujours cet outil pour vérifier si votre marge est toujours bonne.
         </p>
       </section>
 
       <section class="related-tools reveal">
-        <h3>Tools ou ka itilize tou:</h3>
+        <h3>Outils suggérés :</h3>
         <div class="related-tools-grid">
           <a href="calculateur-benefice.html" class="tool-card">
             <div class="tool-card-icon"></div>
-            <span class="tool-card-title">Kalkilatè Benefis</span>
-            <span class="tool-card-desc">Kalkile benefis nèt ou apre tout depans.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-title">Calculateur de Bénéfice</span>
+            <span class="tool-card-desc">Calculez votre bénéfice net après toutes les dépenses.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
           <a href="calculateur-marge.html" class="tool-card">
             <div class="tool-card-icon"></div>
-            <span class="tool-card-title">Kalkilatè Marge</span>
-            <span class="tool-card-desc">Konnen pousantaj maj ou sou chak lavant.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-title">Calculateur de Marge</span>
+            <span class="tool-card-desc">Connaissez votre pourcentage de marge sur chaque vente.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
           <a href="../documents/generateur-facture.html" class="tool-card">
             <div class="tool-card-icon"></div>
-            <span class="tool-card-title">Jenere Faktir</span>
-            <span class="tool-card-desc">Kreye faktir PDF pwofesyonèl rapidman.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-title">Générer Facture</span>
+            <span class="tool-card-desc">Créez des factures PDF professionnelles rapidement.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
         </div>
       </section>
@@ -224,14 +224,14 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <strong>jenezbiznisou.online</strong> — Tools gratis pou entrepreneurs<br>
-          <span>© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Ayiti</span>
+          <strong>jenezbiznisou.online</strong> — Outils gratuits pour entrepreneurs<br>
+          <span>© 2025 Créé par <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Haïti</span>
         </div>
         <nav class="footer-links" aria-label="Liens footer">
           <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
-          <a href="/">Tout Tools</a>
-          <a href="/#finance">Finans</a>
-          <a href="/politique-confidentialite.html">Konfidansyalite</a>
+          <a href="/">Tous les outils</a>
+          <a href="/#finance">Finance</a>
+          <a href="/politique-confidentialite.html">Confidentialité</a>
         </nav>
       </div>
     </div>
@@ -240,7 +240,7 @@
   <script src="../../assets/js/global.js" defer></script>
   <script>
     /**
-     * Kalkil Prix de Vente
+     * Calcul Prix de Vente
      * Formula: PV = (Cout + Depans) / (1 - (Marge / 100))
      */
     function calculate() {
@@ -252,11 +252,11 @@
       const marge = parseInput(margeInput.value);
       const depans = parseInput(depansInput.value);
 
-      if (!validateInput(coutInput, 'Antre pri acha a')) return;
-      if (!validateInput(margeInput, 'Antre pousantaj maj la')) return;
+      if (!validateInput(coutInput, 'Entrez le coût d\'achat')) return;
+      if (!validateInput(margeInput, 'Entrez le pourcentage de marge')) return;
 
       if (marge >= 100) {
-        validateInput(margeInput, 'Maj la pa ka 100% oswa plis');
+        validateInput(margeInput, 'La marge ne peut pas être de 100 % ou plus');
         return;
       }
 
@@ -269,7 +269,7 @@
 
       showResult('result');
 
-      trackEvent(EVENTS.TOOL_USED, {
+      trackEvent('tool_used', {
         tool_name: 'calculateur_prix_vente',
         result: prixVente
       });
@@ -280,9 +280,9 @@
       const profit = document.getElementById('result-profit').textContent;
       const btn = document.getElementById('btn-copy');
 
-      const text = `Kalkilatè Prix de Vente — jenezbiznisou.online\n`
-                 + `Pri lavant konseye: ${prix}\n`
-                 + `Pwofi pa inite: ${profit}\n`
+      const text = `Calculateur de Prix de Vente — jenezbiznisou.online\n`
+                 + `Prix de vente conseillé : ${prix}\n`
+                 + `Profit par unité : ${profit}\n`
                  + `jenezbiznisou.online`;
 
       copyToClipboard(text, btn);

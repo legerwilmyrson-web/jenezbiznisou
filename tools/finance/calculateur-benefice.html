@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ═══ SEO ═══ -->
-  <title>Calculateur de Bénéfice Gratuit</title>
+  <title>Calculateur de Bénéfice Net Gratuit | jenezbiznisou.online</title>
   <meta name="description"
     content="Faites le calcul de profit avec notre calculateur de bénéfice gratuit en ligne. Connaissez votre marge nette facilement. Outil essentiel business en Haïti.">
   <meta name="keywords" content="calculateur bénéfice gratuit, calcul profit, marge, haïti, business, jenezbiznisou.online">
@@ -13,8 +13,8 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Calculateur de Bénéfice Gratuit — jenezbiznisou.online">
-  <meta property="og:description" content="Kalkile benefis nèt ou apre tout depans ak taks an 1 minit.">
+  <meta property="og:title" content="Calculateur de Bénéfice Net Gratuit — jenezbiznisou.online">
+  <meta property="og:description" content="Calculez votre bénéfice net après toutes les dépenses et taxes en 1 minute.">
   <meta property="og:url" content="https://jenezbiznisou.online/tools/finance/calculateur-benefice.html">
   <meta property="og:site_name" content="jenezbiznisou.online">
 
@@ -47,13 +47,13 @@
         </a>
 
         <ul class="navbar-links" role="list">
-          <li><a href="/#finance">Finans</a></li>
-          <li><a href="/#documents">Dokiman</a></li>
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#documents">Documents</a></li>
           <li><a href="/#startup">Startup</a></li>
           <li><a href="/#digital">Digital</a></li>
         </ul>
 
-        <button class="navbar-toggle" aria-label="Ouvri meni" aria-expanded="false">
+        <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
@@ -62,8 +62,8 @@
     </nav>
 
     <div class="mobile-menu" role="menu">
-      <a href="/#finance" role="menuitem">Finans</a>
-      <a href="/#documents" role="menuitem">Dokiman</a>
+      <a href="/#finance" role="menuitem">Finance</a>
+      <a href="/#documents" role="menuitem">Documents</a>
       <a href="/#startup" role="menuitem">Startup</a>
       <a href="/#digital" role="menuitem">Digital</a>
       <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
@@ -74,59 +74,59 @@
     <div class="container">
 
       <nav class="breadcrumb" aria-label="Fil d'Ariane">
-        <a href="/">Akèy</a>
+        <a href="/">Accueil</a>
         <span aria-hidden="true">›</span>
-        <a href="/#finance">Finans</a>
+        <a href="/#finance">Finance</a>
         <span aria-hidden="true">›</span>
-        <span aria-current="page">Kalkilatè Benefis</span>
+        <span aria-current="page">Calculateur de Bénéfice</span>
       </nav>
 
       <div class="ad-space" aria-hidden="true">Ad Space</div>
 
       <section class="tool-hero">
-        <h1>Kalkilatè Benefis Nèt — Gratis</h1>
+        <h1>Calculateur de Bénéfice Net — Gratuit</h1>
         <p>
-          Konnen egzakteman konbe kòb ki rete nan pòch ou apre ou fin retire tout depans ak taks sou lavant ou fè.
+          Sachez exactement combien d'argent il reste dans votre poche après avoir déduit toutes les dépenses et taxes de vos ventes.
         </p>
       </section>
 
-      <section class="tool-container" aria-label="Interface tool">
+      <section class="tool-container" aria-label="Interface outil">
         <div class="form-group">
           <label class="form-label" for="chiffre-affaire">
-            Chif d'Afè (Lavant total) <span style="color: var(--error)">*</span>
+            Chiffre d'Affaires (Ventes totales) <span style="color: var(--error)">*</span>
           </label>
           <input class="form-input" type="number" id="chiffre-affaire" placeholder="Ex: 50000" min="0" inputmode="decimal">
-          <span class="form-hint">Lajan total ou resevwa nan men kliyan yo.</span>
+          <span class="form-hint">Montant total reçu des clients.</span>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="cout-produit">
-            Kou Pwodui (Acha) <span style="color: var(--error)">*</span>
+            Coût du Produit (Achat) <span style="color: var(--error)">*</span>
           </label>
           <input class="form-input" type="number" id="cout-produit" placeholder="Ex: 30000" min="0" inputmode="decimal">
-          <span class="form-hint">Konbe ou te peye pou achte oswa fabrike pwodui a.</span>
+          <span class="form-hint">Combien vous avez payé pour acheter ou fabriquer le produit.</span>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="depans-operasyon">
-            Lòt depans (Livrezon, Pub, etc.)
+            Autres dépenses (Livraison, Pub, etc.)
           </label>
           <input class="form-input" type="number" id="depans-operasyon" placeholder="Ex: 5000" min="0" inputmode="decimal">
         </div>
 
         <button class="btn btn-primary btn-full" onclick="calculate()" id="btn-calculate" style="margin-top: 8px;">
-          Kalkile Benefis →
+          Calculer le Bénéfice →
         </button>
 
-        <div class="result-box hidden" id="result" role="region" aria-live="polite" aria-label="Rezilta">
+        <div class="result-box hidden" id="result" role="region" aria-live="polite" aria-label="Résultats">
           <div class="result-grid">
             <div class="result-item">
               <span class="result-value" id="result-benefice">—</span>
-              <span class="result-label">Benefis Nèt</span>
+              <span class="result-label">Bénéfice Net</span>
             </div>
             <div class="result-item">
               <span class="result-value" id="result-marge">—</span>
-              <span class="result-label">Marge Benefisyè</span>
+              <span class="result-label">Marge Bénéficiaire</span>
             </div>
           </div>
 
@@ -134,10 +134,10 @@
 
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <button class="btn btn-secondary btn-sm" id="btn-copy" onclick="copyResultToClipboard()">
-              Kopye rezilta
+              Copier le résultat
             </button>
             <button class="btn btn-ghost btn-sm" onclick="resetForm()">
-              ↺ Rekòmanse
+              ↺ Recommencer
             </button>
           </div>
         </div>
@@ -145,10 +145,10 @@
 
       <div class="cta-kolonih reveal">
         <div class="cta-kolonih-text">
-          <p>Ou prèt pou vann pwodui dijital ou?</p>
-          <strong>Lanse boutik ou sou Kolonih.com — Platfòm #1 Ayiti</strong>
+          <p>Prêt à vendre vos produits numériques ?</p>
+          <strong>Lancez votre boutique sur Kolonih.com — Plateforme #1 en Haïti</strong>
         </div>
-        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Kòmanse Gratis →</a>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Commencer Gratuitement →</a>
       </div>
 
       <!-- ── CTA WHATSAPP ── -->
@@ -170,36 +170,36 @@
       </div>
 
       <section class="seo-content">
-        <h2>Poukisa li enpòtan pou kalkile benefis ou?</h2>
+        <h2>Pourquoi est-il important de calculer votre bénéfice ?</h2>
         <p>
-          Anpil entrepreneurs an Ayiti fè lavant men yo pa konnen si y ap fè pwofi reyèl. Kalkile benefis nèt pèmèt ou wè kote kòb ou ap pase epi si pri w ap vann yo kòrèk. Zouti sa a ede w separe lajan bizniss la ak lajan pèsonèl ou.
+          Beaucoup d'entrepreneurs en Haïti réalisent des ventes mais ne savent pas s'ils font un profit réel. Calculer le bénéfice net permet de voir où passe votre argent et si vos prix de vente sont corrects. Cet outil vous aide à séparer l'argent de l'entreprise de votre argent personnel.
         </p>
-        <h2>Kijan pou itilize kalkilatè benefis sa a?</h2>
+        <h2>Comment utiliser ce calculateur de bénéfice ?</h2>
         <p>
-          Antre lavant total ou (Chiffre d'affaires), pri ou te achte machandiz la (Coût des marchandises), epi tout lòt ti depans ou fè pou w ka fè lavant lan (livrezon, piblisite, anbalaj). Kalkilatè a ap ba ou benefis nèt la ak pousantaj marge ou otomatikman.
+          Entrez votre chiffre d'affaires total, le coût d'achat des marchandises, et toutes les autres petites dépenses liées à la vente (livraison, publicité, emballage). Le calculateur vous donnera automatiquement le bénéfice net et le pourcentage de marge.
         </p>
       </section>
 
       <section class="related-tools reveal">
-        <h3>Tools ou ka itilize tou:</h3>
+        <h3>Outils suggérés :</h3>
         <div class="related-tools-grid">
           <a href="calculateur-prix-vente.html" class="tool-card">
             <div class="tool-card-icon"></div>
             <span class="tool-card-title">Prix de Vente</span>
-            <span class="tool-card-desc">Fixe bon pri pou pwodui ou yo.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-desc">Fixez le bon prix pour vos produits.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
           <a href="calculateur-marge.html" class="tool-card">
             <div class="tool-card-icon"></div>
-            <span class="tool-card-title">Kalkilatè Marge</span>
-            <span class="tool-card-desc">Konnen pousantaj marge ou.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-title">Calculateur de Marge</span>
+            <span class="tool-card-desc">Connaissez votre pourcentage de marge.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
           <a href="../documents/generateur-facture.html" class="tool-card">
             <div class="tool-card-icon"></div>
-            <span class="tool-card-title">Jenere Faktir</span>
-            <span class="tool-card-desc">Kreye faktir PDF rapid.</span>
-            <span class="tool-card-arrow">Itilize →</span>
+            <span class="tool-card-title">Générer Facture</span>
+            <span class="tool-card-desc">Créez des factures PDF rapidement.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
           </a>
         </div>
       </section>
@@ -210,14 +210,14 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <strong>jenezbiznisou.online</strong> — Tools gratis pou entrepreneurs<br>
-          <span>© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Ayiti</span>
+          <strong>jenezbiznisou.online</strong> — Outils gratuits pour entrepreneurs<br>
+          <span>© 2025 Créé par <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Haïti</span>
         </div>
         <nav class="footer-links" aria-label="Liens footer">
           <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
-          <a href="/">Tout Tools</a>
-          <a href="/#finance">Finans</a>
-          <a href="/politique-confidentialite.html">Konfidansyalite</a>
+          <a href="/">Tous les outils</a>
+          <a href="/#finance">Finance</a>
+          <a href="/politique-confidentialite.html">Confidentialité</a>
         </nav>
       </div>
     </div>
@@ -234,8 +234,8 @@
       const cout = parseInput(coutInput.value);
       const depans = parseInput(depansInput.value);
 
-      if (!validateInput(caInput, 'Antre lavant total ou')) return;
-      if (!validateInput(coutInput, 'Antre kou pwodui a')) return;
+      if (!validateInput(caInput, 'Entrez votre chiffre d\'affaires total')) return;
+      if (!validateInput(coutInput, 'Entrez le coût du produit')) return;
 
       const benefice = ca - (cout + depans);
       const marge = ca > 0 ? (benefice / ca) * 100 : 0;
@@ -245,7 +245,7 @@
 
       showResult('result');
 
-      trackEvent(EVENTS.TOOL_USED, {
+      trackEvent('tool_used', {
         tool_name: 'calculateur_benefice',
         result: benefice
       });
@@ -256,9 +256,9 @@
       const marge = document.getElementById('result-marge').textContent;
       const btn = document.getElementById('btn-copy');
 
-      const text = `Kalkilatè Benefis — jenezbiznisou.online\n`
-                 + `Benefis Nèt: ${benefice}\n`
-                 + `Marge: ${marge}\n`
+      const text = `Calculateur de Bénéfice — jenezbiznisou.online\n`
+                 + `Bénéfice Net : ${benefice}\n`
+                 + `Marge : ${marge}\n`
                  + `jenezbiznisou.online`;
 
       copyToClipboard(text, btn);
