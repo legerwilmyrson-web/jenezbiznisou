@@ -346,10 +346,10 @@
           </div>
 
           <button class="btn btn-primary btn-full" id="btn-download" onclick="downloadPDF()">
-            📄 Télécharger PDF
+            Télécharger PDF
           </button>
           <button class="btn btn-secondary btn-full" onclick="printInvoice()" style="margin-top: 10px;">
-            🖨️ Imprimer
+            Imprimer
           </button>
         </div>
 
@@ -623,7 +623,7 @@
 
       html2pdf().set(opt).from(element).save().then(() => {
         btn.disabled = false;
-        btn.textContent = '📄 Télécharger PDF';
+        btn.textContent = 'Télécharger PDF';
         trackEvent('pdf_downloaded', { tool: 'generateur_bon_commande' });
       });
     }

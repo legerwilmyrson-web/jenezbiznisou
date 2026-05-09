@@ -192,10 +192,10 @@
         <div class="form-group">
           <label class="form-label">CTA (Appel à l'action)</label>
           <select class="form-input" id="cta">
-            <option value="👇 Cliquez sur le lien">Cliquer sur le lien bio</option>
-            <option value="📲 Envoyez un WhatsApp">Envoyer un WhatsApp</option>
-            <option value="📍 Visitez la boutique">Visiter la boutique</option>
-            <option value="📩 Contactez-nous maintenant">Contactez-nous</option>
+            <option value="Cliquez sur le lien">Cliquer sur le lien bio</option>
+            <option value="Envoyez un WhatsApp">Envoyer un WhatsApp</option>
+            <option value="Visitez la boutique">Visiter la boutique</option>
+            <option value="Contactez-nous maintenant">Contactez-nous</option>
           </select>
         </div>
 
@@ -220,7 +220,7 @@
         </div>
         <div style="text-align: center; margin-top: 24px;">
           <button class="btn btn-secondary" onclick="generateBios()">
-            🔄 Générer à nouveau
+            Générer à nouveau
           </button>
         </div>
       </div>
@@ -315,17 +315,17 @@
   <script>
     const TEMPLATES = {
       Professional: [
-        "{name} | Expert {sector}\nOn vous aide à {specialty}\n👇 {cta}",
+        "{name} | Expert {sector}\nOn vous aide à {specialty}\n{cta}",
         "{sector} Solutions - {name}\nSpécialiste en {specialty}\nContactez-nous : {cta}",
         "{name} : Votre partenaire {sector}\nService de qualité & {specialty}\nCliquez ici : {cta}"
       ],
       Fun: [
-        "✨ {name} - Magie du {sector}\n🚀 {specialty}\nFaisons équipe ! 👇 {cta}",
-        "Plus qu'un {sector}, une passion. 🎨\n{name} - {specialty}\nViens voir ça ! {cta}",
-        "On fait du {sector} autrement. ⚡\n{name} : {specialty}\nRejoins l'aventure : {cta}"
+        "{name} - Magie du {sector}\n{specialty}\nFaisons équipe ! {cta}",
+        "Plus qu'un {sector}, une passion.\n{name} - {specialty}\nViens voir ça ! {cta}",
+        "On fait du {sector} autrement.\n{name} : {specialty}\nRejoins l'aventure : {cta}"
       ],
       Kreyòl: [
-        "{name} - Lidè nan {sector} 🇭🇹\nNou la pou nou {specialty}\nKlike la a : {cta}",
+        "{name} - Lidè nan {sector}\nNou la pou nou {specialty}\nKlike la a : {cta}",
         "Lakay se lakay ak {name}\nPi bon solisyon pou {specialty}\nVoye yon mesaj : {cta}",
         "Bèl {sector}, pi bon pri ! {name}\nNou ede w nan {specialty}\nRejwenn nou sou : {cta}"
       ],

@@ -224,7 +224,7 @@
         </label>
 
         <button class="btn btn-primary btn-full" onclick="generateCaptions()">
-          ✨ Générer 3 Captions
+          Générer 3 Captions
         </button>
       </div>
 
@@ -234,7 +234,7 @@
         </div>
         <div style="text-align: center; margin-top: 32px;">
           <button class="btn btn-secondary" onclick="generateCaptions()">
-            🔄 Générer d'autres textes
+            Générer d'autres textes
           </button>
         </div>
       </div>
@@ -322,18 +322,18 @@
     const TEMPLATES = {
       Instagram: {
         Professional: [
-          "✨ {topic} | L'excellence au service de votre projet.\n\nChez nous, nous croyons que chaque détail compte. C'est pourquoi nous mettons tout en œuvre pour vous offrir {topic} avec la meilleure qualité du marché.\n\nFaites confiance à notre expertise en {sector} pour vous accompagner.",
-          "🚀 Élevez vos standards avec {topic}.\n\nDans le secteur de {sector}, la rigueur et le professionnalisme font la différence. Découvrez comment nous transformons vos besoins en solutions concrètes.\n\nContactez-nous pour en savoir plus.",
-          "📍 Focus sur {topic}.\n\nLa satisfaction client est notre priorité absolue. Nous sommes fiers de vous présenter {topic}, conçu spécialement pour répondre aux exigences de nos clients les plus sélectifs."
+          "{topic} | L'excellence au service de votre projet.\n\nChez nous, nous croyons que chaque détail compte. C'est pourquoi nous mettons tout en œuvre pour vous offrir {topic} avec la meilleure qualité du marché.\n\nFaites confiance à notre expertise en {sector} pour vous accompagner.",
+          "Élevez vos standards avec {topic}.\n\nDans le secteur de {sector}, la rigueur et le professionnalisme font la différence. Découvrez comment nous transformons vos besoins en solutions concrètes.\n\nContactez-nous pour en savoir plus.",
+          "Focus sur {topic}.\n\nLa satisfaction client est notre priorité absolue. Nous sommes fiers de vous présenter {topic}, conçu spécialement pour répondre aux exigences de nos clients les plus sélectifs."
         ],
         Fun: [
-          "🔥 Alerte pépite ! {topic} est enfin là !\n\nOn a hâte de vous montrer ce qu'on a préparé en {sector}. Spoiler : vous allez adorer 😍.\n\nTag un ami qui a besoin de voir ça !",
-          "Mood du jour : {topic} ✨.\n\nParce que la vie est trop courte pour ne pas profiter de ce qu'il y a de mieux en {sector}. On s'occupe de tout pour vous simplifier la vie !\n\nLaissez-nous un ❤️ en commentaire.",
-          "POV : Tu viens de découvrir {topic} 🤩.\n\nSi tu cherches du nouveau et du frais en {sector}, tu es au bon endroit. On ne rigole pas avec le plaisir de nos clients !"
+          "Alerte pépite ! {topic} est enfin là !\n\nOn a hâte de vous montrer ce qu'on a préparé en {sector}. Spoiler : vous allez adorer.\n\nTag un ami qui a besoin de voir ça !",
+          "Mood du jour : {topic}.\n\nParce que la vie est trop courte pour ne pas profiter de ce qu'il y a de mieux en {sector}. On s'occupe de tout pour vous simplifier la vie !\n\nLaissez-nous un commentaire.",
+          "POV : Tu viens de découvrir {topic}.\n\nSi tu cherches du nouveau et du frais en {sector}, tu es au bon endroit. On ne rigole pas avec le plaisir de nos clients !"
         ],
         Kreyòl: [
-          "Jan nou te pwomèt la, men {topic} la deyò ! 🇭🇹\n\nNou konnen jan nou renmen bon bagay, se sa k fè nou pote pi bon kalite a pou nou nan {sector}.\n\nPa kite chans sa a pase, kontakte nou kounye a !",
-          "Nou tounen ak plis fòs pou {topic} ! 💪\n\nNan bizniss {sector} nou an, se satisfaksyon nou ki konte anvan tout bagay. Nou travay di pou n toujou ba nou sa k pi bon an.\n\nPataje pòs sa ak yon moun ou renmen !",
+          "Jan nou te pwomèt la, men {topic} la deyò !\n\nNou konnen jan nou renmen bon bagay, se sa k fè nou pote pi bon kalite a pou nou nan {sector}.\n\nPa kite chans sa a pase, kontakte nou kounye a !",
+          "Nou tounen ak plis fòs pou {topic} !\n\nNan bizniss {sector} nou an, se satisfaksyon nou ki konte anvan tout bagay. Nou travay di pou n toujou ba nou sa k pi bon an.\n\nPataje pòs sa ak yon moun ou renmen !",
           "Bon nouvèl pou tout fanatik nou yo : {topic} rive !\n\nVin dekouvri kisa n prepare pou ou jodi a. Paske nou merite pi bon sèvis {sector} ki genyen.\n\nEkri nou sou WhatsApp pou plis enfòmasyon."
         ]
       },
@@ -345,20 +345,20 @@
         ],
         Kreyòl: [
           "Èske w t ap chèche yon solisyon pou {topic} ? Nou la pou sa !\n\nNan bizniss nou an, nou konnen pwoblèm n ap rankontre chak jou nan {sector}. Se sa k fè nou kreye {topic} pou n ka fè lavi w pi fasil.\n\nPa ezite poze nou kesyon nan kòmantè yo, n ap kontan reponn ou !",
-          "Men kijan {topic} ap ede w grandi jodi a. 📈\n\nAnpil moun panse {sector} se yon bagay ki konplike, men ak bon akonpayman, tout bagay vin posib. Nou la pou n ba w kout men w bezwen an.\n\nRele nou oswa ekri nou sou WhatsApp pou n pale plis.",
+          "Men kijan {topic} ap ede w grandi jodi a.\n\nAnpil moun panse {sector} se yon bagay ki konplike, men ak bon akonpayman, tout bagay vin posib. Nou la pou n ba w kout men w bezwen an.\n\nRele nou oswa ekri nou sou WhatsApp pou n pale plis.",
           "Yon gwo mèsi ak tout moun ki toujou sipòte nou. Jodi a nou kontan prezante nou {topic}.\n\nSe gras ak fidbak nou ke nou rive amelyore sèvis nou nan {sector}. Vin wè sa nou prepare pou nou fwa sa a !\n\nPataje eksperyans ou ak nou !"
         ]
       },
       TikTok: {
         Fun: [
-          "Wait for it... {topic} is here ! ⚡️ #haiti #fyp",
-          "This is your sign to get {topic} right now ! 🤩 #sector #viral",
-          "Day in the life with {topic}. Tell me you need it without telling me you need it ! ✨"
+          "Wait for it... {topic} is here ! #haiti #fyp",
+          "This is your sign to get {topic} right now ! #sector #viral",
+          "Day in the life with {topic}. Tell me you need it without telling me you need it !"
         ],
         Kreyòl: [
-          "Gade sa k rive ! {topic} ap kraze brize ! 🔥 #haititiktok",
-          "Si w te konnen kijan {topic} fasil, ou t ap fè l depi lontan ! 🇭🇹",
-          "Men sekrè a pou {sector} an Ayiti ! Chwazi {topic}. 😎"
+          "Gade sa k rive ! {topic} ap kraze brize ! #haititiktok",
+          "Si w te konnen kijan {topic} fasil, ou t ap fè l depi lontan !",
+          "Men sekrè a pou {sector} an Ayiti ! Chwazi {topic}."
         ]
       },
       LinkedIn: {
@@ -370,23 +370,23 @@
       },
       Twitter: {
         Professional: [
-          "🚀 On lance {topic} aujourd'hui ! Le futur du {sector} en Haïti est en marche. #BusinessHaiti",
-          "Besoin de booster votre {sector} ? Découvrez {topic}. Simple, efficace, pro. 📈",
-          "Focus sur l'excellence. {topic} est là pour transformer vos résultats en {sector}. 📍"
+          "On lance {topic} aujourd'hui ! Le futur du {sector} en Haïti est en marche. #BusinessHaiti",
+          "Besoin de booster votre {sector} ? Découvrez {topic}. Simple, efficace, pro.",
+          "Focus sur l'excellence. {topic} est là pour transformer vos résultats en {sector}."
         ],
         Kreyòl: [
-          "Men li ! {topic} la pou n sèvi w pi byen nan {sector}. 🇭🇹 #Haiti",
-          "Pa pèdi tan, {topic} se solisyon w t ap chèche a pou bizniss ou ! 💪",
-          "Siksè w nan {sector} kòmanse ak {topic}. Kontakte nou ! 🔥"
+          "Men li ! {topic} la pou n sèvi w pi byen nan {sector}. #Haiti",
+          "Pa pèdi tan, {topic} se solisyon w t ap chèche a pou bizniss ou !",
+          "Siksè w nan {sector} kòmanse ak {topic}. Kontakte nou !"
         ]
       }
     };
 
     // Generic fallbacks for missing tone/platform combos
     const FALLBACKS = [
-      "Découvrez {topic} dès maintenant. Le meilleur de {sector} pour vous. ✨",
-      "Prêt pour {topic} ? On vous attend pour vous offrir le meilleur service en {sector}. 🚀",
-      "Le moment est arrivé pour {topic}. Profitez de notre expertise en {sector}. 📍"
+      "Découvrez {topic} dès maintenant. Le meilleur de {sector} pour vous.",
+      "Prêt pour {topic} ? On vous attend pour vous offrir le meilleur service en {sector}.",
+      "Le moment est arrivé pour {topic}. Profitez de notre expertise en {sector}."
     ];
 
     function generateCaptions() {
@@ -449,7 +449,7 @@
 
       navigator.clipboard.writeText(textToCopy).then(() => {
         const originalText = btn.innerText;
-        btn.innerText = "Copié ! ✅";
+        btn.innerText = "Copié !";
         btn.style.background = "#25D366";
         btn.style.color = "#fff";
         setTimeout(() => {
