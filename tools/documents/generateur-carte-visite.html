@@ -112,26 +112,6 @@
 
     .hidden { display: none; }
 
-    /* ── PRINT ── */
-    @media print {
-      @page {
-        size: 88.9mm 50.8mm;
-        margin: 0;
-      }
-      body * { visibility: hidden; }
-      #card-to-export,
-      #card-to-export * { visibility: visible; }
-      #card-to-export {
-        position: fixed;
-        top: 0; left: 0;
-        width: 88.9mm;
-        height: 50.8mm;
-        margin: 0;
-        box-shadow: none;
-        border-radius: 2px;
-        overflow: visible;
-      }
-    }
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -366,10 +346,54 @@
     }
 
     function downloadPDF() {
-      if (window.trackEvent) {
-        trackEvent('tool_used', { tool_name: 'generateur_carte_visite' });
-      }
-      window.print();
+      const card = document.getElementById('card-to-export');
+      const bg   = card.style.backgroundColor || '#ffffff';
+      const fg   = card.style.color           || '#1a1d2e';
+      const font = card.style.fontFamily      || "'Inter', sans-serif";
+      const styleClass = [...card.classList].find(c => c.startsWith('style-')) || 'style-classic';
+      const isElegant = styleClass === 'style-elegant';
+
+      const win = window.open('', '_blank', 'width=500,height=350');
+      win.document.write(`<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&family=Roboto+Mono:wght@400;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: 88.9mm 50.8mm; margin: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 88.9mm; height: 50.8mm; overflow: hidden; }
+.business-card {
+  width: 88.9mm; height: 50.8mm;
+  padding: 6mm;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative; overflow: hidden;
+  background: ${bg}; color: ${fg};
+  font-family: ${font};
+  ${isElegant ? 'border-left: 4mm solid #F5A623;' : ''}
+}
+.style-classic .card-top { display: flex; justify-content: space-between; }
+.style-minimalist { align-items: center; justify-content: center; text-align: center; gap: 3mm; }
+.style-minimalist .card-top { flex-direction: column; align-items: center; }
+.style-minimalist .card-details { margin-top: 3mm; }
+.style-minimalist .card-footer { border: none; padding: 0; }
+.style-elegant .card-top { display: flex; flex-direction: row-reverse; justify-content: space-between; }
+.style-bold h2 { font-size: 1.3rem; text-transform: uppercase; }
+.style-bold .card-details { border-left: 0.5mm solid #F5A623; padding-left: 2mm; }
+.style-split::before { content:''; position:absolute; top:0; left:0; width:35%; height:100%; background:rgba(0,0,0,0.05); }
+.style-split .card-details { margin-left: 35%; }
+.card-name-job h2 { font-size: 1.1rem; font-weight: 700; color: inherit; }
+.card-name-job span { font-size: 0.65rem; opacity: 0.8; font-weight: 600; text-transform: uppercase; }
+.card-logo-container { width: 11mm; height: 11mm; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.05); border-radius:1mm; overflow:hidden; }
+.card-logo-container img { width:100%; height:100%; object-fit:contain; }
+.card-details { display:grid; gap:1mm; }
+.detail-item { font-size: 0.65rem; }
+.card-footer { border-top: 0.3mm solid rgba(0,0,0,0.1); padding-top: 2mm; font-weight:700; font-size:0.8rem; }
+</style></head>
+<body><div class="business-card ${styleClass}">${card.innerHTML}</div></body>
+</html>`);
+      win.document.close();
+      setTimeout(() => { win.focus(); win.print(); win.close(); }, 600);
+
+      if (window.trackEvent) trackEvent('tool_used', { tool_name: 'generateur_carte_visite' });
     }
   </script>
 </body>
