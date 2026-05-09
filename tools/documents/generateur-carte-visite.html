@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO ═══ -->
+  <title>Générateur de Carte de Visite Gratuit | jenezbiznisou.online</title>
+  <meta name="description"
+    content="Créez votre carte de visite professionnelle gratuitement. Choisissez parmi 5 designs, personnalisez vos couleurs et polices. Téléchargez en PDF instantanément.">
+  <meta name="keywords" content="générateur carte de visite gratuit, créer carte de visite haïti, carte de visite pdf, jenezbiznisou.online, branding haïti">
+  <link rel="canonical" href="https://jenezbiznisou.online/tools/documents/generateur-carte-visite.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Créez votre Carte de Visite — jenezbiznisou.online">
+  <meta property="og:description" content="5 designs professionnels pour votre business en Haïti.">
+  <meta property="og:url" content="https://jenezbiznisou.online/tools/documents/generateur-carte-visite.html">
+  <meta property="og:site_name" content="jenezbiznisou.online">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&family=Roboto+Mono:wght@400;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/global.css">
+
+  <!-- html2pdf dependency -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    .card-preview-area {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* THE CARD BASE - Standard 3.5x2 inches (350x200px scaled) */
+    .business-card {
+      width: 350px;
+      height: 200px;
+      background: #ffffff;
+      color: #1a1d2e;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #eee;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    /* DESIGNS STYLES */
+    
+    /* 1. Classic (Default) */
+    .style-classic .card-top { display: flex; justify-content: space-between; }
+    .style-classic .card-details { font-size: 0.7rem; }
+
+    /* 2. Minimalist (Centered) */
+    .style-minimalist { align-items: center; justify-content: center; text-align: center; gap: 10px; }
+    .style-minimalist .card-top { flex-direction: column; align-items: center; }
+    .style-minimalist .card-details { font-size: 0.65rem; margin-top: 10px; }
+    .style-minimalist .card-footer { border: none; padding: 0; }
+
+    /* 3. Elegant (Side Border) */
+    .style-elegant { border-left: 15px solid var(--accent); }
+    .style-elegant .card-top { display: flex; flex-direction: row-reverse; justify-content: space-between; }
+    
+    /* 4. Bold (Big Typography) */
+    .style-bold { background: #1a1d2e; color: #ffffff; }
+    .style-bold h2 { font-size: 1.5rem; text-transform: uppercase; }
+    .style-bold .card-details { border-left: 2px solid var(--accent); padding-left: 10px; }
+
+    /* 5. Modern Split */
+    .style-split::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 35%; height: 100%;
+      background: rgba(0,0,0,0.03);
+      z-index: 1;
+    }
+    .style-split .card-top { z-index: 2; }
+    .style-split .card-details { z-index: 2; margin-left: 35%; }
+
+    /* INNER ELEMENTS */
+    .card-name-job h2 { margin: 0; font-size: 1.25rem; font-weight: 700; color: inherit; }
+    .card-name-job span { font-size: 0.75rem; opacity: 0.8; font-weight: 600; text-transform: uppercase; }
+
+    .card-logo-container {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.05);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .card-logo-container img { width: 100%; height: 100%; object-fit: contain; }
+
+    .card-details { display: grid; grid-template-columns: 1fr; gap: 4px; }
+    .detail-item { font-size: 0.7rem; }
+
+    .card-footer { border-top: 1px solid rgba(0,0,0,0.1); padding-top: 8px; font-weight: 700; font-size: 0.85rem; }
+
+    .color-picker-grid { display: flex; gap: 8px; margin-top: 10px; }
+    .color-opt { width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
+    .color-opt.active { border-color: var(--accent); transform: scale(1.1); }
+
+    .hidden { display: none; }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZE70LH5G8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8ZE70LH5G8');
+  </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F5A623'/><text y='.9em' font-size='80' x='50%' text-anchor='middle' fill='white'>J</text></svg>">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <a href="/" class="navbar-logo">jenezbiznisou<span>.online</span></a>
+        <ul class="navbar-links" role="list">
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#documents">Documents</a></li>
+          <li><a href="/#startup">Startup</a></li>
+          <li><a href="/#digital">Digital</a></li>
+        </ul>
+        <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" role="menu">
+      <a href="/#finance" role="menuitem">Finance</a>
+      <a href="/#documents" role="menuitem">Documents</a>
+      <a href="/#startup" role="menuitem">Startup</a>
+      <a href="/#digital" role="menuitem">Digital</a>
+      <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#documents">Documents</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Générateur de Carte</span>
+      </nav>
+
+      <section class="tool-hero">
+        <h1>Générateur de Carte de Visite</h1>
+        <p>Créez votre carte de visite personnalisée. 5 modèles disponibles, choix des couleurs et des polices. Téléchargez gratuitement.</p>
+      </section>
+
+      <div class="tool-card reveal" style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+        <!-- INPUTS SECTION -->
+        <div class="inputs-column">
+          <h3 style="font-size: 1rem; margin-bottom: 20px;">Informations</h3>
+          
+          <div class="form-group">
+            <label class="form-label">Nom & Prénom</label>
+            <input class="form-input" type="text" id="in-name" placeholder="Ex: Jean Dupont" oninput="updateCard()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Poste</label>
+            <input class="form-input" type="text" id="in-job" placeholder="Ex: CEO" oninput="updateCard()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Entreprise</label>
+            <input class="form-input" type="text" id="in-company" placeholder="Ex: My Biz" oninput="updateCard()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Téléphone</label>
+            <input class="form-input" type="text" id="in-phone" placeholder="Ex: +509 0000 0000" oninput="updateCard()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input class="form-input" type="text" id="in-email" placeholder="Ex: me@biz.com" oninput="updateCard()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Adresse</label>
+            <input class="form-input" type="text" id="in-address" placeholder="Ex: Haïti" oninput="updateCard()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Logo</label>
+            <input class="form-input" type="file" accept="image/*" onchange="handleLogo(this)">
+          </div>
+        </div>
+
+        <!-- STYLE SECTION -->
+        <div class="style-column">
+          <h3 style="font-size: 1rem; margin-bottom: 20px;">Personnalisation</h3>
+
+          <div class="form-group">
+            <label class="form-label">Modèle de Design</label>
+            <select class="form-input" id="in-style" onchange="updateCard()">
+              <option value="style-classic">Classique (Moderne)</option>
+              <option value="style-minimalist">Minimaliste (Centré)</option>
+              <option value="style-elegant">Élégant (Bordure)</option>
+              <option value="style-bold">Bold (Foncé)</option>
+              <option value="style-split">Moderne Split</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Police de caractère</label>
+            <select class="form-input" id="in-font" onchange="updateCard()">
+              <option value="'Plus Jakarta Sans', sans-serif">Modern (Jakarta)</option>
+              <option value="'Inter', sans-serif">Clean (Inter)</option>
+              <option value="'Playfair Display', serif">Elegant (Playfair)</option>
+              <option value="'Roboto Mono', monospace">Tech (Roboto)</option>
+              <option value="'Outfit', sans-serif">Rounded (Outfit)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Couleur de Fond</label>
+            <div class="color-picker-grid">
+              <div class="color-opt active" style="background: #ffffff;" onclick="setBg('#ffffff', '#1a1d2e', this)"></div>
+              <div class="color-opt" style="background: #1a1d2e;" onclick="setBg('#1a1d2e', '#ffffff', this)"></div>
+              <div class="color-opt" style="background: #f5a623;" onclick="setBg('#f5a623', '#000000', this)"></div>
+              <div class="color-opt" style="background: #25d366;" onclick="setBg('#25d366', '#ffffff', this)"></div>
+              <div class="color-opt" style="background: #007bff;" onclick="setBg('#007bff', '#ffffff', this)"></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 30px;">
+            <button class="btn btn-primary btn-full" onclick="downloadPDF()">
+              📥 Télécharger PDF
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-preview-area reveal">
+        <p style="font-size: 0.8rem; opacity: 0.6;">Aperçu final :</p>
+        <div class="business-card style-classic" id="card-to-export" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+          <div class="card-top">
+            <div class="card-name-job">
+              <h2 id="out-name">Votre Nom</h2>
+              <span id="out-job">Votre Poste</span>
+            </div>
+            <div class="card-logo-container" id="out-logo-box">
+              <span style="font-weight:700;" id="out-initials">NB</span>
+            </div>
+          </div>
+
+          <div class="card-details">
+            <div class="detail-item">Tel: <span id="out-phone">+509 0000 0000</span></div>
+            <div class="detail-item">Email: <span id="out-email">contact@email.com</span></div>
+            <div class="detail-item">Adresse: <span id="out-address">Haïti</span></div>
+          </div>
+
+          <div class="card-footer">
+            <div id="out-company">Votre Entreprise</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-kolonih reveal" style="margin-top: 60px;">
+        <div class="cta-kolonih-text">
+          <p>Prêt à vendre vos produits numériques ?</p>
+          <strong>Lancez votre boutique sur Kolonih.com — Plateforme #1 en Haïti</strong>
+        </div>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Commencer Gratis →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>jenezbiznisou.online</strong> — Outils gratuits pour entrepreneurs<br>
+          <span>© 2025 Créé par <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Haïti</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/global.js" defer></script>
+  <script>
+    let currentLogo = null;
+
+    function handleLogo(input) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          currentLogo = e.target.result;
+          document.getElementById('out-logo-box').innerHTML = `<img src="${currentLogo}" alt="Logo">`;
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    function setBg(bgColor, textColor, btn) {
+      const card = document.getElementById('card-to-export');
+      card.style.backgroundColor = bgColor;
+      card.style.color = textColor;
+      document.querySelectorAll('.color-opt').forEach(opt => opt.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function updateCard() {
+      const name = document.getElementById('in-name').value || 'Votre Nom';
+      const job = document.getElementById('in-job').value || 'Votre Poste';
+      const company = document.getElementById('in-company').value || 'Votre Entreprise';
+      const phone = document.getElementById('in-phone').value || '+509 0000 0000';
+      const email = document.getElementById('in-email').value || 'contact@email.com';
+      const address = document.getElementById('in-address').value || 'Haïti';
+      
+      const styleClass = document.getElementById('in-style').value;
+      const fontValue = document.getElementById('in-font').value;
+
+      document.getElementById('out-name').textContent = name;
+      document.getElementById('out-job').textContent = job;
+      document.getElementById('out-company').textContent = company;
+      document.getElementById('out-phone').textContent = phone;
+      document.getElementById('out-email').textContent = email;
+      document.getElementById('out-address').textContent = address;
+
+      // Update Style & Font
+      const card = document.getElementById('card-to-export');
+      card.className = 'business-card ' + styleClass;
+      card.style.fontFamily = fontValue;
+
+      if (!currentLogo) {
+        const initials = company.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+        document.getElementById('out-initials').textContent = initials || 'NB';
+      }
+    }
+
+    function downloadPDF() {
+      const element = document.getElementById('card-to-export');
+      const opt = {
+        margin: 0,
+        filename: 'carte-de-visite.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 4, useCORS: true },
+        jsPDF: { unit: 'mm', format: [88.9, 50.8], orientation: 'landscape' }
+      };
+      html2pdf().set(opt).from(element).save();
+      
+      if (window.trackEvent) {
+        trackEvent('tool_used', { tool_name: 'generateur_carte_visite_v2' });
+      }
+    }
+  </script>
+</body>
+</html>

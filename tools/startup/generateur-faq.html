@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO ═══ -->
+  <title>Générateur de FAQ pour Business Haïti | jenezbiznisou.online</title>
+  <meta name="description"
+    content="Générez automatiquement les questions les plus fréquentes (FAQ) pour votre business en Haïti. Améliorez votre service client et votre SEO gratuitement.">
+  <meta name="keywords" content="générateur faq business, questions clients haïti, réponses service client, jenezbiznisou.online, marketing haïti">
+  <link rel="canonical" href="https://jenezbiznisou.online/tools/startup/generateur-faq.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Générateur de FAQ Professionnel — jenezbiznisou.online">
+  <meta property="og:description" content="Gagnez du temps en répondant aux questions de vos clients avant même qu'ils ne les posent.">
+  <meta property="og:url" content="https://jenezbiznisou.online/tools/startup/generateur-faq.html">
+  <meta property="og:site_name" content="jenezbiznisou.online">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/global.css">
+
+  <style>
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .faq-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+
+    .faq-card:hover {
+      border-color: var(--accent);
+    }
+
+    .faq-question {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .faq-answer {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      padding-left: 32px;
+      margin-bottom: 20px;
+    }
+
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.8125rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .hidden { display: none; }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZE70LH5G8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8ZE70LH5G8');
+  </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F5A623'/><text y='.9em' font-size='80' x='50%' text-anchor='middle' fill='white'>J</text></svg>">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <a href="/" class="navbar-logo">jenezbiznisou<span>.online</span></a>
+        <ul class="navbar-links" role="list">
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#documents">Documents</a></li>
+          <li><a href="/#startup">Startup</a></li>
+          <li><a href="/#digital">Digital</a></li>
+        </ul>
+        <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" role="menu">
+      <a href="/#finance" role="menuitem">Finance</a>
+      <a href="/#documents" role="menuitem">Documents</a>
+      <a href="/#startup" role="menuitem">Startup</a>
+      <a href="/#digital" role="menuitem">Digital</a>
+      <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#startup">Startup</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Générateur de FAQ</span>
+      </nav>
+
+      <section class="tool-hero">
+        <h1>Générateur de FAQ pour Business</h1>
+        <p>Gagnez du temps en répondant aux questions de vos clients avant même qu'ils ne les posent. Idéal pour WhatsApp, Facebook et votre site web.</p>
+      </section>
+
+      <div class="tool-card reveal" style="max-width: 600px; margin: 0 auto;">
+        <div class="form-group">
+          <label class="form-label">Secteur d'Activité</label>
+          <select class="form-input" id="sector">
+            <option value="Commerce">Commerce / Boutique</option>
+            <option value="Services">Services (Freelance, Agence)</option>
+            <option value="Tech">Tech / Digital</option>
+            <option value="Beauté">Beauté / Mode</option>
+            <option value="Food">Food / Gastronomie</option>
+            <option value="Construction">Construction / Immobilier</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary btn-full" onclick="generateFAQ()">
+          💡 Générer ma FAQ
+        </button>
+      </div>
+
+      <div id="results-area" class="hidden">
+        <div class="faq-grid" id="faq-container">
+          <!-- FAQ items will appear here -->
+        </div>
+        <div style="text-align: center; margin-top: 32px;">
+          <button class="btn btn-secondary" onclick="generateFAQ()">
+            🔄 Générer d'autres questions
+          </button>
+        </div>
+      </div>
+
+      <div class="cta-kolonih reveal" style="margin-top: 60px;">
+        <div class="cta-kolonih-text">
+          <p>Prêt à vendre vos produits numériques ?</p>
+          <strong>Lancez votre boutique sur Kolonih.com — Plateforme #1 en Haïti</strong>
+        </div>
+        <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">Commencer Gratuitement →</a>
+      </div>
+
+      <section class="seo-content">
+        <h2>L'importance d'une FAQ pour votre service client</h2>
+        <p>Une <strong>Foire Aux Questions (FAQ)</strong> est un outil indispensable pour tout entrepreneur moderne en Haïti. Elle permet de filtrer les questions répétitives qui saturent votre WhatsApp ou votre messagerie Facebook. En répondant à l'avance aux doutes de vos clients (prix, livraison, mode de paiement), vous créez un sentiment de confiance et accélérez la vente.</p>
+        <p>De plus, une FAQ bien structurée améliore votre référencement sur Google, car elle contient souvent les mots-clés exacts que les clients tapent lorsqu'ils recherchent un service.</p>
+      </section>
+
+      <section class="related-tools reveal">
+        <h3>Outils suggérés :</h3>
+        <div class="related-tools-grid">
+          <a href="generateur-caption-reseaux-sociaux.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Caption Social</span>
+            <span class="tool-card-desc">Générez des textes captivants pour vos réseaux.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
+          </a>
+          <a href="../documents/generateur-business-plan.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Business Plan</span>
+            <span class="tool-card-desc">Structurez votre projet professionnellement.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
+          </a>
+          <a href="generateur-slogan.html" class="tool-card">
+            <div class="tool-card-icon"></div>
+            <span class="tool-card-title">Générateur Slogan</span>
+            <span class="tool-card-desc">Trouvez une phrase qui définit votre marque.</span>
+            <span class="tool-card-arrow">Utiliser →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>jenezbiznisou.online</strong> — Outils gratuits pour entrepreneurs<br>
+          <span>© 2025 Créé par <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Haïti</span>
+        </div>
+        <nav class="footer-links" aria-label="Liens footer">
+          <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
+          <a href="/">Tous les outils</a>
+          <a href="/#finance">Finance</a>
+          <a href="/politique-confidentialite.html">Confidentialité</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/global.js" defer></script>
+  <script>
+    const FAQ_DATA = {
+      Commerce: [
+        { q: "Quels sont vos modes de paiement ?", a: "Nous acceptons MonCash, les virements bancaires (SOGEBANK/UNIBANK) et le paiement à la livraison dans certaines zones." },
+        { q: "Faites-vous la livraison en province ?", a: "Oui, nous livrons dans toutes les grandes villes d'Haïti via des services de transport partenaires. Les frais dépendent de votre localisation." },
+        { q: "Quels sont vos délais de livraison ?", a: "Pour Port-au-Prince, la livraison se fait généralement sous 24h à 48h. Pour la province, prévoyez 3 à 5 jours ouvrables." },
+        { q: "Puis-je retourner un produit s'il ne me convient pas ?", a: "Oui, vous avez 48h pour signaler un défaut de fabrication. Le produit doit être retourné dans son emballage d'origine." }
+      ],
+      Services: [
+        { q: "Comment se déroule la collaboration ?", a: "Nous commençons par un appel de diagnostic gratuit pour comprendre vos besoins, suivi d'un devis détaillé et d'un contrat de service." },
+        { q: "Quels sont vos tarifs ?", a: "Nos tarifs sont personnalisés en fonction de la complexité de votre projet. Contactez-nous pour recevoir une offre sur mesure." },
+        { q: "Travaillez-vous à distance ?", a: "Oui, la majorité de nos services peuvent être réalisés à distance via Zoom, WhatsApp et email." },
+        { q: "Fournissez-vous une facture légale ?", a: "Absolument. Pour chaque prestation, nous remettons une facture professionnelle détaillée." }
+      ],
+      Food: [
+        { q: "Livrez-vous les repas chauds ?", a: "Oui, notre service de livraison utilise des sacs isothermes pour garantir que votre repas arrive à la température idéale." },
+        { q: "Proposez-vous un service de traiteur pour événements ?", a: "Oui, nous avons des menus spéciaux pour mariages, baptêmes et réunions d'entreprise. Contactez-nous 7 jours à l'avance." },
+        { q: "Quelles sont vos heures d'ouverture ?", a: "Nous sommes ouverts du lundi au samedi, de 10h00 à 20h00, et le dimanche de 11h00 à 17h00." },
+        { q: "Puis-je commander via WhatsApp ?", a: "Oui, c'est le moyen le plus rapide ! Envoyez-nous simplement votre choix et votre adresse de livraison." }
+      ],
+      Tech: [
+        { q: "Offrez-vous un support technique après la vente ?", a: "Oui, tous nos services incluent une période de maintenance gratuite de 30 jours pour répondre à vos questions techniques." },
+        { q: "Quels langages de programmation utilisez-vous ?", a: "Nous travaillons principalement avec JavaScript (React, Node.js), Python et PHP selon les besoins de votre projet." },
+        { q: "Combien de temps faut-il pour créer un site web ?", a: "Un site vitrine simple prend environ 1 à 2 semaines, tandis qu'une boutique en ligne demande 3 à 4 semaines." },
+        { q: "Mes données sont-elles sécurisées ?", a: "La sécurité est notre priorité. Nous utilisons les protocoles SSL et les meilleures pratiques de chiffrement pour protéger vos informations." }
+      ],
+      Beauté: [
+        { q: "Faut-il prendre rendez-vous ?", a: "Oui, pour vous garantir un service de qualité sans attente, nous recommandons de réserver au moins 24h à l'avance." },
+        { q: "Quelles marques de produits utilisez-vous ?", a: "Nous utilisons uniquement des produits certifiés professionnels, respectueux de votre peau et de vos cheveux." },
+        { q: "Proposez-vous des cartes cadeaux ?", a: "Oui ! C'est le cadeau idéal. Nos cartes cadeaux sont valables 3 mois sur tous nos services." },
+        { q: "Avez-vous des promotions pour les nouveaux clients ?", a: "Oui, bénéficiez de -10% sur votre première prestation en vous inscrivant à notre liste WhatsApp." }
+      ]
+    };
+
+    function generateFAQ() {
+      const sector = document.getElementById('sector').value;
+      const container = document.getElementById('faq-container');
+      container.innerHTML = '';
+
+      const items = FAQ_DATA[sector] || FAQ_DATA['Commerce'];
+
+      items.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'faq-card reveal';
+        card.innerHTML = `
+          <div class="faq-question">
+            <span>❓</span> ${item.q}
+          </div>
+          <div class="faq-answer">
+            ${item.a}
+          </div>
+          <button class="btn-copy" onclick="copyFAQ(this)">Kopye Q&A</button>
+        `;
+        container.appendChild(card);
+      });
+
+      document.getElementById('results-area').classList.remove('hidden');
+      document.getElementById('results-area').scrollIntoView({ behavior: 'smooth' });
+
+      if (window.trackEvent) {
+        trackEvent('tool_used', { tool_name: 'generateur_faq', sector });
+      }
+    }
+
+    function copyFAQ(btn) {
+      const card = btn.closest('.faq-card');
+      const q = card.querySelector('.faq-question').innerText.replace('❓ ', '');
+      const a = card.querySelector('.faq-answer').innerText;
+      const text = `Question: ${q}\nRéponse: ${a}`;
+
+      navigator.clipboard.writeText(text).then(() => {
+        const oldText = btn.innerText;
+        btn.innerText = "Kopye ! ✅";
+        btn.style.background = "#25D366";
+        btn.style.color = "#fff";
+        setTimeout(() => {
+          btn.innerText = oldText;
+          btn.style.background = "";
+          btn.style.color = "";
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

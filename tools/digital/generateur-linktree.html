@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══ SEO ═══ -->
+  <title>Générateur de Liens Bio (Linktree) Gratuit | jenezbiznisou.online</title>
+  <meta name="description"
+    content="Créez votre propre page de liens pour votre bio Instagram ou TikTok gratuitement. Ajoutez vos liens WhatsApp, Facebook et générez un lien partageable instantanément.">
+  <meta name="keywords" content="générateur de liens bio haïti, créer page linktree gratuit, liens réseaux sociaux bio, jenezbiznisou.online">
+  <link rel="canonical" href="https://jenezbiznisou.online/tools/digital/generateur-linktree.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Générateur de Liens Bio Gratuit — jenezbiznisou.online">
+  <meta property="og:description" content="Rassemblez tous vos liens importants sur une seule page propre et professionnelle.">
+  <meta property="og:url" content="https://jenezbiznisou.online/tools/digital/generateur-linktree.html">
+  <meta property="og:site_name" content="jenezbiznisou.online">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../assets/css/global.css">
+
+  <style>
+    .linktree-creator {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    @media (min-width: 992px) {
+      .linktree-creator {
+        grid-template-columns: 1fr 400px;
+      }
+    }
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .link-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: var(--radius-md);
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 12px;
+      align-items: end;
+    }
+
+    .preview-phone {
+      background: #000;
+      width: 100%;
+      height: 600px;
+      border: 8px solid #333;
+      border-radius: 40px;
+      overflow-y: auto;
+      position: sticky;
+      top: 20px;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 20px;
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .preview-profile {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .preview-avatar {
+      width: 80px;
+      height: 80px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .preview-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .preview-link-btn {
+      width: 100%;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .preview-link-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-remove {
+      background: rgba(255, 71, 87, 0.1);
+      color: #FF4757;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .result-box {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(37, 211, 102, 0.1);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      border-radius: var(--radius-lg);
+    }
+
+    .copy-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .hidden { display: none; }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZE70LH5G8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8ZE70LH5G8');
+  </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F5A623'/><text y='.9em' font-size='80' x='50%' text-anchor='middle' fill='white'>J</text></svg>">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <a href="/" class="navbar-logo">jenezbiznisou<span>.online</span></a>
+        <ul class="navbar-links" role="list">
+          <li><a href="/#finance">Finance</a></li>
+          <li><a href="/#documents">Documents</a></li>
+          <li><a href="/#startup">Startup</a></li>
+          <li><a href="/#digital">Digital</a></li>
+        </ul>
+        <button class="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu" role="menu">
+      <a href="/#finance" role="menuitem">Finance</a>
+      <a href="/#documents" role="menuitem">Documents</a>
+      <a href="/#startup" role="menuitem">Startup</a>
+      <a href="/#digital" role="menuitem">Digital</a>
+      <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="/">Accueil</a>
+        <span aria-hidden="true">›</span>
+        <a href="/#digital">Digital</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">Générateur de Liens Bio</span>
+      </nav>
+
+      <section class="tool-hero">
+        <h1>Générateur de Liens Bio</h1>
+        <p>Rassemblez tous vos liens importants sur une seule page. Personnalisez votre profil et générez un lien unique à mettre dans votre bio.</p>
+      </section>
+
+      <div class="linktree-creator reveal">
+        <div class="tool-card">
+          <div class="form-group">
+            <label class="form-label">Nom du Profil</label>
+            <input class="form-input" type="text" id="prof-name" placeholder="Ex: Jean Tech" oninput="updatePreview()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Courte Bio</label>
+            <input class="form-input" type="text" id="prof-bio" placeholder="Ex: Entrepreneur Digital en Haïti" oninput="updatePreview()">
+          </div>
+
+          <div style="margin-top: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="font-size: 1rem; margin: 0;">Mes Liens</h3>
+              <button class="btn btn-sm" onclick="addLink()">Ajouter un lien</button>
+            </div>
+            <div id="links-container" class="links-list">
+              <!-- Link items will be added here -->
+            </div>
+          </div>
+
+          <div style="margin-top: 40px;">
+            <button class="btn btn-primary btn-full" onclick="generateLink()">
+              Générer mon lien de bio
+            </button>
+          </div>
+
+          <div id="link-result-container" class="result-box hidden">
+            <p style="font-size: 0.85rem; font-weight: 700; color: #25D366; margin-bottom: 8px;">Votre lien est prêt !</p>
+            <div class="copy-group">
+              <input type="text" id="generated-link" class="form-input" readonly>
+              <button class="btn btn-primary" style="min-width: 80px;" onclick="copyLink(this)">Copier</button>
+            </div>
+            <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.7;">Astuce : Vous pouvez utiliser un raccourcisseur (ex: Bitly) si vous trouvez le lien trop long.</p>
+          </div>
+        </div>
+
+        <div class="preview-area">
+          <div class="preview-phone">
+            <div class="preview-profile">
+              <div class="preview-avatar" id="pre-avatar">J</div>
+              <h3 id="pre-name" style="margin: 0; font-size: 1.25rem;">Jean Tech</h3>
+              <p id="pre-bio" style="font-size: 0.9rem; opacity: 0.7; margin: 8px 0 0;">Entrepreneur Digital en Haïti</p>
+            </div>
+            <div class="preview-links" id="pre-links">
+              <!-- Links preview here -->
+            </div>
+            <div style="margin-top: auto; text-align: center; font-size: 0.7rem; opacity: 0.4;">
+              Créé avec jenezbiznisou.online
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="seo-content">
+        <h2>Pourquoi utiliser une page de liens dans votre bio ?</h2>
+        <p>Instagram et TikTok ne permettent de mettre qu'un seul lien cliquable dans votre profil. Si vous avez un site web, une boutique sur <strong>Kolonih</strong>, et un numéro WhatsApp, vous devez choisir. Une page de liens (style Linktree) règle ce problème en regroupant tout au même endroit.</p>
+        <p>Notre outil génère pour vous un lien magique qui contient toutes vos informations. Pas besoin de base de données, pas besoin de payer un abonnement. Copiez simplement le lien et collez-le dans votre profil.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>jenezbiznisou.online</strong> — Outils gratuits pour entrepreneurs<br>
+          <span>© 2025 Créé par <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT SOLUTION</a> | Haïti</span>
+        </div>
+        <nav class="footer-links" aria-label="Liens footer">
+          <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
+          <a href="/">Tous les outils</a>
+          <a href="/#finance">Finance</a>
+          <a href="/politique-confidentialite.html">Confidentialité</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/global.js" defer></script>
+  <script>
+    let links = [
+      { label: 'WhatsApp', url: 'https://wa.me/50932000000' },
+      { label: 'Facebook', url: 'https://facebook.com/' }
+    ];
+
+    function addLink() {
+      links.push({ label: 'Nouveau lien', url: 'https://' });
+      renderForm();
+      updatePreview();
+    }
+
+    function removeLink(index) {
+      links.splice(index, 1);
+      renderForm();
+      updatePreview();
+    }
+
+    function updateLink(index, field, value) {
+      links[index][field] = value;
+      updatePreview();
+    }
+
+    function renderForm() {
+      const container = document.getElementById('links-container');
+      container.innerHTML = '';
+      links.forEach((link, i) => {
+        const div = document.createElement('div');
+        div.className = 'link-item';
+        div.innerHTML = `
+          <div class="form-group" style="margin:0;">
+            <label class="form-label" style="font-size: 0.7rem;">Nom</label>
+            <input class="form-input" type="text" value="${link.label}" oninput="updateLink(${i}, 'label', this.value)">
+          </div>
+          <div class="form-group" style="margin:0;">
+            <label class="form-label" style="font-size: 0.7rem;">URL</label>
+            <input class="form-input" type="text" value="${link.url}" oninput="updateLink(${i}, 'url', this.value)">
+          </div>
+          <button class="btn-remove" onclick="removeLink(${i})">Supprimer</button>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function updatePreview() {
+      const name = document.getElementById('prof-name').value || 'Votre Nom';
+      const bio = document.getElementById('prof-bio').value || 'Votre Bio';
+      
+      document.getElementById('pre-name').textContent = name;
+      document.getElementById('pre-bio').textContent = bio;
+      document.getElementById('pre-avatar').textContent = name.charAt(0).toUpperCase();
+
+      const preLinks = document.getElementById('pre-links');
+      preLinks.innerHTML = '';
+      links.forEach(link => {
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.target = '_blank';
+        a.className = 'preview-link-btn';
+        a.textContent = link.label;
+        preLinks.appendChild(a);
+      });
+    }
+
+    function generateLink() {
+      const name = document.getElementById('prof-name').value;
+      const bio = document.getElementById('prof-bio').value;
+
+      if (!name) {
+        alert("Veuillez entrer au moins un nom de profil.");
+        return;
+      }
+
+      const data = {
+        name: name,
+        bio: bio,
+        links: links.filter(l => l.label && l.url && l.url !== 'https://')
+      };
+
+      // Base64 Encode with UTF-8 support
+      const jsonStr = JSON.stringify(data);
+      const base64 = btoa(unescape(encodeURIComponent(jsonStr)));
+      
+      const finalLink = `https://jenezbiznisou.online/bio.html?d=${base64}`;
+      
+      document.getElementById('link-result-container').classList.remove('hidden');
+      document.getElementById('generated-link').value = finalLink;
+      document.getElementById('link-result-container').scrollIntoView({ behavior: 'smooth' });
+
+      if (window.trackEvent) {
+        trackEvent('tool_used', { tool_name: 'generateur_linktree_link' });
+      }
+    }
+
+    function copyLink(btn) {
+      const input = document.getElementById('generated-link');
+      navigator.clipboard.writeText(input.value).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = "Copié !";
+        btn.style.background = "#25D366";
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.background = "";
+        }, 2000);
+      });
+    }
+
+    // Init
+    renderForm();
+    updatePreview();
+  </script>
+</body>
+</html>
