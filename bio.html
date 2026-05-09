@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio | Mes Liens</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0f111a;
+            --surface: #1a1d2e;
+            --accent: #f5a623;
+            --text: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+        }
+
+        * { margin: 0; padding: 0; box-box: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 96px;
+            height: 96px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .bio {
+            font-size: 0.9375rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .links-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: var(--surface);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-sizing: border-box;
+        }
+
+        .link-btn:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 40px 0;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.5;
+            text-align: center;
+        }
+
+        .error-msg {
+            text-align: center;
+            padding: 40px;
+        }
+
+        #main-content.hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container hidden" id="main-content">
+        <div class="avatar" id="avatar">J</div>
+        <h1 id="name">Chargement...</h1>
+        <p class="bio" id="bio"></p>
+        
+        <div class="links-list" id="links">
+            <!-- Liens ici -->
+        </div>
+
+        <div class="footer">
+            Créé avec jenezbiznisou.online
+        </div>
+    </div>
+
+    <div id="error-content" class="error-msg hidden">
+        <h2>Oups ! Paj sa a pa egziste.</h2>
+        <p style="margin-top: 10px; color: var(--text-muted);">Lyen an sanble li pa kòrèk oswa li manke enfòmasyon.</p>
+        <a href="https://jenezbiznisou.online" style="color: var(--accent); text-decoration: none; display: inline-block; margin-top: 20px;">Retounen sou paj akèy →</a>
+    </div>
+
+    <script>
+        function decodeData() {
+            const params = new URLSearchParams(window.location.search);
+            const rawData = params.get('d');
+
+            if (!rawData) {
+                showError();
+                return;
+            }
+
+            try {
+                // Base64 Decode + UTF-8 support
+                const jsonStr = decodeURIComponent(escape(atob(rawData)));
+                const data = JSON.parse(jsonStr);
+
+                if (!data.name || !data.links) {
+                    showError();
+                    return;
+                }
+
+                renderProfile(data);
+            } catch (e) {
+                console.error(e);
+                showError();
+            }
+        }
+
+        function renderProfile(data) {
+            document.getElementById('name').textContent = data.name;
+            document.getElementById('bio').textContent = data.bio || '';
+            document.getElementById('avatar').textContent = data.name.charAt(0).toUpperCase();
+            
+            const linksContainer = document.getElementById('links');
+            data.links.forEach(link => {
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.className = 'link-btn';
+                a.textContent = link.label;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                linksContainer.appendChild(a);
+            });
+
+            document.getElementById('main-content').classList.remove('hidden');
+        }
+
+        function showError() {
+            document.getElementById('error-content').classList.remove('hidden');
+        }
+
+        decodeData();
+    </script>
+</body>
+</html>

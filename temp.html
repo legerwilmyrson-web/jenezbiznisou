@@ -1,0 +1,1029 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- âââ SEO âââ -->
+  <title>jenezbiznisou.online | Tools entrepreneurs HaÃ¯ti</title>
+  <meta name="description"
+    content="Plateforme proposant plus de 20 outils gratuits pour les entrepreneurs : calculateurs de bÃ©nÃ©fices, gÃ©nÃ©rateurs de factures et devis. OptimisÃ© pour HaÃ¯ti.">
+  <meta name="keywords"
+    content="business haÃ¯ti, tools entrepreneurs, calcul bÃ©nÃ©fice, gÃ©nÃ©rateur facture gratuit, jenezbiznisou.online, kolonih">
+  <link rel="canonical" href="https://jenezbiznisou.online/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="jenezbiznisou.online â Tools gratuits pour entrepreneurs">
+  <meta property="og:description"
+    content="DÃ©couvrez plus de 20 outils indispensables pour lancer et gÃ©rer votre entreprise en HaÃ¯ti.">
+  <meta property="og:url" content="https://jenezbiznisou.online/">
+  <meta property="og:site_name" content="jenezbiznisou.online">
+
+  <!-- Fonts: Plus Jakarta Sans â 400/600/700 sÃ¨lman -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/global.css">
+
+  <style>
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       DESIGN TOKENS â DESIGN.md
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    :root {
+      --bg-base: #0F1117;
+      --bg-surface: #1A1D2E;
+      --bg-elevated: #232640;
+      --accent: #F5A623;
+      --accent-hover: #E09015;
+      --accent-soft: rgba(245, 166, 35, 0.10);
+      --accent-border: rgba(245, 166, 35, 0.25);
+      --text-primary: #F0F0F0;
+      --text-secondary: #9BA3AF;
+      --text-muted: #6B7280;
+      --border: #2D3748;
+      --border-hover: rgba(245, 166, 35, 0.35);
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
+    /* ââ RESET ââ */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ââ CONTAINER ââ */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 2rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        padding: 0 3rem;
+      }
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       NAVBAR
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 60px;
+      background: rgba(15, 17, 23, 0.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar>.container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+    }
+
+    .navbar-logo span {
+      color: var(--accent);
+    }
+
+    .navbar-links {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .navbar-links {
+        display: flex;
+      }
+    }
+
+    .navbar-links a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: color 150ms ease;
+    }
+
+    .navbar-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .navbar-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-secondary);
+    }
+
+    @media (min-width: 768px) {
+      .navbar-toggle {
+        display: none;
+      }
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 0 1.5rem;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      transition: color 150ms ease, background 150ms ease;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu a:hover {
+      color: var(--text-primary);
+      background: var(--bg-elevated);
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       HERO â Tipografi pwisan + radial gradient
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .hero {
+      position: relative;
+      padding: 88px 0 104px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Radial gradient subtil â CSS only, zero perf cost */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 90% 60% at 50% -5%, rgba(245, 166, 35, 0.07) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero>.container {
+      position: relative;
+    }
+
+    /* Eyebrow pill */
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+      border-radius: 999px;
+      padding: 6px 16px;
+      margin-bottom: 32px;
+    }
+
+    /* H1 â Apple-level presans */
+    .hero-title {
+      font-size: clamp(2.375rem, 6vw, 4.25rem);
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+      color: var(--text-primary);
+      margin: 0 auto 22px;
+      max-width: 800px;
+    }
+
+    .hero-title mark {
+      color: var(--accent);
+      background: none;
+    }
+
+    .hero-sub {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      max-width: 460px;
+      margin: 0 auto 48px;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding: 112px 0 128px;
+      }
+    }
+
+    /* ââ BUTTONS ââ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      min-height: 44px;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: background 200ms ease, border-color 200ms ease, transform 150ms ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0F1117;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       SECTIONS
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .section {
+      padding: 72px 0;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding: 96px 0;
+      }
+    }
+
+    .section-alt {
+      background: rgba(255, 255, 255, 0.018);
+    }
+
+    /* Section header â numbered tag */
+    .section-header {
+      margin-bottom: 44px;
+    }
+
+    .section-tag {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 1.875rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      line-height: 1.15;
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       TOOL CARDS â DOUBLE BEZEL, ZERO ICONS
+       Outer: 1px var(--border)
+       Gap:   1px padding (bezel space)
+       Inner: 1px rgba(255,255,255,0.045)
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 580px) {
+      .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+    }
+
+    /* Outer bezel */
+    .tool-card {
+      display: block;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 220ms ease, transform 220ms ease;
+    }
+
+    .tool-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+    }
+
+    .tool-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* Inner bezel */
+    .tool-card-inner {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 255, 255, 0.045);
+      border-radius: 15px;
+      padding: 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 220ms ease;
+    }
+
+    .tool-card:hover .tool-card-inner {
+      border-color: rgba(245, 166, 35, 0.07);
+    }
+
+    /* Category label */
+    .tool-cat {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+
+    .tool-title {
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .tool-desc {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      flex-grow: 1;
+      margin-bottom: 22px;
+    }
+
+    .tool-arrow {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--accent);
+      display: inline-block;
+      transition: transform 200ms ease;
+    }
+
+    .tool-card:hover .tool-arrow {
+      transform: translateX(5px);
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       CTA BLOCKS
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .cta-section {
+      padding: 0 0 80px;
+    }
+
+    /* CTA Kolonih */
+    .cta-kolonih {
+      background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-elevated) 100%);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta-kolonih-text p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .cta-kolonih-text strong {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+      display: block;
+    }
+
+    /* CTA WhatsApp */
+    .cta-whatsapp {
+      margin-top: 14px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-whatsapp p {
+      flex: 1;
+      min-width: 180px;
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+    }
+
+    .cta-whatsapp strong {
+      color: var(--text-primary);
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 11px 22px;
+      min-height: 44px;
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 150ms ease;
+    }
+
+    .btn-whatsapp:hover {
+      opacity: 0.88;
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       FOOTER
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 44px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .footer-brand a {
+      color: var(--text-secondary);
+      transition: color 150ms ease;
+    }
+
+    .footer-brand a:hover {
+      color: var(--accent);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      transition: color 150ms ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-secondary);
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       SCROLL REVEAL â IntersectionObserver
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 420ms ease, transform 420ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       REDUCED MOTION â OBLIGATWA (DESIGN.md)
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZE70LH5G8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-8ZE70LH5G8');
+  </script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23F5A623'/><text y='.9em' font-size='80' x='50%' text-anchor='middle' fill='white'>J</text></svg>">
+</head>
+
+<body>
+
+  <!-- ââ NAVBAR ââ -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navigation principale">
+      <div class="container">
+        <a href="/" class="navbar-logo">jenezbiznisou<span>.online</span></a>
+
+        <ul class="navbar-links" role="list">
+          <li><a href="#finance">Finans</a></li>
+          <li><a href="#documents">Dokiman</a></li>
+          <li><a href="#startup">Startup</a></li>
+          <li><a href="#digital">Digital</a></li>
+        </ul>
+
+        <button class="navbar-toggle" aria-label="Ouvri meni" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" role="menu" aria-label="Meni mobil">
+      <a href="#finance" role="menuitem">Finans</a>
+      <a href="#documents" role="menuitem">Dokiman</a>
+      <a href="#startup" role="menuitem">Startup</a>
+      <a href="#digital" role="menuitem">Digital</a>
+      <a href="https://kolonih.com" target="_blank" rel="noopener" role="menuitem">Kolonih.com</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ââ HERO ââ -->
+    <section class="hero">
+      <div class="container">
+
+        <p class="hero-label">Tout tools yo 100% gratis pou toutan</p>
+
+        <h1 class="hero-title">
+          Tools Gratuits<br>pour <mark>Entrepreneurs</mark>
+        </h1>
+
+        <p class="hero-sub">
+          Plis pase 20 tools pou jere finans ou, kreye dokiman pwofesyonÃ¨l, epi lanse bizniss ou â rapid epi gratis.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#finance" class="btn btn-primary">Dekouvri tools yo â</a>
+          <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-secondary">Vann sou
+            Kolonih.com</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ââ 01 FINANCE ââ -->
+    <section class="section" id="finance">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-tag">01 â Finance</span>
+          <h2 class="section-title">KalkilatÃ¨ & Finans</h2>
+        </div>
+
+        <div class="tools-grid">
+
+          <a href="tools/finance/calculateur-benefice.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Finance</p>
+              <h3 class="tool-title">KalkilatÃ¨ Benefis</h3>
+              <p class="tool-desc">Kalkile benefis nÃ¨t ou apre tout depans ak taks.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/finance/calculateur-prix-vente.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Finance</p>
+              <h3 class="tool-title">Prix de Vente</h3>
+              <p class="tool-desc">Fixe bon pri pou pwodui ou yo pou w pa janm fÃ¨ pÃ¨t.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/finance/calculateur-marge.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Finance</p>
+              <h3 class="tool-title">KalkilatÃ¨ Marge</h3>
+              <p class="tool-desc">Konnen pousantaj marge ou sou chak lavant w ap fÃ¨.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/finance/convertisseur-devises.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Finance</p>
+              <h3 class="tool-title">KonvÃ¨ti Lajan</h3>
+              <p class="tool-desc">Chanje USD, HTG, EUR, CAD ak dÃ¨nye to mache a.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/finance/calculateur-seuil-rentabilite.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Finance</p>
+              <h3 class="tool-title">Seuil de RentabilitÃ©</h3>
+              <p class="tool-desc">Konnen konbe lavant ou dwe fÃ¨ pou w pa fÃ¨ pÃ¨t.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/finance/calculateur-salaire-net.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Finance</p>
+              <h3 class="tool-title">SalÃ¨ NÃ¨t</h3>
+              <p class="tool-desc">Kalkile konbe kÃ²b ou dwe resevwa apre dediksyon.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/finance/calculateur-tva.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Finance</p>
+              <h3 class="tool-title">KalkilatÃ¨ TCA</h3>
+              <p class="tool-desc">Kalkile taks sou chif d'afÃ¨ (10%) rapid.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ââ 02 DOCUMENTS ââ -->
+    <section class="section section-alt" id="documents">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-tag">02 â Dokiman</span>
+          <h2 class="section-title">Dokiman PwofesyonÃ¨l</h2>
+        </div>
+
+        <div class="tools-grid">
+
+          <a href="tools/documents/generateur-facture.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Dokiman</p>
+              <h3 class="tool-title">Jenere Faktir</h3>
+              <p class="tool-desc">Kreye bÃ¨l faktir PDF pou kliyan ou yo an 1 minit.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/documents/generateur-devis.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Dokiman</p>
+              <h3 class="tool-title">Jenere Devis</h3>
+              <p class="tool-desc">Voye bÃ¨l sitasyon (proforma) bay kliyan ou rapidman.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/documents/generateur-recu.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Dokiman</p>
+              <h3 class="tool-title">Jenere Resi</h3>
+              <p class="tool-desc">Bay prÃ¨v peman pwofesyonÃ¨l pou chak vant.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/documents/generateur-bon-commande.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Dokiman</p>
+              <h3 class="tool-title">Bon de Commande</h3>
+              <p class="tool-desc">Prepare kÃ²mand pwofesyonÃ¨l pou founisÃ¨ ou yo.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/documents/generateur-business-plan.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Dokiman</p>
+              <h3 class="tool-title">Business Plan</h3>
+              <p class="tool-desc">Mete ide ou sou papye epi estriktire pwojÃ¨ ou.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ââ 03 STARTUP ââ -->
+    <section class="section" id="startup">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-tag">03 â Startup</span>
+          <h2 class="section-title">Lanse Bizniss Ou</h2>
+        </div>
+
+        <div class="tools-grid">
+
+          <a href="tools/startup/generateur-nom-business.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Startup</p>
+              <h3 class="tool-title">Non Bizniss</h3>
+              <p class="tool-desc">Jwenn bÃ¨l lide non pou bizniss ou an kreyÃ²l oswa fransÃ¨.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/startup/generateur-slogan.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Startup</p>
+              <h3 class="tool-title">Jenere Slogan</h3>
+              <p class="tool-desc">Lanse yon slogan ki makÃ²nen ak vizyon bizniss ou an.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/startup/generateur-bio-instagram.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Startup</p>
+              <h3 class="tool-title">Bio Instagram</h3>
+              <p class="tool-desc">Kreye yon bio ki atire kliyan sou rezo sosyal yo.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/startup/generateur-idee-business.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Startup</p>
+              <h3 class="tool-title">Ide Bizniss</h3>
+              <p class="tool-desc">Jwenn ide pwojÃ¨ rentab ki anfÃ²m ak bidjÃ¨ ou an Ayiti.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ââ 04 DIGITAL ââ -->
+    <section class="section section-alt" id="digital">
+      <div class="container">
+
+        <div class="section-header reveal">
+          <span class="section-tag">04 â Digital</span>
+          <h2 class="section-title">Zouti Digital</h2>
+        </div>
+
+        <div class="tools-grid">
+
+          <a href="tools/digital/generateur-qr-code.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Digital</p>
+              <h3 class="tool-title">QR Code Gratis</h3>
+              <p class="tool-desc">Kreye QR code pou WhatsApp ou, sit web ou oswa meni ou.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/digital/generateur-mot-de-passe.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Digital</p>
+              <h3 class="tool-title">Mot de Passe</h3>
+              <p class="tool-desc">Jenere mot de passe solid pou pwoteje kont ou yo.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/digital/generateur-email-alias.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Digital</p>
+              <h3 class="tool-title">Email Alias</h3>
+              <p class="tool-desc">Pwoteje email prensipal ou kont spam ak publisite.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+          <a href="tools/digital/generateur-lien-whatsapp.html" class="tool-card reveal">
+            <div class="tool-card-inner">
+              <p class="tool-cat">Digital</p>
+              <h3 class="tool-title">Lien WhatsApp</h3>
+              <p class="tool-desc">Kreye yon lien kout pou kliyan kontakte ou rapid.</p>
+              <span class="tool-arrow">Itilize â</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ââ CTA KOLONIH + WHATSAPP ââ -->
+    <section class="cta-section">
+      <div class="container">
+
+        <div class="cta-kolonih reveal">
+          <div class="cta-kolonih-text">
+            <p>Ou prÃ¨t pou vann pwodui dijital ou?</p>
+            <strong>Lanse boutik ou sou Kolonih.com â PlatfÃ²m #1 Ayiti</strong>
+          </div>
+          <a href="https://kolonih.com" target="_blank" rel="noopener" class="btn btn-primary">
+            KÃ²manse Gratis â
+          </a>
+        </div>
+
+        <div class="cta-whatsapp reveal">
+          <p>Resevwa <strong>1 tip business gratis chak semÃ¨n</strong> sou WhatsApp</p>
+          <a href="https://wa.me/50932049515?text=Mwen+vle+tips+business+gratis" target="_blank" rel="noopener"
+            class="btn-whatsapp" onclick="trackEvent && trackEvent('whatsapp_click', {page: location.pathname})">
+            Rejwenn sou WhatsApp â
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ââ FOOTER ââ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <strong>jenezbiznisou.online</strong> â Tools gratis pou entrepreneurs<br>
+          <span>Â© 2025 Kreye pa <a href="https://redprintsolution.com" target="_blank" rel="noopener">REDPRINT
+              SOLUTION</a> | Ayiti</span>
+        </div>
+        <nav class="footer-links" aria-label="Liens footer">
+          <a href="https://kolonih.com" target="_blank" rel="noopener">Kolonih.com</a>
+          <a href="/">Tout Tools</a>
+          <a href="/#finance">Finans</a>
+          <a href="/#documents">Dokiman</a>
+          <a href="/#startup">Startup</a>
+          <a href="/politique-confidentialite.html">Konfidansyalite</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/global.js" defer></script>
+  <script>
+    // Mobile menu
+    const toggle = document.querySelector('.navbar-toggle');
+    const menu = document.querySelector('.mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          menu.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Scroll reveal â IntersectionObserver, pa bloke main thread
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"207d4c62ab6f42bdb50b4e90e7bc083d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f8b1c8ffc230cc8',t:'MTc3ODI3MTA2NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
+
