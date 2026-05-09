@@ -35,7 +35,6 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="../../assets/css/global.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
   <style>
     /* ── DEVIS SPECIFIC STYLES ── */
@@ -624,26 +623,8 @@
     }
 
     function downloadPDF() {
-      const btn = document.getElementById('btn-download');
-      const element = document.getElementById('invoice-paper');
-      const invNum = document.getElementById('inv-number').value || 'DEV-001';
-      
-      btn.disabled = true;
-      btn.textContent = 'Génération en cours...';
-
-      const opt = {
-        margin: 10,
-        filename: `devis-${invNum}.pdf`,
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-
-      html2pdf().set(opt).from(element).save().then(() => {
-        btn.disabled = false;
-        btn.textContent = '📄 Télécharger PDF';
-        trackEvent('pdf_downloaded', { tool: 'generateur_devis' });
-      });
+      trackEvent('tool_used', { tool_name: 'generateur_devis' });
+      window.print();
     }
 
     window.addEventListener('DOMContentLoaded', init);
