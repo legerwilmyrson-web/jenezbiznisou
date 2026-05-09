@@ -249,7 +249,7 @@
         </div>
       </div>
 
-      <div class="card-preview-area reveal">
+      <div class="card-preview-area">
         <p style="font-size: 0.8rem; opacity: 0.6;">Aperçu final :</p>
         <div class="business-card style-classic" id="card-to-export" style="font-family: 'Plus Jakarta Sans', sans-serif;">
           <div class="card-top">
@@ -364,8 +364,13 @@
         jsPDF: { unit: 'mm', format: [88.9, 50.8], orientation: 'landscape' }
       };
       
-      // On s'assure que l'élément est bien capturé
-      html2pdf().set(opt).from(element).save().catch(err => {
+      // On s'assure que l'élément est bien visible
+      element.style.opacity = "1";
+      element.style.visibility = "visible";
+      
+      html2pdf().set(opt).from(element).save().then(() => {
+        // Optionnel: remettre le style original si besoin
+      }).catch(err => {
         console.error("Erreur PDF:", err);
         alert("Oups ! Gen yon ti pwoblèm pou jenere PDF la. Eseye ankò oswa sèvi ak yon lòt navigatè.");
       });
