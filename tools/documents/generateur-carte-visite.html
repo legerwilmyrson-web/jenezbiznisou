@@ -35,14 +35,14 @@
       gap: 20px;
     }
 
-    /* THE CARD BASE - Standard 3.5x2 inches (350x200px scaled) */
+    /* ── BASE CARD ── */
     .business-card {
       width: 350px;
       height: 200px;
       background: #ffffff;
       color: #1a1d2e;
       border-radius: 4px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
       position: relative;
       overflow: hidden;
       border: 1px solid #eee;
@@ -53,65 +53,90 @@
       transition: all 0.3s ease;
     }
 
-    /* DESIGNS STYLES */
-    
-    /* 1. Classic (Default) */
+    /* ── TEMPLATE 1 — Classique ── */
     .style-classic .card-top { display: flex; justify-content: space-between; }
-    .style-classic .card-details { font-size: 0.7rem; }
 
-    /* 2. Minimalist (Centered) */
+    /* ── TEMPLATE 2 — Minimaliste ── */
     .style-minimalist { align-items: center; justify-content: center; text-align: center; gap: 10px; }
     .style-minimalist .card-top { flex-direction: column; align-items: center; }
     .style-minimalist .card-details { font-size: 0.65rem; margin-top: 10px; }
     .style-minimalist .card-footer { border: none; padding: 0; }
 
-    /* 3. Elegant (Side Border) */
-    .style-elegant { border-left: 15px solid var(--accent); }
+    /* ── TEMPLATE 3 — Élégant ── */
+    .style-elegant { border-left: 15px solid #f5a623; }
     .style-elegant .card-top { display: flex; flex-direction: row-reverse; justify-content: space-between; }
-    
-    /* 4. Bold (Big Typography) */
+
+    /* ── TEMPLATE 4 — Bold ── */
     .style-bold { background: #1a1d2e; color: #ffffff; }
     .style-bold h2 { font-size: 1.5rem; text-transform: uppercase; }
-    .style-bold .card-details { border-left: 2px solid var(--accent); padding-left: 10px; }
+    .style-bold .card-details { border-left: 2px solid #f5a623; padding-left: 10px; }
+    .style-bold .card-footer { border-top-color: rgba(255,255,255,0.12); }
 
-    /* 5. Modern Split */
-    .style-split::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 35%; height: 100%;
-      background: rgba(0,0,0,0.03);
-      z-index: 1;
-    }
-    .style-split .card-top { z-index: 2; }
-    .style-split .card-details { z-index: 2; margin-left: 35%; }
+    /* ── TEMPLATE 5 — Split ── */
+    .style-split::before { content:''; position:absolute; top:0; left:0; width:35%; height:100%; background:rgba(0,0,0,0.04); z-index:0; }
+    .style-split .card-top { position:relative; z-index:1; display:flex; justify-content:space-between; }
+    .style-split .card-details { position:relative; z-index:1; margin-left:35%; }
+    .style-split .card-footer { position:relative; z-index:1; }
 
-    /* INNER ELEMENTS */
+    /* ── TEMPLATE 6 — Dégradé Gold ── */
+    .style-gradient { background: linear-gradient(135deg, #0f1117 0%, #1c1200 70%, #3d2800 100%); color: #ffffff; }
+    .style-gradient::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,#f5a623,#ffdd88,#f5a623,transparent); }
+    .style-gradient .card-top { display:flex; justify-content:space-between; }
+    .style-gradient .card-name-job h2 { color: #f5a623; }
+    .style-gradient .card-name-job span { color: rgba(245,166,35,0.85); opacity:1; }
+    .style-gradient .card-footer { border-top-color: rgba(245,166,35,0.25); color: rgba(255,255,255,0.65); }
+    .style-gradient .card-logo-container { background:rgba(245,166,35,0.12); border:1px solid rgba(245,166,35,0.3); color:#f5a623; }
+
+    /* ── TEMPLATE 7 — Corporate Pro ── */
+    .style-corporate { background: #ffffff; color: #1a1d2e; padding-top: 32px; }
+    .style-corporate::before { content:''; position:absolute; top:0; left:0; right:0; height:8px; background:#f5a623; }
+    .style-corporate .card-top { display:flex; justify-content:space-between; }
+    .style-corporate .card-footer { border-top: 1.5px solid #f5a623; color:#f5a623; }
+    .style-corporate .card-logo-container { background:rgba(245,166,35,0.08); border:1px solid rgba(245,166,35,0.2); color:#f5a623; }
+    .style-corporate .card-name-job span { color:#888; opacity:1; }
+
+    /* ── TEMPLATE 8 — Diagonal ── */
+    .style-diagonal { background: #ffffff; color: #1a1d2e; padding: 0; }
+    .style-diagonal::before { content:''; position:absolute; top:0; right:0; bottom:0; width:45%; background:#1a1d2e; clip-path:polygon(20% 0%,100% 0%,100% 100%,0% 100%); z-index:0; }
+    .style-diagonal .card-top { display:flex; justify-content:space-between; align-items:flex-start; padding:22px 22px 0; position:relative; z-index:1; }
+    .style-diagonal .card-details { padding:0 22px; position:relative; z-index:1; }
+    .style-diagonal .card-footer { padding:0 22px 16px; border:none; position:relative; z-index:1; font-size:0.75rem; color:#777; font-weight:600; }
+    .style-diagonal .card-logo-container { background:rgba(245,166,35,0.15); border:1px solid rgba(245,166,35,0.3); color:#f5a623; }
+
+    /* ── TEMPLATE 9 — Tech Neon ── */
+    .style-neon { background: #080e14; color: #e8f5ff; border:1px solid rgba(34,211,238,0.2); }
+    .style-neon::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:linear-gradient(180deg,#22d3ee,rgba(34,211,238,0.08)); }
+    .style-neon .card-top { display:flex; justify-content:space-between; }
+    .style-neon .card-name-job h2 { color: #22d3ee; text-shadow: 0 0 14px rgba(34,211,238,0.45); }
+    .style-neon .card-name-job span { color:rgba(34,211,238,0.7); opacity:1; }
+    .style-neon .card-footer { border-top-color:rgba(34,211,238,0.15); color:rgba(34,211,238,0.6); }
+    .style-neon .card-logo-container { background:rgba(34,211,238,0.08); border:1px solid rgba(34,211,238,0.25); color:#22d3ee; }
+    .style-neon .detail-item { color: rgba(232,245,255,0.7); }
+
+    /* ── TEMPLATE 10 — Exécutif Luxe ── */
+    .style-executive { background: #fdf9f3; color: #1a1506; }
+    .style-executive::after { content:''; position:absolute; left:25px; right:25px; bottom:38px; height:1px; background:linear-gradient(90deg,transparent,#c9a84c 20%,#c9a84c 80%,transparent); }
+    .style-executive .card-top { display:flex; justify-content:space-between; align-items:flex-start; }
+    .style-executive h2 { font-size: 1.3rem; letter-spacing: -0.02em; }
+    .style-executive .card-name-job span { color:#c9a84c; opacity:1; letter-spacing:0.12em; font-size:0.6rem; }
+    .style-executive .card-footer { border:none; text-align:right; font-size:0.7rem; color:#c9a84c; font-weight:600; letter-spacing:0.05em; }
+    .style-executive .card-logo-container { background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.25); color:#c9a84c; }
+    .style-executive .detail-item { font-size:0.65rem; color:#5a5040; }
+
+    /* ── INNER ELEMENTS ── */
     .card-name-job h2 { margin: 0; font-size: 1.25rem; font-weight: 700; color: inherit; }
     .card-name-job span { font-size: 0.75rem; opacity: 0.8; font-weight: 600; text-transform: uppercase; }
-
-    .card-logo-container {
-      width: 45px;
-      height: 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,0.05);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .card-logo-container img { width: 100%; height: 100%; object-fit: contain; }
-
-    .card-details { display: grid; grid-template-columns: 1fr; gap: 4px; }
+    .card-logo-container { width:45px; height:45px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.05); border-radius:4px; overflow:hidden; flex-shrink:0; }
+    .card-logo-container img { width:100%; height:100%; object-fit:contain; }
+    .card-details { display:grid; gap:4px; }
     .detail-item { font-size: 0.7rem; }
+    .card-footer { border-top:1px solid rgba(0,0,0,0.1); padding-top:8px; font-weight:700; font-size:0.85rem; }
 
-    .card-footer { border-top: 1px solid rgba(0,0,0,0.1); padding-top: 8px; font-weight: 700; font-size: 0.85rem; }
-
-    .color-picker-grid { display: flex; gap: 8px; margin-top: 10px; }
-    .color-opt { width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
-    .color-opt.active { border-color: var(--accent); transform: scale(1.1); }
+    .color-picker-grid { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .color-opt { width: 24px; height: 24px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: transform 0.15s; }
+    .color-opt.active { border-color: var(--accent); transform: scale(1.15); }
 
     .hidden { display: none; }
-
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -164,7 +189,7 @@
 
       <section class="tool-hero">
         <h1>Générateur de Carte de Visite</h1>
-        <p>Créez votre carte de visite personnalisée. 5 modèles disponibles, choix des couleurs et des polices. Téléchargez gratuitement.</p>
+        <p>Créez votre carte de visite personnalisée. 10 modèles premium disponibles, choix des couleurs et des polices. Téléchargez gratuitement.</p>
       </section>
 
       <div class="tool-card reveal" style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
@@ -209,11 +234,16 @@
           <div class="form-group">
             <label class="form-label">Modèle de Design</label>
             <select class="form-input" id="in-style" onchange="updateCard()">
-              <option value="style-classic">Classique (Moderne)</option>
-              <option value="style-minimalist">Minimaliste (Centré)</option>
-              <option value="style-elegant">Élégant (Bordure)</option>
-              <option value="style-bold">Bold (Foncé)</option>
-              <option value="style-split">Moderne Split</option>
+              <option value="style-classic">1 · Classique</option>
+              <option value="style-minimalist">2 · Minimaliste</option>
+              <option value="style-elegant">3 · Élégant (Bordure Or)</option>
+              <option value="style-bold">4 · Bold (Foncé)</option>
+              <option value="style-split">5 · Split Moderne</option>
+              <option value="style-gradient">6 · Dégradé Gold ✨</option>
+              <option value="style-corporate">7 · Corporate Pro</option>
+              <option value="style-diagonal">8 · Diagonal</option>
+              <option value="style-neon">9 · Tech Neon</option>
+              <option value="style-executive">10 · Exécutif Luxe</option>
             </select>
           </div>
 
@@ -316,26 +346,36 @@
       btn.classList.add('active');
     }
 
-    function updateCard() {
-      const name = document.getElementById('in-name').value || 'Votre Nom';
-      const job = document.getElementById('in-job').value || 'Votre Poste';
-      const company = document.getElementById('in-company').value || 'Votre Entreprise';
-      const phone = document.getElementById('in-phone').value || '+509 0000 0000';
-      const email = document.getElementById('in-email').value || 'contact@email.com';
-      const address = document.getElementById('in-address').value || 'Haïti';
-      
-      const styleClass = document.getElementById('in-style').value;
-      const fontValue = document.getElementById('in-font').value;
+    // Templates with built-in background — color picker is secondary
+    const SELF_STYLED = ['style-gradient','style-bold','style-neon','style-executive','style-corporate','style-diagonal'];
 
-      document.getElementById('out-name').textContent = name;
-      document.getElementById('out-job').textContent = job;
+    function updateCard() {
+      const name    = document.getElementById('in-name').value    || 'Votre Nom';
+      const job     = document.getElementById('in-job').value     || 'Votre Poste';
+      const company = document.getElementById('in-company').value || 'Votre Entreprise';
+      const phone   = document.getElementById('in-phone').value   || '+509 0000 0000';
+      const email   = document.getElementById('in-email').value   || 'contact@email.com';
+      const address = document.getElementById('in-address').value || 'Haïti';
+
+      const styleClass = document.getElementById('in-style').value;
+      const fontValue  = document.getElementById('in-font').value;
+
+      document.getElementById('out-name').textContent    = name;
+      document.getElementById('out-job').textContent     = job;
       document.getElementById('out-company').textContent = company;
-      document.getElementById('out-phone').textContent = phone;
-      document.getElementById('out-email').textContent = email;
+      document.getElementById('out-phone').textContent   = phone;
+      document.getElementById('out-email').textContent   = email;
       document.getElementById('out-address').textContent = address;
 
-      // Update Style & Font
       const card = document.getElementById('card-to-export');
+
+      // Reset inline colors when switching to self-styled templates
+      if (SELF_STYLED.includes(styleClass)) {
+        card.style.backgroundColor = '';
+        card.style.color = '';
+        document.querySelectorAll('.color-opt').forEach(o => o.classList.remove('active'));
+      }
+
       card.className = 'business-card ' + styleClass;
       card.style.fontFamily = fontValue;
 
@@ -347,52 +387,97 @@
 
     function downloadPDF() {
       const card = document.getElementById('card-to-export');
-      const bg   = card.style.backgroundColor || '#ffffff';
-      const fg   = card.style.color           || '#1a1d2e';
-      const font = card.style.fontFamily      || "'Inter', sans-serif";
+      const userBg   = card.style.backgroundColor;
+      const userFg   = card.style.color;
+      const font     = card.style.fontFamily || "'Inter', sans-serif";
       const styleClass = [...card.classList].find(c => c.startsWith('style-')) || 'style-classic';
-      const isElegant = styleClass === 'style-elegant';
+      // Only override template colors if user explicitly chose a color
+      const userColorCSS = userBg
+        ? `.business-card{background:${userBg}!important;color:${userFg||'#1a1d2e'}!important;}`
+        : '';
 
       const win = window.open('', '_blank', 'width=500,height=350');
       win.document.write(`<!DOCTYPE html>
 <html><head><meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&family=Roboto+Mono:wght@400;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-@page { size: 88.9mm 50.8mm; margin: 0; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { width: 88.9mm; height: 50.8mm; overflow: hidden; }
-.business-card {
-  width: 88.9mm; height: 50.8mm;
-  padding: 6mm;
-  display: flex; flex-direction: column; justify-content: space-between;
-  position: relative; overflow: hidden;
-  background: ${bg}; color: ${fg};
-  font-family: ${font};
-  ${isElegant ? 'border-left: 4mm solid #F5A623;' : ''}
-}
-.style-classic .card-top { display: flex; justify-content: space-between; }
-.style-minimalist { align-items: center; justify-content: center; text-align: center; gap: 3mm; }
-.style-minimalist .card-top { flex-direction: column; align-items: center; }
-.style-minimalist .card-details { margin-top: 3mm; }
-.style-minimalist .card-footer { border: none; padding: 0; }
-.style-elegant .card-top { display: flex; flex-direction: row-reverse; justify-content: space-between; }
-.style-bold h2 { font-size: 1.3rem; text-transform: uppercase; }
-.style-bold .card-details { border-left: 0.5mm solid #F5A623; padding-left: 2mm; }
-.style-split::before { content:''; position:absolute; top:0; left:0; width:35%; height:100%; background:rgba(0,0,0,0.05); }
-.style-split .card-details { margin-left: 35%; }
-.card-name-job h2 { font-size: 1.1rem; font-weight: 700; color: inherit; }
-.card-name-job span { font-size: 0.65rem; opacity: 0.8; font-weight: 600; text-transform: uppercase; }
-.card-logo-container { width: 11mm; height: 11mm; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.05); border-radius:1mm; overflow:hidden; }
-.card-logo-container img { width:100%; height:100%; object-fit:contain; }
-.card-details { display:grid; gap:1mm; }
-.detail-item { font-size: 0.65rem; }
-.card-footer { border-top: 0.3mm solid rgba(0,0,0,0.1); padding-top: 2mm; font-weight:700; font-size:0.8rem; }
+@page{size:88.9mm 50.8mm;margin:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{width:88.9mm;height:50.8mm;overflow:hidden}
+.business-card{width:88.9mm;height:50.8mm;padding:6mm;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;background:#ffffff;color:#1a1d2e;font-family:${font}}
+.card-name-job h2{font-size:1.1rem;font-weight:700;color:inherit}
+.card-name-job span{font-size:0.6rem;opacity:.8;font-weight:600;text-transform:uppercase}
+.card-logo-container{width:11mm;height:11mm;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.05);border-radius:1mm;overflow:hidden;flex-shrink:0}
+.card-logo-container img{width:100%;height:100%;object-fit:contain}
+.card-details{display:grid;gap:1mm}
+.detail-item{font-size:0.62rem}
+.card-footer{border-top:0.3mm solid rgba(0,0,0,.1);padding-top:2mm;font-weight:700;font-size:0.78rem}
+/* T1 */
+.style-classic .card-top{display:flex;justify-content:space-between}
+/* T2 */
+.style-minimalist{align-items:center;justify-content:center;text-align:center;gap:3mm}
+.style-minimalist .card-top{flex-direction:column;align-items:center}
+.style-minimalist .card-details{margin-top:3mm}
+.style-minimalist .card-footer{border:none;padding:0}
+/* T3 */
+.style-elegant{border-left:4mm solid #f5a623}
+.style-elegant .card-top{display:flex;flex-direction:row-reverse;justify-content:space-between}
+/* T4 */
+.style-bold{background:#1a1d2e;color:#fff}
+.style-bold h2{font-size:1.25rem;text-transform:uppercase}
+.style-bold .card-details{border-left:0.5mm solid #f5a623;padding-left:2mm}
+.style-bold .card-footer{border-top-color:rgba(255,255,255,.1)}
+/* T5 */
+.style-split::before{content:'';position:absolute;top:0;left:0;width:35%;height:100%;background:rgba(0,0,0,.05)}
+.style-split .card-top{position:relative;z-index:1;display:flex;justify-content:space-between}
+.style-split .card-details{position:relative;z-index:1;margin-left:35%}
+.style-split .card-footer{position:relative;z-index:1}
+/* T6 — Gradient Gold */
+.style-gradient{background:linear-gradient(135deg,#0f1117 0%,#1c1200 70%,#3d2800 100%);color:#fff}
+.style-gradient::after{content:'';position:absolute;bottom:0;left:0;right:0;height:0.8mm;background:linear-gradient(90deg,transparent,#f5a623,#ffdd88,#f5a623,transparent)}
+.style-gradient .card-top{display:flex;justify-content:space-between}
+.style-gradient .card-name-job h2{color:#f5a623}
+.style-gradient .card-name-job span{color:rgba(245,166,35,.85);opacity:1}
+.style-gradient .card-footer{border-top-color:rgba(245,166,35,.25);color:rgba(255,255,255,.65)}
+.style-gradient .card-logo-container{background:rgba(245,166,35,.12);border:0.3mm solid rgba(245,166,35,.3);color:#f5a623}
+/* T7 — Corporate Pro */
+.style-corporate{background:#fff;color:#1a1d2e;padding-top:8mm}
+.style-corporate::before{content:'';position:absolute;top:0;left:0;right:0;height:2mm;background:#f5a623}
+.style-corporate .card-top{display:flex;justify-content:space-between}
+.style-corporate .card-footer{border-top:0.4mm solid #f5a623;color:#f5a623}
+.style-corporate .card-logo-container{background:rgba(245,166,35,.08);border:0.3mm solid rgba(245,166,35,.2);color:#f5a623}
+.style-corporate .card-name-job span{color:#888;opacity:1}
+/* T8 — Diagonal */
+.style-diagonal{background:#fff;color:#1a1d2e;padding:0}
+.style-diagonal::before{content:'';position:absolute;top:0;right:0;bottom:0;width:45%;background:#1a1d2e;clip-path:polygon(20% 0%,100% 0%,100% 100%,0% 100%);z-index:0}
+.style-diagonal .card-top{display:flex;justify-content:space-between;align-items:flex-start;padding:5mm 5mm 0;position:relative;z-index:1}
+.style-diagonal .card-details{padding:0 5mm;position:relative;z-index:1}
+.style-diagonal .card-footer{padding:0 5mm 4mm;border:none;position:relative;z-index:1;font-size:0.62rem;color:rgba(0,0,0,.5);font-weight:600}
+.style-diagonal .card-logo-container{background:rgba(245,166,35,.15);border:0.3mm solid rgba(245,166,35,.3);color:#f5a623}
+/* T9 — Neon */
+.style-neon{background:#080e14;color:#e8f5ff;border:0.3mm solid rgba(34,211,238,.2)}
+.style-neon::before{content:'';position:absolute;top:0;left:0;width:0.8mm;height:100%;background:linear-gradient(180deg,#22d3ee,rgba(34,211,238,.08))}
+.style-neon .card-top{display:flex;justify-content:space-between}
+.style-neon .card-name-job h2{color:#22d3ee}
+.style-neon .card-name-job span{color:rgba(34,211,238,.7);opacity:1}
+.style-neon .card-footer{border-top-color:rgba(34,211,238,.15);color:rgba(34,211,238,.6)}
+.style-neon .card-logo-container{background:rgba(34,211,238,.08);border:0.3mm solid rgba(34,211,238,.25);color:#22d3ee}
+.style-neon .detail-item{color:rgba(232,245,255,.7)}
+/* T10 — Executive */
+.style-executive{background:#fdf9f3;color:#1a1506}
+.style-executive::after{content:'';position:absolute;left:5mm;right:5mm;bottom:9mm;height:0.2mm;background:linear-gradient(90deg,transparent,#c9a84c 20%,#c9a84c 80%,transparent)}
+.style-executive .card-top{display:flex;justify-content:space-between;align-items:flex-start}
+.style-executive h2{font-size:1.15rem;letter-spacing:-0.02em}
+.style-executive .card-name-job span{color:#c9a84c;opacity:1;letter-spacing:.12em;font-size:.55rem}
+.style-executive .card-footer{border:none;text-align:right;font-size:.62rem;color:#c9a84c;font-weight:600;letter-spacing:.05em}
+.style-executive .card-logo-container{background:rgba(201,168,76,.08);border:0.3mm solid rgba(201,168,76,.25);color:#c9a84c}
+.style-executive .detail-item{font-size:.6rem;color:#5a5040}
+${userColorCSS}
 </style></head>
 <body><div class="business-card ${styleClass}">${card.innerHTML}</div></body>
 </html>`);
       win.document.close();
       setTimeout(() => { win.focus(); win.print(); win.close(); }, 600);
-
       if (window.trackEvent) trackEvent('tool_used', { tool_name: 'generateur_carte_visite' });
     }
   </script>
