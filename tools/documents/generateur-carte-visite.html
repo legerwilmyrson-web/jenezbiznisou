@@ -26,9 +26,6 @@
   <!-- Styles -->
   <link rel="stylesheet" href="../../assets/css/global.css">
 
-  <!-- html2pdf dependency -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
   <style>
     .card-preview-area {
       margin-top: 40px;
@@ -114,6 +111,27 @@
     .color-opt.active { border-color: var(--accent); transform: scale(1.1); }
 
     .hidden { display: none; }
+
+    /* ── PRINT ── */
+    @media print {
+      @page {
+        size: 88.9mm 50.8mm;
+        margin: 0;
+      }
+      body * { visibility: hidden; }
+      #card-to-export,
+      #card-to-export * { visibility: visible; }
+      #card-to-export {
+        position: fixed;
+        top: 0; left: 0;
+        width: 88.9mm;
+        height: 50.8mm;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 2px;
+        overflow: visible;
+      }
+    }
   </style>
 
   <!-- Google tag (gtag.js) -->
@@ -243,7 +261,7 @@
 
           <div style="margin-top: 30px;">
             <button class="btn btn-primary btn-full" onclick="downloadPDF()">
-              📥 Télécharger PDF
+              Imprimer / Sauvegarder PDF
             </button>
           </div>
         </div>
@@ -348,36 +366,10 @@
     }
 
     function downloadPDF() {
-      const element = document.getElementById('card-to-export');
-      
-      // Options optimisées pour éviter le PDF vide
-      const opt = {
-        margin: 0,
-        filename: 'carte-de-visite.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { 
-          scale: 2, // Réduit pour plus de stabilité
-          useCORS: true,
-          letterRendering: true,
-          logging: false
-        },
-        jsPDF: { unit: 'mm', format: [88.9, 50.8], orientation: 'landscape' }
-      };
-      
-      // On s'assure que l'élément est bien visible
-      element.style.opacity = "1";
-      element.style.visibility = "visible";
-      
-      html2pdf().set(opt).from(element).save().then(() => {
-        // Optionnel: remettre le style original si besoin
-      }).catch(err => {
-        console.error("Erreur PDF:", err);
-        alert("Oups ! Gen yon ti pwoblèm pou jenere PDF la. Eseye ankò oswa sèvi ak yon lòt navigatè.");
-      });
-      
       if (window.trackEvent) {
-        trackEvent('tool_used', { tool_name: 'generateur_carte_visite_v2' });
+        trackEvent('tool_used', { tool_name: 'generateur_carte_visite' });
       }
+      window.print();
     }
   </script>
 </body>
