@@ -105,6 +105,8 @@
       font-family: 'Inter', system-ui, sans-serif;
       min-height: 600px;
       position: relative;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
     }
 
     .invoice-header {
@@ -194,6 +196,32 @@
       padding-top: 20px;
     }
 
+    /* Template Or */
+    .tpl-gold { border-top: 6px solid #f5a623; }
+    .tpl-gold .invoice-title { color: #c47d00; }
+    .tpl-gold .preview-table th { background: #fffbf0; border-bottom: 2px solid #f5a623; }
+    .tpl-gold .total-row.grand-total { border-top-color: #f5a623; color: #c47d00; }
+    .tpl-gold .addr-label { color: #c47d00; }
+    .tpl-gold .invoice-footer { border-top-color: rgba(197,119,0,0.3); }
+
+    /* Template Corporate */
+    .tpl-corporate { border-top: 6px solid #1a1d2e; }
+    .tpl-corporate .invoice-title { color: white; background: #1a1d2e; padding: 5px 14px; border-radius: 3px; display: inline-block; }
+    .tpl-corporate .preview-table th { background: #1a1d2e; color: white; border-bottom: none; }
+    .tpl-corporate .total-row.grand-total { border-top-color: #1a1d2e; }
+
+    /* Template Élégant */
+    .tpl-elegant { background: #fdf9f3; border-left: 6px solid #c9a84c; }
+    .tpl-elegant .invoice-title { color: #c9a84c; font-style: italic; }
+    .tpl-elegant .preview-table th { background: transparent; border-bottom: 1px solid #c9a84c; color: #7a6030; font-style: italic; text-transform: none; }
+    .tpl-elegant .total-row.grand-total { border-top-color: #c9a84c; color: #7a6030; }
+    .tpl-elegant .addr-label { color: #c9a84c; }
+
+    /* Template Moderne */
+    .tpl-moderne .invoice-title { background: #f5a623; color: white; padding: 4px 12px; border-radius: 3px; display: inline-block; }
+    .tpl-moderne .preview-table th { background: #f5a623; color: white; border-bottom: none; }
+    .tpl-moderne .total-row.grand-total { border-top-color: #f5a623; }
+
     /* ── PRINT ── */
     @media print {
       body * {
@@ -277,7 +305,20 @@
         
         <!-- ── INPUTS ── -->
         <div class="invoice-form no-print">
-          
+
+          <div class="form-section">
+            <div class="form-section-title">Modèle de Document</div>
+            <div class="form-group" style="margin: 0;">
+              <select class="form-input" id="tpl-select" onchange="setTemplate(this.value)">
+                <option value="">1 · Classique</option>
+                <option value="tpl-gold">2 · Or (Gold)</option>
+                <option value="tpl-corporate">3 · Corporate</option>
+                <option value="tpl-elegant">4 · Élégant</option>
+                <option value="tpl-moderne">5 · Moderne</option>
+              </select>
+            </div>
+          </div>
+
           <div class="form-section">
             <div class="form-section-title">Informations de Votre Entreprise</div>
             <div class="form-group">
@@ -622,6 +663,11 @@
     function downloadPDF() {
       trackEvent('tool_used', { tool_name: 'generateur_facture' });
       window.print();
+    }
+
+    function setTemplate(val) {
+      const paper = document.getElementById('invoice-paper');
+      paper.className = 'invoice-paper' + (val ? ' ' + val : '');
     }
 
     // Init on load

@@ -86,6 +86,8 @@
       position: relative;
       overflow: hidden;
       border: 1px solid #eee;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
     }
 
     .receipt-header {
@@ -162,6 +164,37 @@
       font-size: 0.75rem;
       color: #999;
     }
+
+    /* Template Or */
+    .tpl-gold.receipt-paper { border-top: 6px solid #f5a623; }
+    .tpl-gold .receipt-title { color: #c47d00; }
+    .tpl-gold .receipt-header { border-bottom-style: solid; border-bottom-color: #f5a623; }
+    .tpl-gold .receipt-amount-box { background: #fffbf0; border: 1px solid #f5a623; }
+    .tpl-gold .receipt-amount-value { color: #c47d00; }
+    .tpl-gold .peye-stamp { border-color: rgba(197,119,0,0.35); color: rgba(197,119,0,0.35); }
+
+    /* Template Corporate */
+    .tpl-corporate.receipt-paper { border-top: 6px solid #1a1d2e; }
+    .tpl-corporate .receipt-title { color: white; background: #1a1d2e; padding: 5px 14px; border-radius: 3px; display: inline-block; }
+    .tpl-corporate .receipt-amount-box { background: #1a1d2e; border: none; }
+    .tpl-corporate .receipt-amount-value { color: #f5a623; }
+    .tpl-corporate .receipt-amount-box > div:first-child { color: rgba(255,255,255,0.7) !important; }
+
+    /* Template Élégant */
+    .tpl-elegant.receipt-paper { background: #fdf9f3; border-left: 6px solid #c9a84c; }
+    .tpl-elegant .receipt-title { color: #c9a84c; font-style: italic; }
+    .tpl-elegant .receipt-header { border-bottom-style: solid; border-bottom-color: #c9a84c; }
+    .tpl-elegant .receipt-amount-box { background: transparent; border: 1px solid #c9a84c; }
+    .tpl-elegant .receipt-amount-value { color: #7a6030; }
+    .tpl-elegant .receipt-label { color: #c9a84c; }
+    .tpl-elegant .peye-stamp { border-color: rgba(201,168,76,0.35); color: rgba(201,168,76,0.35); }
+
+    /* Template Moderne */
+    .tpl-moderne .receipt-title { background: #f5a623; color: white; padding: 4px 16px; border-radius: 3px; display: inline-block; }
+    .tpl-moderne .receipt-header { border-bottom-style: solid; border-bottom-color: #f5a623; }
+    .tpl-moderne .receipt-amount-box { background: #f5a623; border: none; }
+    .tpl-moderne .receipt-amount-value { color: white; }
+    .tpl-moderne .receipt-amount-box > div:first-child { color: rgba(255,255,255,0.85) !important; }
 
     /* ── PRINT ── */
     @media print {
@@ -293,6 +326,19 @@
             <div class="form-group">
               <label class="form-label">Reçu Par</label>
               <input class="form-input" type="text" id="rec-by" placeholder="Votre nom ou celui de l'entreprise" oninput="updatePreview()">
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-title">Modèle de Document</div>
+            <div class="form-group" style="margin: 0;">
+              <select class="form-input" id="tpl-select" onchange="setTemplate(this.value)">
+                <option value="">1 · Classique</option>
+                <option value="tpl-gold">2 · Or (Gold)</option>
+                <option value="tpl-corporate">3 · Corporate</option>
+                <option value="tpl-elegant">4 · Élégant</option>
+                <option value="tpl-moderne">5 · Moderne</option>
+              </select>
             </div>
           </div>
 
@@ -466,6 +512,11 @@
     function downloadPDF() {
       trackEvent('tool_used', { tool_name: 'generateur_recu' });
       window.print();
+    }
+
+    function setTemplate(val) {
+      const paper = document.getElementById('receipt-paper');
+      paper.className = 'receipt-paper' + (val ? ' ' + val : '');
     }
 
     window.addEventListener('DOMContentLoaded', init);
